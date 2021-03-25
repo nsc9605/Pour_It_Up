@@ -1,5 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+// process.env.ATLAS_URI, process.env.MONGODB_URI, "" 
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/cocktailsdb",
+  process.env.ATLAS_URI, {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
 
 const cocktailSchema = new Schema({
   name: { type: String, required: true },
