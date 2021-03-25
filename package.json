@@ -1,5 +1,5 @@
 {
-  "name": "Pour_It_Up",
+  "name": "pour_it_up",
   "version": "1.0.0",
   "description": "MERN stack app aimed at those new found bartenders during the 2020 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!",
   "main": "index.js",
@@ -11,7 +11,8 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "seed": "node scripts/seedDB.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,7 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongojs": "^3.1.0",
-    "mongoose": "^5.12.2"
+    "mongoose": "^5.11.18"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
