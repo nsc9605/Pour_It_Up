@@ -4,10 +4,7 @@ const db = require("../models");
 
 // This file empties the Cocktails collection and inserts the cocktails below
 console.log(process.env.ATLAS_URI)
-mongoose.connect(process.env.ATLAS_URI || "mongodb://localhost/cocktailsdb", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-});
+mongoose.connect(process.env.ATLAS_URI || "mongodb://localhost/cocktailsdb");
 
 const cocktailSeed = [
   {
