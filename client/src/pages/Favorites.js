@@ -1,9 +1,11 @@
 import React from 'react';
+import CocktailData from '../components/CocktailData/CocktailData';
 
 function Favorites() {
     return(
 
-         { /*show favorites saved on this page*/}
+        <CocktailData />
+         
     )
 }
 

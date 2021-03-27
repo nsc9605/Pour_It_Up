@@ -3,8 +3,9 @@ import { Route } from "react-router-dom";
 import SignUp from "../SignUp";
 import PasswordReset from "../PasswordReset";
 import { auth } from "../../firebase";
+import CocktailData from "../CocktailData/CocktailData"
 
-const SignIn = () => {
+const SignIn = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -77,6 +78,11 @@ const SignIn = () => {
             Forgot Password?
           </Route>
         </p>
+        {/* COCKTAIL DATA */}
+        <CocktailData>
+          <p>{props.name}</p>
+          <img alt="thumbnail">{props.image}</img>
+        </CocktailData>
       </div>
     </div>
   );
