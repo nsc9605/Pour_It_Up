@@ -120,7 +120,6 @@ This Search was creating with help from:
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku](https://www.herokuapp.com)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal
 

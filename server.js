@@ -18,8 +18,8 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/cocktailsdb",
-  process.env.ATLAS_URI,
+  process.env.ATLAS_URI || "mongodb://localhost/cocktailsdb",
+  
   {
     useNewUrlParser: true,
     useFindAndModify: false,
