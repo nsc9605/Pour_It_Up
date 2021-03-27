@@ -1,9 +1,10 @@
 import React from 'react';
 
 function Favorites() {
-    return(
-
-         { /*show favorites saved on this page*/}
+    return (
+        <div>
+            { /*show favorites saved on this page*/}
+        </div>
     )
 }
 

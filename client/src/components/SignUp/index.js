@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
-import SignIn from "../SignIn";
+import { Link } from "react-router-dom";
 import auth from "../../Providers/UserProvider";
 
 const SignUp = () => {
@@ -87,7 +86,7 @@ const SignUp = () => {
               createUserWithEmailAndPasswordHandler(event, email, password);
             }}
           >
-            Sign up
+            <Link to="/">Sign up</Link>
           </button>
         </form>
         <p className="text-center my-3">or</p>
@@ -98,9 +97,9 @@ const SignUp = () => {
         </button>
         <p className="text-center my-3">
           Already have an account?{" "}
-          <Route exact path="/" component={SignIn} className="text-blue-500 hover:text-blue-600">
+          <Link to="/" className="text-blue-500 hover:text-blue-600">
             Sign in here
-          </Route>
+          </Link>
         </p>
       </div>
     </div>

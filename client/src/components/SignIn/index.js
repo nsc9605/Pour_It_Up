@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
-import SignUp from "../SignUp";
-import PasswordReset from "../PasswordReset";
+import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 
 const SignIn = () => {
@@ -69,13 +67,13 @@ const SignIn = () => {
         </button>
         <p className="text-center my-3">
           Don't have an account?{" "}
-          <Route exact path="/" component={SignUp} className="text-blue-500 hover:text-blue-600">
+          <Link to="/signup" className="text-blue-500 hover:text-blue-600">
             Sign up here
-          </Route>{" "}
+          </Link>{" "}
           <br />{" "}
-          <Route exact path="/passwordreset" component={PasswordReset} className="text-blue-500 hover:text-blue-600">
+          <Link to="/passwordreset" className="text-blue-500 hover:text-blue-600">
             Forgot Password?
-          </Route>
+          </Link>
         </p>
       </div>
     </div>
