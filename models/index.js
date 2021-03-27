@@ -1,3 +1,3 @@
 module.exports = {
-  Cocktail: require("./Cocktail")
+  Cocktail: require("./cocktail")
 };

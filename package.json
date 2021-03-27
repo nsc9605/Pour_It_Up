@@ -2,7 +2,7 @@
   "name": "pour_it_up",
   "version": "1.0.0",
   "description": "MERN stack app aimed at those new found bartenders during the 2020 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env SOME_ENV_VAR=some_val ANOTHER_ENV_VAR=another_val && npm run this || npm run that",
