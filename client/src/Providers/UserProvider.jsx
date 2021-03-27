@@ -23,4 +23,5 @@ class UserProvider extends Component {
     );
   }
 }
+
 export default UserProvider;
