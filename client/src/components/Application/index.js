@@ -12,8 +12,8 @@ function Application() {
         <ProfilePage />
       :
         <Router>
-          <Route exact path="/" component={SignUp} />
           <Route exact path="/" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path = "/passwordReset" component={PasswordReset} />
         </Router>
 

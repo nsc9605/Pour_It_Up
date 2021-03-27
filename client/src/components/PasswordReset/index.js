@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import SignIn from "../SignIn";
-import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
   const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
   const [error, setError] = useState(null);
+
   const onChangeHandler = event => {
     const { name, value } = event.currentTarget;
     if (name === "userEmail") {
       setEmail(value);
     }
   };
+
   const sendResetEmail = event => {
     event.preventDefault();
   };
+
   return (
     <div className="mt-8">
       <h1 className="text-xl text-center font-bold mb-3">
@@ -44,15 +46,13 @@ const PasswordReset = () => {
             onChange={onChangeHandler}
             className="mb-3 w-full px-1 py-2"
           />
-          <button
-            className="w-full bg-blue-400 text-white py-3"
-          >
+          <button className="w-full bg-blue-400 text-white py-3">
             Send me a reset link
           </button>
         </form>
-        <Route exact path ="/" component={SignIn} className="my-2 text-blue-700 hover:text-blue-800 text-center block">
+        <Link to="/" className="my-2 text-blue-700 hover:text-blue-800 text-center block">
           &larr; back to sign in page
-        </Route>
+        </Link>
       </div>
     </div>
   );
