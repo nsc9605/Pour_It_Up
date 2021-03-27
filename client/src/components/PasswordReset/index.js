@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "@reach/router";
+import SignIn from "../SignIn";
+import { Route } from "react-router-dom";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
@@ -49,12 +50,9 @@ const PasswordReset = () => {
             Send me a reset link
           </button>
         </form>
-        <Link
-         to ="/"
-          className="my-2 text-blue-700 hover:text-blue-800 text-center block"
-        >
+        <Route exact path ="/" component={SignIn} className="my-2 text-blue-700 hover:text-blue-800 text-center block">
           &larr; back to sign in page
-        </Link>
+        </Route>
       </div>
     </div>
   );

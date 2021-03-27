@@ -1,9 +1,10 @@
 import React from "react";
-import { Router } from "@reach/router";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
-import ProfilePage from "./ProfilePage";
-import PasswordReset from "./PasswordReset";
+import { HashRouter as Router, Route } from "react-router-dom";
+import SignIn from "../SignIn";
+import SignUp from "../SignUp";
+import ProfilePage from "../ProfilePage";
+import PasswordReset from "../PasswordReset";
+
 function Application() {
   const user = null;
   return (
@@ -11,9 +12,9 @@ function Application() {
         <ProfilePage />
       :
         <Router>
-          <SignUp path="signUp" />
-          <SignIn path="/" />
-          <PasswordReset path = "passwordReset" />
+          <Route exact path="/" component={SignUp} />
+          <Route exact path="/" component={SignIn} />
+          <Route exact path = "/passwordReset" component={PasswordReset} />
         </Router>
 
   );

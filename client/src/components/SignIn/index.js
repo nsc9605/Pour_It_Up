@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "@reach/router";
-import auth from "../../Providers/UserProvider";
+import { Route } from "react-router-dom";
+import SignUp from "../SignUp";
+import PasswordReset from "../PasswordReset";
+import { auth } from "../../firebase";
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -40,7 +42,7 @@ const SignIn = () => {
             className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="example@gmail.com"
             id="userEmail"
             onChange={(event) => onChangeHandler(event)}
           />
@@ -67,13 +69,13 @@ const SignIn = () => {
         </button>
         <p className="text-center my-3">
           Don't have an account?{" "}
-          <Link to="signUp" className="text-blue-500 hover:text-blue-600">
+          <Route exact path="/" component={SignUp} className="text-blue-500 hover:text-blue-600">
             Sign up here
-          </Link>{" "}
+          </Route>{" "}
           <br />{" "}
-          <Link to="passwordReset" className="text-blue-500 hover:text-blue-600">
+          <Route exact path="/passwordreset" component={PasswordReset} className="text-blue-500 hover:text-blue-600">
             Forgot Password?
-          </Link>
+          </Route>
         </p>
       </div>
     </div>
