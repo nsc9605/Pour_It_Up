@@ -7,7 +7,7 @@ function CocktailData() {
 
     const cocktailData = []
 
-    const []
+    // const []
 
     useEffect(() => {
         getCocktails();
