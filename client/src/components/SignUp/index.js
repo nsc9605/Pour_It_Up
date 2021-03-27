@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "@reach/router";
+import { Route } from "react-router-dom";
+import SignIn from "../SignIn";
 import auth from "../../Providers/UserProvider";
 
 const SignUp = () => {
@@ -52,7 +53,7 @@ const SignUp = () => {
             className="my-1 p-1 w-full "
             name="displayName"
             value={displayName}
-            placeholder="E.g: Faruq"
+            placeholder="Your Name"
             id="displayName"
             onChange={event => onChangeHandler(event)}
           />
@@ -64,7 +65,7 @@ const SignUp = () => {
             className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="example@gmail.com"
             id="userEmail"
             onChange={event => onChangeHandler(event)}
           />
@@ -97,9 +98,9 @@ const SignUp = () => {
         </button>
         <p className="text-center my-3">
           Already have an account?{" "}
-          <Link to="/" className="text-blue-500 hover:text-blue-600">
+          <Route exact path="/" component={SignIn} className="text-blue-500 hover:text-blue-600">
             Sign in here
-          </Link>
+          </Route>
         </p>
       </div>
     </div>

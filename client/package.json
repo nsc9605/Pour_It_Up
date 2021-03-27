@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "firebase": "^8.3.1",
+    "firestore": "^1.1.6",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
