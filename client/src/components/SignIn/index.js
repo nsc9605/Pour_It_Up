@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
+import UserContext from "../../Providers/UserProvider";
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -12,8 +14,9 @@ const SignIn = () => {
     auth.signInWithEmailAndPassword(email, password)
     .then(res => {
       console.log(res);
-      // TODO: set redirect here
       // TODO: Set user Context
+      // TODO: set redirect here
+      window.location.replace("/home");
     })
     .catch(error => {
       setError("Error signing in with password and email!");
