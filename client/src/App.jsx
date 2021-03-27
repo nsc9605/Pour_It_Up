@@ -17,7 +17,7 @@ function App() {
         <Router >
           <Navigation />
           <Header />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/favorites" component={Favorites} />
           <Route exact path="/contact" component={Contact} />
