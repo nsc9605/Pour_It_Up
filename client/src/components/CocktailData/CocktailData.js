@@ -34,13 +34,10 @@ function CocktailData() {
     }
 
     return (
-        <div>
-            <container>
+        <div className="container">
                 <h1>Drinks</h1>
                     <img src={image} alt={image} />
                     <p>{drinkName}</p>
-               
-            </container>
         </div>
     )
     }

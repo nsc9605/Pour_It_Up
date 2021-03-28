@@ -36,7 +36,7 @@ const SignIn = (props) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Sign In</h1>
       <div>
         {error !== null && <div>{error}</div>}
