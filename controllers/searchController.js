@@ -7,6 +7,8 @@ module.exports = {
         const options = {
             method: "GET",
             url: "https://the-cocktail-db.p.rapidapi.com/filter.php",
+            // url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
+            // url: 'https://the-cocktail-db.p.rapidapi.com/random.php',
             params: { i: "Lime" },
             headers: {
               "x-rapidapi-key": process.env.API_KEY,
