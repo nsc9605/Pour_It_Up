@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
+import { signInWithGoogle } from "../../firebase";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -33,6 +34,10 @@ const SignUp = () => {
       setDisplayName(value);
     }
   };
+
+  const handlePopup = () => {
+    signInWithGoogle();
+  }
 
   return (
     <div>
@@ -86,7 +91,7 @@ const SignUp = () => {
           </button>
         </form>
         <p>or</p>
-        <button>
+        <button onClick={() => {handlePopup()}}>
           Sign In with Google
         </button>
         <p>

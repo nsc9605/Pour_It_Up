@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { auth } from "../../firebase";
-import UserContext from "../../Providers/UserProvider";
-import CocktailData from "../CocktailData/CocktailData"
+// import CocktailData from "../CocktailData/CocktailData";
+import { signInWithGoogle } from "../../firebase";
 
 const SignIn = (props) => {
   const [email, setEmail] = useState('');
@@ -12,16 +12,18 @@ const SignIn = (props) => {
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
-    .then(res => {
-      console.log(res);
-      // TODO: Set user Context
-      // TODO: set redirect here
-      window.location.replace("/home");
-    })
-    .catch(error => {
-      setError("Error signing in with password and email!");
-      console.error("Error signing in with password and email", error);
-    });
+      .then(res => {
+        console.log('res: ', res);
+        return (
+          <Redirect to="/profile" />
+        );
+        // TODO: Set user Context
+        // TODO: set redirect here
+      })
+      .catch(error => {
+        setError("Error signing in with password and email!");
+        console.error("Error signing in with password and email", error);
+      });
   };
 
   const onChangeHandler = (event) => {
@@ -34,6 +36,10 @@ const SignIn = (props) => {
       setPassword(value);
     }
   };
+
+  const handlePopup = () => {
+    signInWithGoogle();
+  }
 
   return (
     <div className="container">
@@ -64,11 +70,11 @@ const SignIn = (props) => {
             onChange={(event) => onChangeHandler(event)}
           />
           <button onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
-            Sign in
+              Sign in
           </button>
         </form>
         <p>or</p>
-        <button>
+        <button onClick={() => {handlePopup()}}>
           Sign in with Google
         </button>
         <p>
@@ -81,11 +87,11 @@ const SignIn = (props) => {
             Forgot Password?
           </Link>
         </p>
-        {/* COCKTAIL DATA */}
+        {/* COCKTAIL DATA
         <CocktailData>
           <p>{props.name}</p>
           <img alt="thumbnail">{props.image}</img>
-        </CocktailData>
+        </CocktailData> */}
       </div>
     </div>
   );
