@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 
 function CocktailData() {
-    const cocktailData = [{}]
+    const cocktailData = []
 
     const [drinkName, setDrinkName] = useState()
     const [image, setImage] = useState()
@@ -28,7 +28,7 @@ function CocktailData() {
             setImage(results.data.drinks[0].strDrinkThumb)
 
             cocktailData.push(data);
-            console.log(cocktailData)
+            // console.log(cocktailData)
         })
         return(cocktailData);
     }
@@ -37,9 +37,9 @@ function CocktailData() {
         <div>
             <container>
                 <h1>Drinks</h1>
-                {/* {options.map((cocktailData, index) => ( */}
-                    <Card name={drinkName} image={image} />
-              {/* ))}  */}
+                    <img src={image} alt={image} />
+                    <p>{drinkName}</p>
+               
             </container>
         </div>
     )
