@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { auth } from "../../firebase";
-// import CocktailData from "../CocktailData/CocktailData";
+import CocktailData from "../CocktailData/CocktailData";
 import { signInWithGoogle } from "../../firebase";
 
 const SignIn = (props) => {
@@ -87,11 +87,17 @@ const SignIn = (props) => {
             Forgot Password?
           </Link>
         </p>
-        {/* COCKTAIL DATA
-        <CocktailData>
-          <p>{props.name}</p>
-          <img alt="thumbnail">{props.image}</img>
-        </CocktailData> */}
+        COCKTAIL DATA
+        <CocktailData 
+        name={props.name}
+        image={props.image}
+        ingredients={props.ingredients}
+        preparation={props.preparation}
+        measurements={props.measurements}
+        category={props.category}
+        glass={props.glass}
+        >
+        </CocktailData>
       </div>
     </div>
   );
