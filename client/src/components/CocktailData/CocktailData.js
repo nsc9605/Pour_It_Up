@@ -3,7 +3,7 @@ import options from "../../utils/API";
 
 function CocktailData() {
   const cocktailData = [];
-
+  // const [drinkId, setDrinkId] = useState();
   const [drinkName, setDrinkName] = useState();
   const [image, setImage] = useState();
   const [ingredients, setIngredients] = useState([]);
@@ -16,10 +16,12 @@ function CocktailData() {
     getCocktails();
   }, []);
 
+
   function getCocktails() {
     options.search().then((results) => {
       console.log(results);
       const data = {
+        // id: results.data.drinks.idDrink,
         name: results.data.drinks.strDrink,
         image: results.data.drinks.strDrinkThumb,
         ingredients: [
@@ -34,11 +36,12 @@ function CocktailData() {
           results.data.drinks.strMeasure2,
           results.data.drinks.strMeasure3,
         ],
-        category: results.data.drinks.strCategory,
-        glass: results.data.drinks.strGlass,
+        // category: results.data.drinks.strCategory,
+  //       // glass: results.data.drinks.strGlass,
       };
 
       // SET STATES
+      // setDrinkId(results.data.drinks[0].drinkId);
       setDrinkName(results.data.drinks[0].strDrink);
       setImage(results.data.drinks[0].strDrinkThumb);
       setIngredients([
@@ -76,6 +79,7 @@ function CocktailData() {
             <th>Category</th> */}
           </tr>
         </thead>
+            {/* {cocktailData.map((drinks) => ( */}
         <tbody>
           <tr>
             <td>{drinkName}</td>
@@ -89,6 +93,7 @@ function CocktailData() {
             <td>{category}</td> */}
           </tr>
         </tbody>
+            {/* ))} */}
       </table>
     </div>
   );
