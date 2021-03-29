@@ -8,8 +8,8 @@ module.exports = {
             method: "GET",
             url: "https://the-cocktail-db.p.rapidapi.com/filter.php",
             // url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
-            // url: 'https://the-cocktail-db.p.rapidapi.com/random.php',
-            params: { i: "Lime" },
+            url: 'https://the-cocktail-db.p.rapidapi.com/random.php',
+            params: { i: "" },
             headers: {
               "x-rapidapi-key": process.env.API_KEY,
               "x-rapidapi-host": process.env.API_HOST,
