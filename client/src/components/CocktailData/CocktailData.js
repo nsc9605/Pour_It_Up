@@ -15,7 +15,7 @@ function CocktailData() {
 
   useEffect(() => {
     getCocktails();
-  });
+  },[]);
 
   function getCocktails() {
     options.search().then((results) => {
@@ -75,7 +75,7 @@ function CocktailData() {
           <tr>
             <td>{drinkName}</td>
             <td>
-              <img src={image} alt={drinkName} />
+              <img className="drinkImg" src={image} alt={drinkName} />
             </td>
             {/* <td
             >{ingredients}</td>
