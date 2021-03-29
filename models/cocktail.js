@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const cocktailSchema = new Schema({
   name: { type: String, required: true },
-  image: { type: String },
-  ingredients: { type: Array },
+  image: { type: String, required: true },
+  ingredients: { type: Array, required: true },
   preparation: { type: String, required: true },
-  measurements: { type: Number },
+  measurements: { type: Array, required: true },
   category: { type: String, required: true },
   glassware: { type: Array, required: true },
   link: { type: String },

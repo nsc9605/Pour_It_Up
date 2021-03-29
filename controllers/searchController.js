@@ -7,7 +7,7 @@ module.exports = {
         const options = {
             method: "GET",
             url: "https://the-cocktail-db.p.rapidapi.com/filter.php",
-            url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
+            // url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
             url: 'https://the-cocktail-db.p.rapidapi.com/random.php',
             params: { i: "" },
             headers: {
@@ -21,7 +21,6 @@ module.exports = {
             .then(function (response) {
               console.log(response.data);
               res.json(response.data);
-            //   response
             })
             .catch(function (error) {
               console.error(error);

@@ -15,3 +15,9 @@ code {
 .drinkImg{
   height: 200px;
 }
+
+button {
+  box-shadow: 3px 2px 3px rgb(79, 79, 79);
+  border-radius: 7px solid;
+  padding: 5px;
+}
