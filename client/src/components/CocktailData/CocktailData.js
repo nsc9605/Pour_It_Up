@@ -6,11 +6,11 @@ function CocktailData() {
 
   const [drinkName, setDrinkName] = useState();
   const [image, setImage] = useState();
-  // const [ingredients, setIngredients] = useState([]);
-  // const [preparation, setPreparation] = useState();
-  // const [measurements, setMeasurements] = useState([]);
-  // const [category, setCategory] = useState();
-  // const [glass, setGlass] = useState();
+  const [ingredients, setIngredients] = useState([]);
+  const [preparation, setPreparation] = useState();
+  const [measurements, setMeasurements] = useState([]);
+  const [category, setCategory] = useState();
+  const [glass, setGlass] = useState();
 
 
   useEffect(() => {
@@ -23,20 +23,20 @@ function CocktailData() {
       const data = {
         name: results.data.drinks.strDrink,
         image: results.data.drinks.strDrinkThumb,
-        // ingredients: [ 
-        //     results.data.drinks.strIngredient1,
-        //     results.data.drinks.strIngredient2,
-        //     results.data.drinks.strIngredient3,
-        //     results.data.drinks.strIngredient4,
-        //     ],
-        // preparation: results.data.drinks.strInstructions,
-        // measurements: [
-        //     results.data.drinks.strMeasure1,
-        //     results.data.drinks.strMeasure2,
-        //     results.data.drinks.strMeasure3,
-        // ],
-        // category: results.data.drinks.setCategory,
-        // glass: results.data.drinks.strGlass,
+        ingredients: [ 
+            results.data.drinks.strIngredient1,
+            results.data.drinks.strIngredient2,
+            results.data.drinks.strIngredient3,
+            results.data.drinks.strIngredient4,
+            ],
+        preparation: results.data.drinks.strInstructions,
+        measurements: [
+            results.data.drinks.strMeasure1,
+            results.data.drinks.strMeasure2,
+            results.data.drinks.strMeasure3,
+        ],
+        category: results.data.drinks.setCategory,
+        glass: results.data.drinks.strGlass,
       };
 
 
@@ -44,11 +44,11 @@ function CocktailData() {
       // setImage(results.data.image)
       setDrinkName(results.data.drinks[0].strDrink);
       setImage(results.data.drinks[0].strDrinkThumb);
-      // setIngredients([results.data.ingredients])
-      // setPreparation(results.data.ingredients)
-      // setMeasurements([results.data.measurements])
-      // setCategory(results.data.category)
-      // setGlass(results.data.glass);
+      setIngredients([results.data.ingredients]);
+      setPreparation(results.data.ingredients)
+      setMeasurements([results.data.measurements])
+      setCategory(results.data.category)
+      setGlass(results.data.glass);
 
       cocktailData.push(data);
       console.log(cocktailData)
@@ -77,12 +77,11 @@ function CocktailData() {
             <td>
               <img className="drinkImg" src={image} alt={drinkName} />
             </td>
-            {/* <td
-            >{ingredients}</td>
             <td>{preparation}</td>
             <td>{measurements}</td>
             <td>{category}</td>
-            <td>{glass}</td> */}
+            <td>{ingredients}</td>
+            <td>{glass}</td>
           </tr>
         </tbody>
       </table>
