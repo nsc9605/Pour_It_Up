@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState,  } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
 import CocktailData from "../CocktailData/CocktailData";
 import SearchForm from "../Search/SearchForm";
@@ -9,15 +9,14 @@ const SignIn = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const history = useHistory();
 
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('res: ', res);
-        return (
-          <Redirect to="/profile" />
-        );
+        history.push("/home");
         // TODO: Set user Context
         // TODO: set redirect here
       })
