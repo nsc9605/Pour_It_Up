@@ -4,13 +4,12 @@ const Schema = mongoose.Schema;
 
 const cocktailSchema = new Schema({
   name: { type: String, required: true },
+  image: { type: String, required: true },
   ingredients: { type: Array, required: true },
-  measurements: { type: Number, required: true },
-  served: { type: String, required: true },
   preparation: { type: String, required: true },
-  garnish: { type: String, required: true },
+  measurements: { type: Array, required: true },
+  category: { type: String, required: true },
   glassware: { type: Array, required: true },
-  image: { type: String },
   link: { type: String },
   date: { type: Date, default: Date.now }
 });

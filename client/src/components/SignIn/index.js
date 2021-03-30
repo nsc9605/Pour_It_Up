@@ -1,7 +1,8 @@
 import React, { useState,  } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
-// import CocktailData from "../CocktailData/CocktailData";
+import CocktailData from "../CocktailData/CocktailData";
+import SearchForm from "../Search/SearchForm";
 import { signInWithGoogle } from "../../firebase";
 
 const SignIn = (props) => {
@@ -41,12 +42,12 @@ const SignIn = (props) => {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Sign In</h1>
       <div>
         {error !== null && <div>{error}</div>}
         <form>
-          <label htmlFor="userEmail">
+          <label htmlFor="userEmail" className="mx-2">
             Email:
           </label>
           <input
@@ -57,7 +58,7 @@ const SignIn = (props) => {
             id="userEmail"
             onChange={(event) => onChangeHandler(event)}
           />
-          <label htmlFor="userPassword">
+          <label htmlFor="userPassword" className="mx-2">
             Password:
           </label>
           <input
@@ -68,12 +69,12 @@ const SignIn = (props) => {
             id="userPassword"
             onChange={(event) => onChangeHandler(event)}
           />
-          <button onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
+          <button className="ml-2 rounded" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
               Sign in
           </button>
         </form>
         <p>or</p>
-        <button onClick={() => {handlePopup()}}>
+        <button className="my-2 rounded" onClick={() => {handlePopup()}}>
           Sign in with Google
         </button>
         <p>
@@ -85,12 +86,22 @@ const SignIn = (props) => {
           <Link to="/passwordreset">
             Forgot Password?
           </Link>
+          
         </p>
-        {/* COCKTAIL DATA
-        <CocktailData>
-          <p>{props.name}</p>
-          <img alt="thumbnail">{props.image}</img>
-        </CocktailData> */}
+
+
+        <h2>COCKTAIL DATA</h2>
+        <SearchForm />
+        <CocktailData 
+        name={props.name}
+        image={props.image}
+        ingredients={props.ingredients}
+        preparation={props.preparation}
+        measurements={props.measurements}
+        category={props.category}
+        glass={props.glass}
+        >
+        </CocktailData>
       </div>
     </div>
   );

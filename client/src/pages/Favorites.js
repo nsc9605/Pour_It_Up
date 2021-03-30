@@ -2,14 +2,13 @@ import React from 'react';
 import CocktailData from '../components/CocktailData/CocktailData';
 
 function Favorites() {
+
     return(
-        <>
-            <CocktailData />
-            <div>
-                { /*show favorites saved on this page*/}
-            </div>
-        </>
-    );
+
+        <CocktailData />
+
+
+    )
 }
 
 export default Favorites;
