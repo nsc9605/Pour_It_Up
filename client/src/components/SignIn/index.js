@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { auth } from "../../firebase";
 import CocktailData from "../CocktailData/CocktailData";
-import SearchForm from "../Search/SearchForm";
 import { signInWithGoogle } from "../../firebase";
 
 const SignIn = (props) => {
@@ -92,15 +91,14 @@ const SignIn = (props) => {
 
 
         <h2>COCKTAIL DATA</h2>
-        <SearchForm />
         <CocktailData 
-        name={props.name}
-        image={props.image}
-        ingredients={props.ingredients}
-        preparation={props.preparation}
-        measurements={props.measurements}
-        category={props.category}
-        glass={props.glass}
+        // name={props.name}
+        // image={props.image}
+        // ingredients={props.ingredients}
+        // preparation={props.preparation}
+        // measurements={props.measurements}
+        // category={props.category}
+        // glass={props.glass}
         >
         </CocktailData>
       </div>
