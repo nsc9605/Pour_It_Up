@@ -5,7 +5,6 @@ import ProfilePage from "./components/ProfilePage";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
-// import UserProvider from "./Providers/UserProvider";
 import { UserContext } from "./Providers/UserProvider";
 import Header from "./components/Header/Header";
 import About from "./pages/About";
@@ -16,24 +15,25 @@ import './index.css';
 
 
 function App() {
-  const user = useContext(UserContext);
+  const userContext = useContext(UserContext);
+  const user = userContext.user;
   console.log("user: ", user);
-  console.log("userstate: ", user.user)
+  console.log("userstate: ", user);
   return (
     <Router>
       <div className="App">
-        {user.user && (
+        <Navigation />
+        <Header />
+        {user && (
           <Switch>
-            <Navigation />
-            <Header />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/favorites" component={Favorites} />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/profile" component={ProfilePage} />
+            <Route exact path={["/", "/home"]} component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/favorites" component={Favorites} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/profile" component={ProfilePage} />
           </Switch>
         )}
-        {!user.user && (
+        {!user && (
           <Switch>
             <Route exact path="/" component={SignIn} />
             <Route exact path="signup" component={SignUp} />
