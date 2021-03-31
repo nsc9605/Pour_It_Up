@@ -3,19 +3,19 @@ const axios = require("axios");
 
 module.exports = {
   // findAll: function (req, res) {
-  findIng: function (req, res) {
+  selectDrink: function (req, res) {
     console.log(process.env.API_HOST);
-    const options = {
+    const drinkTarget = {
       method: "GET",
-      url: "https://the-cocktail-db.p.rapidapi.com/filter.php",
-      params: { i: req.params.ing },
+      url: "https://the-cocktail-db.p.rapidapi.com/lookup.php?",
+      params: { i: req.params.drinkId },
       headers: {
         "x-rapidapi-key": process.env.API_KEY,
         "x-rapidapi-host": process.env.API_HOST,
       },
     };
     axios
-      .request(options)
+      .request(drinkTarget)
       .then(function (response) {
         console.log(response.data);
         res.json(response.data);
@@ -23,5 +23,5 @@ module.exports = {
       .catch(function (error) {
         console.error(error);
       });
-  },
-};
+  }
+}
