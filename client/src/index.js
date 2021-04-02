@@ -8,10 +8,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <UserProvider>
       <App />
-    </UserProvider>
-  </React.StrictMode>,
+    </UserProvider>,
+  // {/* </React.StrictMode>, */}
   document.getElementById('root')
 );

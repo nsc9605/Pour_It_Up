@@ -1,7 +1,7 @@
 {
   "name": "pour_it_up",
   "version": "1.0.0",
-  "description": "MERN stack app aimed at those new found bartenders during the 2020 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!",
+  "description": "MERN stack app aimed at those new found bartenders during the 2020 quarantine lock-down. This app helps in assisting those with drink ingredients, preparations, glass, and more!",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install --prefix client && npm run build --prefix client",
     "seed": "node scripts/seedDB.js"
   },
   "repository": {

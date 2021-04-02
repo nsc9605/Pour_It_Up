@@ -65,7 +65,7 @@ function CocktailData() {
   };
 
   const body = (
-    <div className="container modal">
+    <div className="container">
       <h1 id="simple-modal-title modalTest">{singleDrinkDetails.strDrink}</h1>
       <div className="cocktailImage">
         <img
@@ -96,7 +96,7 @@ function CocktailData() {
   );
 
   return (
-    <div className="App">
+    <div className="container">
       <form onSubmit={searchByIngredientFormSubmit}>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
@@ -118,7 +118,7 @@ function CocktailData() {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <div>{body}</div>
+        <div className="modal">{body}</div>
       </Modal>
     </div>
   );
