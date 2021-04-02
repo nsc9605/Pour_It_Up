@@ -25,4 +25,5 @@ button {
 .modal {
   color: white !important;
   background-color: black !important;
+  align-items: center;
 }

@@ -96,7 +96,7 @@ function CocktailData() {
   );
 
   return (
-    <div className="App">
+    <div className="container">
       <form onSubmit={searchByIngredientFormSubmit}>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
