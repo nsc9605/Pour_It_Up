@@ -1,10 +1,10 @@
 import React, { useState,  } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
-import CocktailData from "../CocktailData/CocktailData";
+// import CocktailData from "../CocktailData/CocktailData";
 import { signInWithGoogle } from "../../firebase";
 
-const SignIn = (props) => {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -90,7 +90,7 @@ const SignIn = (props) => {
         </p>
 
 
-        <h2>COCKTAIL DATA</h2>
+        {/* <h2>COCKTAIL DATA</h2>
         <CocktailData 
         // name={props.name}
         // image={props.image}
@@ -100,7 +100,7 @@ const SignIn = (props) => {
         // category={props.category}
         // glass={props.glass}
         >
-        </CocktailData>
+        </CocktailData> */}
       </div>
     </div>
   );
