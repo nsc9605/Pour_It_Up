@@ -5,7 +5,7 @@ const searchController = require("../../controllers/searchController");
 router.route("/:ing").get(searchController.findIng);
 
 // router.route("/")
-//   .get(searchController.findAll)
+//   .get(cocktailsController.findAll)
 //   .post(cocktailsController.create);
 
 module.exports = router;

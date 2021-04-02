@@ -21,3 +21,8 @@ button {
   border-radius: 7px solid;
   padding: 5px;
 }
+
+.modal {
+  color: white !important;
+  background-color: black !important;
+}
