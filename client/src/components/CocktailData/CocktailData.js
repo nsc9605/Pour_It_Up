@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
-import { makeStyles } from "@material-ui/core/styles";
+import { useStyles } from "@material-ui/styles";
 
 function CocktailData() {
   const [inputsObj, setInputsObj] = useState({});
@@ -63,6 +63,8 @@ function CocktailData() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // const useStyles = makeStyles({})
 
   const body = (
     <div className="container">

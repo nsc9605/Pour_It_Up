@@ -5,7 +5,10 @@ function Favorites() {
 
     return(
 
-        <CocktailData />
+        <CocktailData>
+            
+        </CocktailData>
+
 
 
     )
