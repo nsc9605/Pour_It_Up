@@ -13,6 +13,7 @@ const SignIn = () => {
 
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
+    console.log(email, password)
     auth.signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('res: ', res);

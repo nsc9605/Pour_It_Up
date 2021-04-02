@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 // process.env.ATLAS_URI, process.env.MONGODB_URI, "" 
 
 const cocktailSchema = new Schema({
+  uid: { type: String, required: true },
   name: { type: String, required: true },
   image: { type: String, required: true },
   ingredients: { type: Array, required: true },
