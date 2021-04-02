@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
-import { makeStyles } from "@material-ui/core/styles";
+// import { useStyles } from "@material-ui/styles";
 
 function CocktailData() {
   const [inputsObj, setInputsObj] = useState({});
@@ -64,8 +64,10 @@ function CocktailData() {
     setOpen(false);
   };
 
+  // const useStyles = makeStyles({})
+
   const body = (
-    <div className="container">
+    <div>
       <h1 id="simple-modal-title modalTest">{singleDrinkDetails.strDrink}</h1>
       <div className="cocktailImage">
         <img
@@ -97,17 +99,17 @@ function CocktailData() {
 
   return (
     <div className="container">
-      <form onSubmit={searchByIngredientFormSubmit}>
+      <form className="m-2" onSubmit={searchByIngredientFormSubmit}>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
           return (
-            <div key={index} onClick={() => getDetails(each.idDrink)}>
-              <button type="button" onClick={handleOpen}>
-                DRINK DETAILS
+            <div className="container m-4" key={index} onClick={() => getDetails(each.idDrink)}>
+              <img src={each.strDrinkThumb} alt={index} className="rounded drinkImg" />
+              <h4>{each.strDrink}</h4>
+              <button className="mb-2 rounded" type="button" onClick={handleOpen}>
+                Select Drink
               </button>
-              <p>{each.strDrink}</p>
-              <img src={each.strDrinkThumb} alt={index} />
             </div>
           );
         })}

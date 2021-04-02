@@ -6,6 +6,8 @@ function Favorites() {
     return(
 
         <CocktailData />
+            
+
 
 
     )
