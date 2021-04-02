@@ -71,9 +71,12 @@ const submitFavorite=()=>{
 const favObject = {
   uid: user.uid,
   name: singleDrinkDetails.strDrink,
-  ingredients: singleDrinkDetails.strDrink
+  image: singleDrinkDetails.strDrinkThumb,
+  ingredients: singleDrinkDetails.strDrink,
+  preparation: singleDrinkDetails.strInstructions,
+  measurements: measurements,
+  glassware: singleDrinkDetails.strGlass
 }
-
 
 
 }
