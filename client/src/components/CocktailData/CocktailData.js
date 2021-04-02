@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
 import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
 function CocktailData() {
   const [inputsObj, setInputsObj] = useState({});
@@ -34,8 +35,8 @@ function CocktailData() {
         console.log(results)
           ;
         console.log(results.data.drinks[0].idDrink);
-        setSingleDrinkDetails(results.data.drinks[0].idDrink);
-      //  (`Name: ${results.data.drinks[0].strDrink}
+       setSingleDrinkDetails(results.data.drinks[0]);
+      // alert(`Name: ${results.data.drinks[0].strDrink}
       // Preparation: ${results.data.drinks[0].strInstructions}
       // Ingredients: ${results.data.drinks[0].strIngredients}
       // `);
@@ -51,6 +52,17 @@ function CocktailData() {
   };
 
   // Alcoholic: ${results.data.drinks[0].strAlcoholic === "Alcoholic" ? "true" : "false"}
+  const body = (
+    <div>
+      <h1 id="simple-modal-title modalTest">test modal</h1>
+
+      <h1 id="simple-modal-description">
+        {singleDrinkDetails.strDrink}
+      </h1>
+      
+      
+    </div>
+  );
 
   return (
     <div className="App">
@@ -68,12 +80,12 @@ function CocktailData() {
         })}
       </form>
       <Modal
-      display="block" 
+
         open={open}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description">
-         <div>hello{singleDrinkDetails.strDrink}</div> 
+         <div>{body}</div> 
       </Modal>
 
       <div className="card">
