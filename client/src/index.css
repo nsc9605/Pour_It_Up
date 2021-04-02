@@ -23,13 +23,27 @@ button {
   padding: 5px;
 }
 
-.modal {
+#modal {
   color: white !important;
   background-color: black !important;
   align-items: center;
-
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 15px;
 }
 
 .list {
   align-content: center !important;
+}
+
+#simple-modal-title{
+  margin-left: 400px;
+}
+
+.cocktail-details{
+  margin-left: 400px;
+}
+
+.cocktailImage{
+  margin-left: 400px;
 }
