@@ -4,6 +4,8 @@ import UserProvider from "./Providers/UserProvider";
 import './index.css';
 import App from './App.jsx';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { makeStyles } from '@material-ui/core/styles';
+
 
 ReactDOM.render(
   <React.StrictMode>

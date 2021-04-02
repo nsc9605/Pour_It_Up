@@ -1,10 +1,13 @@
+// import { Modal } from "bootstrap";
 import React, { useState } from "react";
 import API from "../../utils/API";
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
 function CocktailData() {
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
-  const [singleDrinkDetails, setSingleDrinkDetails] = useState({}); 
+  const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
 
   // Handle input to target API
   const handleInputs = (e) => {
@@ -14,33 +17,52 @@ function CocktailData() {
   };
 
   // Handle form submit -- first API call
- const searchByIngredientFormSubmit = (e) => {
+  const searchByIngredientFormSubmit = (e) => {
     e.preventDefault();
     console.log(inputsObj.ingredient);
-      API.searchIng(inputsObj.ingredient)
+    API.searchIng(inputsObj.ingredient)
       .then((results) => {
-      console.log(results);
-      setDrinks(results.data.drinks);
-    })
+        console.log(results);
+        setDrinks(results.data.drinks);
+      })
   };
 
   // Get details on drink selected
   const getDetails = (idDrink) => {
-  console.log(inputsObj.ingredient.idDrink);
+    console.log(inputsObj.ingredient.idDrink);
     API.selectDrink(idDrink)
-    .then((results) => {
-      console.log(results)
-      ;
-      console.log(results.data.drinks[0].idDrink);
-      setSingleDrinkDetails(results.data.drinks[0].idDrink);
-      alert(`Name: ${results.data.drinks[0].strDrink}
-      Preparation: ${results.data.drinks[0].strInstructions}
-      Ingredients: ${results.data.drinks[0].strIngredients}
-      `);
-    })
+      .then((results) => {
+        console.log(results)
+          ;
+        console.log(results.data.drinks[0].idDrink);
+       setSingleDrinkDetails(results.data.drinks[0]);
+      // alert(`Name: ${results.data.drinks[0].strDrink}
+      // Preparation: ${results.data.drinks[0].strInstructions}
+      // Ingredients: ${results.data.drinks[0].strIngredients}
+      // `);
+      })
+  };
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
   };
 
-    // Alcoholic: ${results.data.drinks[0].strAlcoholic === "Alcoholic" ? "true" : "false"}
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  // Alcoholic: ${results.data.drinks[0].strAlcoholic === "Alcoholic" ? "true" : "false"}
+  const body = (
+    <div>
+      <h1 id="simple-modal-title modalTest">test modal</h1>
+
+      <h1 id="simple-modal-description">
+        {singleDrinkDetails.strDrink}
+      </h1>
+      
+      
+    </div>
+  );
 
   return (
     <div className="App">
@@ -50,19 +72,29 @@ function CocktailData() {
         {drinks.map((each, index) => {
           return (
             <div key={index} onClick={() => getDetails(each.idDrink)}>
+              <button type="button" onClick={handleOpen}>DRINK DETAILS</button>
               <p>{each.strDrink}</p>
               <img src={each.strDrinkThumb} alt={index} />
-              </div>
-            );
-          })}
-        </form>
-        <div className="card">
-          <div className="card-title">
-            <h2>Dranks</h2>
-          </div>
-          <div className="card-content">
+            </div>
+          );
+        })}
+      </form>
+      <Modal
 
-        {/* <p>
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description">
+         <div>{body}</div> 
+      </Modal>
+
+      <div className="card">
+        <div className="card-title">
+          <h2>Dranks</h2>
+        </div>
+        <div className="card-content">
+
+          {/* <p>
         <span className='drink-data'>ingredients: </span>
           {each.strIngredients.map((item, index) => {
         return (
@@ -78,9 +110,9 @@ function CocktailData() {
         )
       })}
         </p> */}
-          </div>
         </div>
       </div>
+    </div>
   );
 }
 
