@@ -16,8 +16,6 @@ import './index.css';
 function App() {
   const userContext = useContext(UserContext);
   const user = userContext.user;
-  console.log("user: ", user);
-  console.log("userstate: ", user);
 
   window.onbeforeunload = function() {
     localStorage.clear();
