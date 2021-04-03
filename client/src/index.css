@@ -24,11 +24,12 @@ button {
 }
 
 #modal {
-  color: white !important;
+  color: rgb(11, 10, 10) !important;
   background-color: black !important;
   align-items: center;
   margin-left: 150px;
   margin-right: 150px;
+  margin-bottom: 20px;
   padding: 15px;
 }
 
@@ -46,4 +47,9 @@ button {
 
 .cocktailImage{
   margin-left: 400px;
+}
+.drink-category {
+  font-weight: bold;
+  font-size: 25px;
+  border-bottom: .5px solid 50%;
 }
