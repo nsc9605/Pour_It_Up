@@ -38,7 +38,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="passwordreset" component={PasswordReset} />
+            <Route exact path="/passwordreset" component={PasswordReset} />
           </Switch>
         )}
       </div>
