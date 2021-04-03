@@ -14,13 +14,13 @@ function Navigation() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Link
-            to="/about"
+            to="/home"
             className={
-              location.pathname === "/about" ? "nav-link active" : "nav-link"
+              location.pathname === "/home" ? "nav-link active" : "nav-link"
             }
           >
             <i className="fa fa-fw fa-user"></i>
-            About
+            Home
           </Link>
           <Link
             to="/favorites"

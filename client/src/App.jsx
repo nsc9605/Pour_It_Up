@@ -7,7 +7,6 @@ import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
 import { UserContext } from "./Providers/UserProvider";
 import Header from "./components/Header/Header";
-import About from "./pages/About";
 import Favorites from "./pages/Favorites";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -32,7 +31,6 @@ function App() {
         {user && (
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
-            <Route exact path="/about" component={About} />
             <Route exact path="/favorites" component={Favorites} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/profile" component={ProfilePage} />
