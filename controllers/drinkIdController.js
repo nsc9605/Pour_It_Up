@@ -8,11 +8,11 @@ module.exports = {
     console.log(process.env.API_HOST);
     const drinkTarget = {
       method: "GET",
-      url: "https://thecocktaildb.p.rapidapi.com/lookup.php?",
+      url: "https://the-cocktail-db.p.rapidapi.com/lookup.php?",
       params: { i: req.params.drinkId },
       headers: {
-        xrapidapikey: process.env.API_KEY,
-        xrapidapihost: process.env.API_HOST,
+        "x-rapidapi-key": process.env.API_KEY,
+        "x-rapidapi-host": process.env.API_HOST,
       },
     };
     axios
@@ -35,7 +35,7 @@ module.exports = {
       strOwner,
       glassware,
     } = req.body;
-    const createCocktail = Cocktail.create({
+    const addCocktail = Cocktail.create({
       name,
       image,
       preparation,
@@ -52,7 +52,7 @@ module.exports = {
   favoriteCocktails: function (req, res) {
     const uid = req.params.drinkId;
 
-    Cocktail.findById(id)
+    Cocktail.findById(uid)
       .populate("strOwner")
       .then((cocktailDetails) =>
         res.render("cocktails/favorites", { cocktailDetails })
