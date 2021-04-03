@@ -1,11 +1,13 @@
 import React from 'react';
-import CocktailData from '../components/CocktailData/CocktailData';
+// import CocktailData from '../components/CocktailData/CocktailData';
 
 function Favorites() {
 
     return(
 
-        <CocktailData />
+        <div>
+            <h1>Pour It Up</h1>
+        </div>
             
 
 
