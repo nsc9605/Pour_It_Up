@@ -14,12 +14,12 @@ export default {
     return axios.get('/api/drink/' + drinkId)
   },
 
-  // saveFavorite:  function () {
-  //   return axios.post('/api/drink');
-  // },
+  saveFavorite:  function () {
+    return axios.post('/api/drink');
+  },
 
-  // favoriteDrinks: function() {
-  //   return axios.get('/api/');
-  // }
+  favoriteDrinks: function() {
+    return axios.get('/api/');
+  }
 }
 
