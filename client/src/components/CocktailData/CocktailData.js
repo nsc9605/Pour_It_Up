@@ -1,10 +1,11 @@
-// import { Modal } from "bootstrap";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
-// import { useStyles } from "@material-ui/styles";
+import {UserContext} from "../../Providers/UserProvider";
 
 function CocktailData() {
+  const {user} = useContext(UserContext);
+  console.log(user);
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
@@ -66,6 +67,20 @@ function CocktailData() {
 
   // const useStyles = makeStyles({})
 
+const submitFavorite=()=>{
+const favObject = {
+  uid: user.uid,
+  name: singleDrinkDetails.strDrink,
+  image: singleDrinkDetails.strDrinkThumb,
+  ingredients: singleDrinkDetails.strDrink,
+  preparation: singleDrinkDetails.strInstructions,
+  measurements: measurements,
+  glassware: singleDrinkDetails.strGlass
+}
+
+
+}
+
   const body = (
     <div>
       <h1 id="simple-modal-title">{singleDrinkDetails.strDrink}</h1>
@@ -94,8 +109,12 @@ function CocktailData() {
           {singleDrinkDetails.strGlass}
         </p>
       </div>
+      <button onClick={()=>
+      submitFavorite()}>Save to Favorites</button>
     </div>
   );
+
+
 
   return (
     <div className="container">

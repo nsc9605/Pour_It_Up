@@ -36,7 +36,7 @@ function App() {
         {!user && (
           <Switch>
             <Route exact path="/" component={SignIn} />
-            <Route exact path="signup" component={SignUp} />
+            <Route exact path="/signup" component={SignUp} />
             <Route exact path="passwordreset" component={PasswordReset} />
           </Switch>
         )}
