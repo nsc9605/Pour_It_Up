@@ -66,16 +66,20 @@ function CocktailData() {
 
   // const useStyles = makeStyles({})
 
-  const submitFavorite = () => {
+  const [favorite, setFavorite] = React.useState();
+  const handleSubmitFavorite = () => {
     const favObject = {
       uid: user.uid,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
-      ingredients: singleDrinkDetails.strDrink,
+      ingredients: [singleDrinkDetails.strDrink],
       preparation: singleDrinkDetails.strInstructions,
-      // measurements: measurements,
+      measurements: singleDrinkDetails.strMeasure,
       glassware: singleDrinkDetails.strGlass,
     };
+    setFavorite(favObject)
+    console.log(favObject)
+    // return favObject;
   };
 
   const body = (
@@ -101,7 +105,11 @@ function CocktailData() {
         <h2 className="drink-category">Glass: </h2>
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
+
+      <button  onClick={() => handleSubmitFavorite()}>
+
       <button onClick={() => submitFavorite()}>
+
         Save to Favorites
       </button>
       <button onClick={() => handleClose()}>
@@ -143,6 +151,7 @@ function CocktailData() {
       <Modal
         open={open}
         onClose={handleClose}
+        onSubmit={handleSubmitFavorite}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
@@ -154,21 +163,3 @@ function CocktailData() {
 
 export default CocktailData;
 
-
-      // Ingredients Array
-      // let ingredients = [
-      //   results.data.drinks[0].strIngredient1,
-      //   results.data.drinks[0].strIngredient2,
-      //   results.data.drinks[0].strIngredient3,
-      //   results.data.drinks[0].strIngredient4,
-      // ];
-      // setIngredients(ingredients);
-
-      // // Measurements Array
-      // let measurements = [
-      //   results.data.drinks[0].strMeasure1,
-      //   results.data.drinks[0].strMeasure2,
-      //   results.data.drinks[0].strMeasure3,
-      //   results.data.drinks[0].strMeasure4,
-      // ];
-      // setMeasurements(measurements);
