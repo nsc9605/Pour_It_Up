@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Cocktail
-      .find(req.query)
+      .find(req.drinkId)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -23,13 +23,13 @@ module.exports = {
   },
   update: function(req, res) {
     db.Cocktail
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ uid: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.Cocktail
-      .findById({ _id: req.params.id })
+      .findById({ uid: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

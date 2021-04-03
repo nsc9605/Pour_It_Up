@@ -62,16 +62,20 @@ function CocktailData() {
 
   // const useStyles = makeStyles({})
 
-  const submitFavorite = () => {
+  const [favorite, setFavorite] = React.useState();
+  const handleSubmitFavorite = () => {
     const favObject = {
       uid: user.uid,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
-      ingredients: singleDrinkDetails.strDrink,
+      ingredients: [singleDrinkDetails.strDrink],
       preparation: singleDrinkDetails.strInstructions,
-      // measurements: measurements,
+      measurements: singleDrinkDetails.strMeasure,
       glassware: singleDrinkDetails.strGlass,
     };
+    setFavorite(favObject)
+    console.log(favObject)
+    // return favObject;
   };
 
   const body = (
@@ -97,7 +101,7 @@ function CocktailData() {
         <h2 className="drink-category">Glass: </h2>
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
-      <button  onClick={() => submitFavorite()}>
+      <button  onClick={() => handleSubmitFavorite()}>
         Save to Favorites
       </button>
       <button  onClick={() => handleClose()}>
@@ -138,6 +142,7 @@ function CocktailData() {
       <Modal
         open={open}
         onClose={handleClose}
+        onSubmit={handleSubmitFavorite}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
