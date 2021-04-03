@@ -23,6 +23,10 @@ function CocktailData() {
   // Handle form submit -- first API call
   const searchByIngredientFormSubmit = (e) => {
     e.preventDefault();
+    if (inputsObj.ingredient === undefined) {
+      alert("Please enter a valid ingredient!");
+      return;
+    }
     console.log(inputsObj.ingredient);
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
@@ -97,10 +101,10 @@ function CocktailData() {
         <h2 className="drink-category">Glass: </h2>
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
-      <button  onClick={() => submitFavorite()}>
+      <button onClick={() => submitFavorite()}>
         Save to Favorites
       </button>
-      <button  onClick={() => handleClose()}>
+      <button onClick={() => handleClose()}>
         Close
       </button>
     </div>
@@ -109,6 +113,7 @@ function CocktailData() {
   return (
     <div className="container">
       <form className="m-2" onSubmit={searchByIngredientFormSubmit}>
+      <h2>Search for Drinks by Ingredient!</h2>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
