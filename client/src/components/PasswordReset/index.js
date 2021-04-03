@@ -59,7 +59,7 @@ const PasswordReset = () => {
             Send me a reset link
           </button>
         </form>
-        <Link to="/signin">
+        <Link to="/">
           &larr; back to sign in page
         </Link>
       </div>
