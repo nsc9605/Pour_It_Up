@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
 import { UserContext } from "../../Providers/UserProvider";
+import "./style.css";
 
 function CocktailData() {
   const { user } = useContext(UserContext);
@@ -9,8 +10,8 @@ function CocktailData() {
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
-  const [ingredients, setIngredients] = useState([]);
-  const [measurements, setMeasurements] = useState([]);
+  // const [ingredients, setIngredients] = useState([]);
+  // const [measurements, setMeasurements] = useState([]);
 
   // Handle input to target API
   const handleInputs = (e) => {
@@ -37,25 +38,19 @@ function CocktailData() {
       console.log(results.data.drinks[0].idDrink);
       setSingleDrinkDetails(results.data.drinks[0]);
 
-      // Ingredients Array
-      let ingredients = [
-        results.data.drinks[0].strIngredient1,
-        results.data.drinks[0].strIngredient2,
-        results.data.drinks[0].strIngredient3,
-        results.data.drinks[0].strIngredient4,
-      ];
-      setIngredients(ingredients);
-
-      // Measurements Array
-      let measurements = [
-        results.data.drinks[0].strMeasure1,
-        results.data.drinks[0].strMeasure2,
-        results.data.drinks[0].strMeasure3,
-        results.data.drinks[0].strMeasure4,
-      ];
-      setMeasurements(measurements);
     });
   };
+
+  // Go through and count the number of ingredients per drink with measure
+  const numberOfIngredients = () => {
+    let ingredients = [];
+    for (let index = 1; index <= 15; index++) {
+      ingredients.push(index);
+    }
+
+    return ingredients;
+  };
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -74,7 +69,7 @@ function CocktailData() {
       image: singleDrinkDetails.strDrinkThumb,
       ingredients: singleDrinkDetails.strDrink,
       preparation: singleDrinkDetails.strInstructions,
-      measurements: measurements,
+      // measurements: measurements,
       glassware: singleDrinkDetails.strGlass,
     };
   };
@@ -90,24 +85,21 @@ function CocktailData() {
         />
       </div>
       <div className="cocktail-details">
-        <p>
-          <span className="drink-category">Preparation: </span>
-          {singleDrinkDetails.strInstructions}
-        </p>
-        <p>
-          <span className="drink-category">Ingredients: </span>
-          {ingredients}
-        </p>
-        <p>
-          <span className="drink-category">Measurement: </span>
-          {measurements}
-        </p>
-        <p>
-          <span className="drink-category">Glass: </span>
-          {singleDrinkDetails.strGlass}
-        </p>
+        <h2 className="drink-category">Preparation: </h2>
+        <p>{singleDrinkDetails.strInstructions}</p>
+        <h2 className="drink-category">Ingredients: </h2>
+        {numberOfIngredients().map((number) => (
+          <p key={number}>
+            {singleDrinkDetails["strMeasure" + number]}
+            {singleDrinkDetails["strIngredient" + number]}
+          </p>
+        ))}
+        <h2 className="drink-category">Glass: </h2>
+        <p>{singleDrinkDetails.strGlass}</p>
       </div>
-      <button onClick={() => submitFavorite()}>Save to Favorites</button>
+      <button className="float-right" onClick={() => submitFavorite()}>
+        Save to Favorites
+      </button>
     </div>
   );
 
@@ -146,10 +138,29 @@ function CocktailData() {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <div id="modal">{body}</div>
+        <div id="modal m-2">{body}</div>
       </Modal>
     </div>
   );
 }
 
 export default CocktailData;
+
+
+      // Ingredients Array
+      // let ingredients = [
+      //   results.data.drinks[0].strIngredient1,
+      //   results.data.drinks[0].strIngredient2,
+      //   results.data.drinks[0].strIngredient3,
+      //   results.data.drinks[0].strIngredient4,
+      // ];
+      // setIngredients(ingredients);
+
+      // // Measurements Array
+      // let measurements = [
+      //   results.data.drinks[0].strMeasure1,
+      //   results.data.drinks[0].strMeasure2,
+      //   results.data.drinks[0].strMeasure3,
+      //   results.data.drinks[0].strMeasure4,
+      // ];
+      // setMeasurements(measurements);
