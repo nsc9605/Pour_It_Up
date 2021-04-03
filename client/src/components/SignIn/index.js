@@ -1,7 +1,6 @@
 import React, { useState,  } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
-// import CocktailData from "../CocktailData/CocktailData";
 import { signInWithGoogle } from "../../firebase";
 
 const SignIn = () => {
@@ -16,14 +15,10 @@ const SignIn = () => {
     console.log(email, password)
     auth.signInWithEmailAndPassword(email, password)
       .then(res => {
-        console.log('res: ', res);
         history.push("/home");
-        // TODO: Set user Context
-        // TODO: set redirect here
       })
       .catch(error => {
         setError("Error signing in with password and email!");
-        console.error("Error signing in with password and email", error);
       });
   };
 
@@ -87,21 +82,7 @@ const SignIn = () => {
           <Link to="/passwordreset">
             Forgot Password?
           </Link>
-          
         </p>
-
-
-        {/* <h2>COCKTAIL DATA</h2>
-        <CocktailData 
-        // name={props.name}
-        // image={props.image}
-        // ingredients={props.ingredients}
-        // preparation={props.preparation}
-        // measurements={props.measurements}
-        // category={props.category}
-        // glass={props.glass}
-        >
-        </CocktailData> */}
       </div>
     </div>
   );

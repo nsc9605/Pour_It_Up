@@ -19,6 +19,11 @@ function App() {
   const user = userContext.user;
   console.log("user: ", user);
   console.log("userstate: ", user);
+
+  window.onbeforeunload = function() {
+    localStorage.clear();
+  }
+  
   return (
     <Router>
       <div className="App">
