@@ -97,8 +97,11 @@ function CocktailData() {
         <h2 className="drink-category">Glass: </h2>
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
-      <button className="float-right" onClick={() => submitFavorite()}>
+      <button  onClick={() => submitFavorite()}>
         Save to Favorites
+      </button>
+      <button  onClick={() => handleClose()}>
+        Close
       </button>
     </div>
   );
