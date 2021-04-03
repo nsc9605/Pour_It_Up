@@ -66,6 +66,7 @@ function CocktailData() {
 
   // const useStyles = makeStyles({})
 
+
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
     const favObject = {
@@ -109,9 +110,9 @@ function CocktailData() {
       <button  onClick={() => handleSubmitFavorite()}>
         Save to Favorites
       </button>
-      <button onClick={() => handleClose()}>
+      {/* <button onClick={() => handleClose()}>
         Close
-      </button>
+      </button> */}
     </div>
   );
 
