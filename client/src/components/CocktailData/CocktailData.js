@@ -75,7 +75,7 @@ function CocktailData() {
   };
 
   const body = (
-    <div>
+    <div id="modal">
       <h1 id="simple-modal-title">{singleDrinkDetails.strDrink}</h1>
       <div className="cocktailImage">
         <img
@@ -138,7 +138,7 @@ function CocktailData() {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <div id="modal m-2">{body}</div>
+        <div className="m-2" >{body}</div>
       </Modal>
     </div>
   );
