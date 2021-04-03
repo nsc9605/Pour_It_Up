@@ -154,21 +154,3 @@ function CocktailData() {
 
 export default CocktailData;
 
-
-      // Ingredients Array
-      // let ingredients = [
-      //   results.data.drinks[0].strIngredient1,
-      //   results.data.drinks[0].strIngredient2,
-      //   results.data.drinks[0].strIngredient3,
-      //   results.data.drinks[0].strIngredient4,
-      // ];
-      // setIngredients(ingredients);
-
-      // // Measurements Array
-      // let measurements = [
-      //   results.data.drinks[0].strMeasure1,
-      //   results.data.drinks[0].strMeasure2,
-      //   results.data.drinks[0].strMeasure3,
-      //   results.data.drinks[0].strMeasure4,
-      // ];
-      // setMeasurements(measurements);
