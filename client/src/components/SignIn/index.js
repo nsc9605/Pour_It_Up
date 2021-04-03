@@ -1,4 +1,4 @@
-import React, { useState,  } from "react";
+import React, { useState, } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signInWithGoogle } from "../../firebase";
@@ -7,24 +7,19 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  
+
   const history = useHistory();
 
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
     console.log(email, password)
-    auth.setPersistence(auth.Auth.Persistance.SESSION)
-    .then(function() {
-      auth.signInWithEmailAndPassword(email, password)
-        .then(res => {
-          history.push("/home");
-        })
-        .catch(error => {
-          setError("Error signing in with password and email!");
-        })
-      }).catch(error => {
-        console.log("Session error: ", error)
-      });
+    auth.signInWithEmailAndPassword(email, password)
+      .then(res => {
+        history.push("/home");
+      })
+      .catch(error => {
+        setError("Error signing in with password and email!");
+      })
   };
 
   const onChangeHandler = (event) => {
@@ -71,11 +66,11 @@ const SignIn = () => {
             onChange={(event) => onChangeHandler(event)}
           />
           <button className="ml-2 rounded" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
-              Sign in
+            Sign in
           </button>
         </form>
         <p>or</p>
-        <button className="my-2 rounded" onClick={() => {handlePopup()}}>
+        <button className="my-2 rounded" onClick={() => { handlePopup() }}>
           Sign in with Google
         </button>
         <p>
