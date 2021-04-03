@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
-import {UserContext} from "../../Providers/UserProvider";
+import { UserContext } from "../../Providers/UserProvider";
 
 function CocktailData() {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   console.log(user);
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
@@ -52,8 +52,8 @@ function CocktailData() {
         results.data.drinks[0].strMeasure2,
         results.data.drinks[0].strMeasure3,
         results.data.drinks[0].strMeasure4,
-      ]
-      setMeasurements(measurements)
+      ];
+      setMeasurements(measurements);
     });
   };
   const [open, setOpen] = React.useState(false);
@@ -67,19 +67,17 @@ function CocktailData() {
 
   // const useStyles = makeStyles({})
 
-const submitFavorite=()=>{
-const favObject = {
-  uid: user.uid,
-  name: singleDrinkDetails.strDrink,
-  image: singleDrinkDetails.strDrinkThumb,
-  ingredients: singleDrinkDetails.strDrink,
-  preparation: singleDrinkDetails.strInstructions,
-  measurements: measurements,
-  glassware: singleDrinkDetails.strGlass
-}
-
-
-}
+  const submitFavorite = () => {
+    const favObject = {
+      uid: user.uid,
+      name: singleDrinkDetails.strDrink,
+      image: singleDrinkDetails.strDrinkThumb,
+      ingredients: singleDrinkDetails.strDrink,
+      preparation: singleDrinkDetails.strInstructions,
+      measurements: measurements,
+      glassware: singleDrinkDetails.strGlass,
+    };
+  };
 
   const body = (
     <div>
@@ -98,7 +96,7 @@ const favObject = {
         </p>
         <p>
           <span className="drink-category">Ingredients: </span>
-          {ingredients} 
+          {ingredients}
         </p>
         <p>
           <span className="drink-category">Measurement: </span>
@@ -109,12 +107,9 @@ const favObject = {
           {singleDrinkDetails.strGlass}
         </p>
       </div>
-      <button onClick={()=>
-      submitFavorite()}>Save to Favorites</button>
+      <button onClick={() => submitFavorite()}>Save to Favorites</button>
     </div>
   );
-
-
 
   return (
     <div className="container">
@@ -123,10 +118,22 @@ const favObject = {
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
           return (
-            <div className="container m-4" key={index} onClick={() => getDetails(each.idDrink)}>
-              <img src={each.strDrinkThumb} alt={index} className="rounded drinkImg" />
+            <div
+              className="container m-4"
+              key={index}
+              onClick={() => getDetails(each.idDrink)}
+            >
+              <img
+                src={each.strDrinkThumb}
+                alt={index}
+                className="rounded drinkImg"
+              />
               <h4>{each.strDrink}</h4>
-              <button className="mb-2 rounded" type="button" onClick={handleOpen}>
+              <button
+                className="mb-2 rounded"
+                type="button"
+                onClick={handleOpen}
+              >
                 Select Drink
               </button>
             </div>
