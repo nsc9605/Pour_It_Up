@@ -113,6 +113,7 @@ function CocktailData() {
   return (
     <div className="container">
       <form className="m-2" onSubmit={searchByIngredientFormSubmit}>
+      <h2>Search for Drinks by Ingredient!</h2>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
