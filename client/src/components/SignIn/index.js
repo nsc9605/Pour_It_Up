@@ -13,12 +13,17 @@ const SignIn = () => {
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
     console.log(email, password)
-    auth.signInWithEmailAndPassword(email, password)
-      .then(res => {
-        history.push("/home");
-      })
-      .catch(error => {
-        setError("Error signing in with password and email!");
+    auth.setPersistence(auth.Auth.Persistance.SESSION)
+    .then(function() {
+      auth.signInWithEmailAndPassword(email, password)
+        .then(res => {
+          history.push("/home");
+        })
+        .catch(error => {
+          setError("Error signing in with password and email!");
+        })
+      }).catch(error => {
+        console.log("Session error: ", error)
       });
   };
 

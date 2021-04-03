@@ -1,9 +1,20 @@
 
 import { Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
+import { auth } from "../../firebase";
 
 function Navigation() {
   const location = useLocation();
+  const history = useHistory();
+
+  function handleSignOut() {
+    auth.signOut().then(() => {
+      alert("Sign Out Successful.")
+      history.push("/");
+    }).catch(error => {
+      alert(error)
+    })
+  }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -42,6 +53,9 @@ function Navigation() {
             <i className="fa fa-fw fa-envelope"></i>
             Contact
           </Link>
+          <button onClick={handleSignOut}>
+            Sign Out
+          </button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
