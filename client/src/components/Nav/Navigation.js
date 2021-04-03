@@ -18,7 +18,7 @@ function Navigation() {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Link to="/home">
+      <Link to="/">
         <Navbar.Brand className="brand size-large">Pour It Up</Navbar.Brand>
       </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

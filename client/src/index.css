@@ -12,48 +12,65 @@ code {
     monospace;
 }
 
+#modal {
+  display: flex;
+  color: rgb(11, 10, 10) !important;
+  background-color: black !important;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
 .drinkImg{
   height: 400px;
-  margin: 10px
+  margin: 10px;
+  flex-wrap: wrap;
 }
 
 button {
   box-shadow: 3px 2px 3px rgb(79, 79, 79);
   border-radius: 7px solid;
   padding: 5px;
-}
-
-#modal {
-  color: rgb(11, 10, 10) !important;
-  background-color: black !important;
-  align-items: center;
-  margin-left: 250px;
-  margin-right: 250px;
-  margin-bottom: 20px;
-  padding: 15px;
-}
-
-.list {
-  align-content: center !important;
+  flex-wrap: wrap;
 }
 
 #simple-modal-title{
-  
   color: white;
+  flex-wrap: wrap;
 }
 
 .cocktail-details{
-  
   color: white;
-}
-
-.cocktailImage{
- 
+  flex-wrap: wrap;
 }
 
 .drink-category {
   font-weight: bold;
   font-size: 25px;
   border-bottom: .5px solid 50%;
+  flex-wrap: wrap;
 }
 
+@media (max-width: 790px){
+  #modal{
+    height: 25%;
+  }
+}
+
+@media (max-width: 790px){
+  #simple-modal-title{
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 790px){
+  .drinkImg{
+    height: 150px;
+  }
+}
+
+@media (max-width: 440px){
+  .drinkImg{
+    height: 50px;
+  }
+}
