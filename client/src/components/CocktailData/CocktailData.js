@@ -107,9 +107,6 @@ function CocktailData() {
       </div>
 
       <button  onClick={() => handleSubmitFavorite()}>
-
-      <button onClick={() => submitFavorite()}>
-
         Save to Favorites
       </button>
       <button onClick={() => handleClose()}>
