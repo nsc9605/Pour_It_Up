@@ -1,7 +1,7 @@
 import { Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
-// import UserAvatar from "../ProfilePage/Avatar";
+import UserAvatar from "../ProfilePage/Avatar";
 
 function Navigation() {
   const location = useLocation();
@@ -60,7 +60,7 @@ function Navigation() {
           className={
             location.path === "/profile" ? "nav-link active" : "nav-link"
             }>
-          {/* <UserAvatar /> */}
+          <UserAvatar />
           </Link>
           <button onClick={handleSignOut}>Sign Out</button>
         </Nav>

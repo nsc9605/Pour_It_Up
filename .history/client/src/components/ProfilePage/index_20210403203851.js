@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../Providers/UserProvider";
 import { auth } from "../../firebase";
-// import UserAvatar from "./Avatar";
+// import { makeStyles } from "@material-ui/core/styles";
+// import Avatar from "@material-ui/core/Avatar";
+import UserAvatar from "./Avatar";
+// import { Avatar, createAvatarComponent, GoogleSource } from 'react-avatar';
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
@@ -12,7 +15,8 @@ const ProfilePage = () => {
         <div
           style={{
             background: `url(${
-              photoURL ||
+              photoURL 
+              ||
               "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"
             })  no-repeat center center`,
             backgroundSize: "cover",
@@ -26,8 +30,8 @@ const ProfilePage = () => {
           <h3 className="italic">{email}</h3>
         </div>
       </div>
-      {/* <UserAvatar key={user.uid} round={true} alt={name} src={photoURL} title={name} /> */}
-
+        <UserAvatar key={user.uid} round={true} alt={name} src={photoURL} title={name} />
+      
       <button
         className="w-full py-3 bg-red-600 mt-4 text-white"
         onClick={() => {
