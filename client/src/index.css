@@ -34,14 +34,15 @@ button {
   flex-wrap: wrap;
 }
 
-#simple-modal-title{
+#simple-modal-title {
   color: white;
   flex-wrap: wrap;
 }
 
-.cocktail-details{
+.cocktail-details {
   color: white;
   flex-wrap: wrap;
+  
 }
 
 .drink-category {

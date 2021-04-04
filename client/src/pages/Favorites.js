@@ -6,7 +6,8 @@ function Favorites() {
 
     return(
 
-        <Favorite />
+        <Favorite 
+        />
             
 
 

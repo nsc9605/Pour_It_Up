@@ -14,12 +14,16 @@ export default {
     return axios.get('/api/drink/' + drinkId)
   },
 
-  saveCocktail:  function (drinkData) {
-    return axios.post('/api/drink', drinkData);
+  saveCocktail:  function (drinkId) {
+    return axios.post('/api/drink', drinkId);
   },
 
-  favoriteCocktails: function() {
-    return axios.get('/api/drink');
+  favoriteCocktails: function(id) {
+    return axios.get('/api/drink' + id);
+  },
+
+  remove: function (id) {
+    return axios.delete('/api/cocktails' + id)
   }
 }
 
