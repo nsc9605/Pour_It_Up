@@ -27,7 +27,7 @@ function CocktailData() {
       alert("Please enter a valid ingredient!");
       return;
     }
-    console.log(inputsObj.ingredient);
+    // console.log(inputsObj.ingredient);
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
       setDrinks(results.data.drinks);
@@ -51,7 +51,7 @@ function CocktailData() {
     for (let index = 1; index <= 15; index++) {
       ingredients.push(index);
     }
-
+    // setIngredients(ingredients)
     return ingredients;
   };
 
@@ -69,18 +69,19 @@ function CocktailData() {
 
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
+    // let ingredients = [];
     const favObject = {
       uid: user.uid,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
-      ingredients: [singleDrinkDetails.strDrink],
+      ingredients:  singleDrinkDetails.ingredients,
       preparation: singleDrinkDetails.strInstructions,
       measurements: singleDrinkDetails.strMeasure,
       glassware: singleDrinkDetails.strGlass,
     };
     setFavorite(favObject)
-    console.log(favObject)
-    // return favObject;
+    console.log(favObject);
+    return favorite;
   };
 
   const body = (
@@ -93,7 +94,7 @@ function CocktailData() {
           className="drinkImg"
         />
       </div>
-      <div className="cocktail-details">
+      <div className="cocktail-details px-4">
         <h2 className="drink-category">Preparation: </h2>
         <p>{singleDrinkDetails.strInstructions}</p>
         <h2 className="drink-category">Ingredients: </h2>

@@ -28,34 +28,38 @@ module.exports = {
 
   saveCocktail: function (req, res) {
     const {
-      name,
-      image,
-      preparation,
-      ingredients,
-      strOwner,
-      glassware,
+      strDrink: name,
+      strDrinkThumb: image,
+      strInstructions: preparation,
+      strIngredients: [ingredients],
+      strMeasure: [measurements],
+      uid: strOwner,
+      strGlass: glassware,
     } = req.body;
+
     const addCocktail = Cocktail.create({
       name,
       image,
       preparation,
       ingredients,
-      strOwner: req.user.uid,
+      measurements,
+      // strOwner: req.user.uid,
+      strOwner,
       glassware,
     });
 
-    Cocktail.all([addCocktail])
-      .then(() => res.redirect("/cocktails/favorites"))
+    Cocktail.all([drinkId])
+      .then((drinkId) => res.render("/drink/:drinkId", { drinkId }))
       .catch((err) => next(err));
   },
 
   favoriteCocktails: function (req, res) {
-    const uid = req.params.drinkId;
+    const id = req.user.uid;
 
     Cocktail.findById(uid)
-      .populate("strOwner")
-      .then((cocktailDetails) =>
-        res.render("cocktails/favorites", { cocktailDetails })
+      .populate("uid")
+      .then((id) =>
+        res.render("api/drink/:id", { id })
       )
       .catch((err) => next(err));
   },
