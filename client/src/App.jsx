@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import Favorites from "./pages/Favorites";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Search from "./pages/Search";
 import './index.css';
 
 
@@ -29,6 +30,7 @@ function App() {
         {user && (
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
+            <Route exact path="/search" component={Search} />
             <Route exact path="/favorites" component={Favorites} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/profile" component={ProfilePage} />
