@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { List, ListItem } from "../List";
 // import handleSubmitFavorite from "../CocktailData/CocktailData";
 //import Jumbotron from "../components/Jumbotron";
+// import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 
 function Favorite() {
@@ -16,6 +17,14 @@ function Favorite() {
         setFavorites(res.data)
       })
       .catch((err) => console.log(err));
+  }
+
+
+  function deleteCocktail(id) {
+      API.deleteCocktail(id)
+      .then((res) => {
+          loadFavorites();
+      })
   }
 
   return (
@@ -35,6 +44,9 @@ function Favorite() {
                     className="drinkImg"
                   />{" "}
                 </div>
+
+                {/* <DeleteBtn onClick={() => deleteCocktail(favorite._id)} /> */}
+
               </ListItem>
             );
           })}
