@@ -56,17 +56,11 @@ button {
   #modal{
     height: 25%;
   }
-}
-
-@media (max-width: 790px){
-  #simple-modal-title{
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 790px){
   .drinkImg{
     height: 150px;
+  }
+  #simple-modal-title{
+    font-size: 18px;
   }
 }
 
