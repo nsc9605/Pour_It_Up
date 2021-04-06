@@ -1,13 +1,14 @@
 const router = require("express").Router();
-const drinkIdController = require('../../controllers/drinkIdController');
+const drinkIdController = require("../../controllers/drinkIdController");
 
+router.route("/:drinkId").get(drinkIdController.selectDrink);
 
-router.route("/:drinkId")
-  .get(drinkIdController.selectDrink)
-  .post(drinkIdController.saveCocktail)
+router.route("/").post(drinkIdController.saveCocktail);
+console.log("WORKS");
+//   .post(function(req, res){
+// console.log("WORKS")
+//   })
 
-router.route("/:id")
-  .get(drinkIdController.favoriteCocktails)
-
+// router.route("/:id").get(drinkIdController.favoriteCocktails);
 
 module.exports = router;

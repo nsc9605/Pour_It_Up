@@ -14,8 +14,9 @@ export default {
     return axios.get('/api/drink/' + drinkId)
   },
 
-  saveCocktail:  function (drinkId) {
-    return axios.post('/api/drink', drinkId);
+  saveCocktail:  function (drinkObj) {
+    console.log(drinkObj)
+    return axios.post('/api/drink', drinkObj);
   },
 
   favoriteCocktails: function(id) {

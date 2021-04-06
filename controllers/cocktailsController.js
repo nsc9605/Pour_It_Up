@@ -18,6 +18,7 @@ module.exports = {
   },
   // create: function(req, res) {
   saveCocktail: function(req, res) {
+    console.log("WORKS")
     db.Cocktail
       .create(req.body)
       .then(dbModel => res.json(dbModel))

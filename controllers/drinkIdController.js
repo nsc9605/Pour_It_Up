@@ -5,7 +5,7 @@ const axios = require("axios");
 module.exports = {
   // findAll: function (req, res) {
   selectDrink: function (req, res) {
-    console.log(process.env.API_HOST);
+    // console.log(process.env.API_HOST);
     const drinkTarget = {
       method: "GET",
       url: "https://the-cocktail-db.p.rapidapi.com/lookup.php?",
@@ -18,7 +18,7 @@ module.exports = {
     axios
       .request(drinkTarget)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         res.json(response.data);
       })
       .catch(function (error) {
@@ -27,15 +27,17 @@ module.exports = {
   },
 
   saveCocktail: function (req, res) {
+    console.log(req.body);
     const {
       strDrink: name,
       strDrinkThumb: image,
       strInstructions: preparation,
       strIngredients: [ingredients],
       strMeasure: [measurements],
-      uid: strOwner,
+      uid: uid,
       strGlass: glassware,
     } = req.body;
+
 
     const addCocktail = Cocktail.create({
       name,
@@ -44,7 +46,7 @@ module.exports = {
       ingredients,
       measurements,
       // strOwner: req.user.uid,
-      strOwner,
+      uid,
       glassware,
     });
 
@@ -53,14 +55,14 @@ module.exports = {
       .catch((err) => next(err));
   },
 
-  favoriteCocktails: function (req, res) {
-    const id = req.user.uid;
+  // favoriteCocktails: function (req, res) {
+  //   const id = req.user.uid;
 
-    Cocktail.findById(uid)
-      .populate("uid")
-      .then((id) =>
-        res.render("api/drink/:id", { id })
-      )
-      .catch((err) => next(err));
-  },
+  //   Cocktail.findById(uid)
+  //     .populate("uid")
+  //     .then((id) =>
+  //       res.render("api/drink/:id", { id })
+  //     )
+  //     .catch((err) => next(err));
+  // },
 };

@@ -41,7 +41,6 @@ function CocktailData() {
       console.log(results);
       console.log(results.data.drinks[0].idDrink);
       setSingleDrinkDetails(results.data.drinks[0]);
-
     });
   };
 
@@ -66,7 +65,6 @@ function CocktailData() {
 
   // const useStyles = makeStyles({})
 
-
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
     // let ingredients = [];
@@ -74,13 +72,19 @@ function CocktailData() {
       uid: user.uid,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
-      ingredients:  singleDrinkDetails.ingredients,
       preparation: singleDrinkDetails.strInstructions,
+      ingredients: singleDrinkDetails.ingredients,
       measurements: singleDrinkDetails.strMeasure,
       glassware: singleDrinkDetails.strGlass,
     };
-    setFavorite(favObject)
-    console.log(favObject);
+    setFavorite(favObject);
+    // console.log(favObject);
+
+    API.saveCocktail(favObject).then((results) => {
+      console.log(results);
+      // setFavorite(favObject);
+      // setDrinks(results.data.drinks);
+    });
     return favorite;
   };
 
@@ -108,9 +112,7 @@ function CocktailData() {
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
 
-      <button  onClick={() => handleSubmitFavorite()}>
-        Save to Favorites
-      </button>
+      <button onClick={() => handleSubmitFavorite()}>Save to Favorites</button>
       {/* <button onClick={() => handleClose()}>
         Close
       </button> */}
@@ -120,7 +122,7 @@ function CocktailData() {
   return (
     <div className="container">
       <form className="m-2" onSubmit={searchByIngredientFormSubmit}>
-      <h2>Search for Drinks by Ingredient!</h2>
+        <h2>Search for Drinks by Ingredient!</h2>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
@@ -154,11 +156,10 @@ function CocktailData() {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <div className="m-2" >{body}</div>
+        <div className="m-2">{body}</div>
       </Modal>
     </div>
   );
 }
 
 export default CocktailData;
-
