@@ -19,12 +19,14 @@ function Favorite() {
       .catch((err) => console.log(err));
   }
 
+
   function deleteCocktail(id) {
       API.deleteCocktail(id)
       .then((res) => {
           loadFavorites();
       })
   }
+
   return (
     <div>
       <h1>Favorite Drinks</h1>
@@ -42,7 +44,9 @@ function Favorite() {
                     className="drinkImg"
                   />{" "}
                 </div>
+
                 {/* <DeleteBtn onClick={() => deleteCocktail(favorite._id)} /> */}
+
               </ListItem>
             );
           })}

@@ -1,4 +1,5 @@
 require("dotenv").config();
+const Cocktail = require("../models/cocktail");
 const axios = require("axios");
 
 module.exports = {
@@ -23,5 +24,43 @@ module.exports = {
       .catch(function (error) {
         console.error(error);
       });
-  }
-}
+  },
+
+  saveCocktail: function (req, res) {
+    const {
+      strDrink: name,
+      strDrinkThumb: image,
+      strInstructions: preparation,
+      strIngredients: [ingredients],
+      strMeasure: [measurements],
+      uid: strOwner,
+      strGlass: glassware,
+    } = req.body;
+
+    const addCocktail = Cocktail.create({
+      name,
+      image,
+      preparation,
+      ingredients,
+      measurements,
+      // strOwner: req.user.uid,
+      strOwner,
+      glassware,
+    });
+
+    Cocktail.all([drinkId])
+      .then((drinkId) => res.render("/drink/:drinkId", { drinkId }))
+      .catch((err) => next(err));
+  },
+
+  favoriteCocktails: function (req, res) {
+    const id = req.user.uid;
+
+    Cocktail.findById(uid)
+      .populate("uid")
+      .then((id) =>
+        res.render("api/drink/:id", { id })
+      )
+      .catch((err) => next(err));
+  },
+};

@@ -1,11 +1,14 @@
-import React from 'react';
+import React  from 'react';
+// import ProfilePage from '../components/ProfilePage/index';
 
-function Contact() {
-    return(
+
+function Profile(){
+return(
         <div>
-            <h2>Stuff on page</h2>
+            <h2>Avatar</h2>
+            {/* <ProfilePage /> */}
         </div>
     )
-}
 
-export default Contact;
+}
+    export default Profile;

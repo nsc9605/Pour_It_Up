@@ -1,10 +1,11 @@
 import React from 'react';
-import CocktailData from '../components/CocktailData/CocktailData';
 
 function Home() {
     return (
-        <CocktailData />
-        
+        <>
+            <h1>Welcome to Pour It Up!</h1>
+            <h2>The souce for all of your Cocktail needs!</h2>
+        </>
     )
 };
 

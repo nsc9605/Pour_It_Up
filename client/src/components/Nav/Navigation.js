@@ -1,37 +1,40 @@
-
 import { Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
+import UserAvatar from "../ProfilePage/Avatar";
 
 function Navigation() {
   const location = useLocation();
   const history = useHistory();
 
   function handleSignOut() {
-    auth.signOut().then(() => {
-      alert("Sign Out Successful.")
-      history.push("/");
-    }).catch(error => {
-      alert(error)
-    })
+    auth
+      .signOut()
+      .then(() => {
+        alert("Sign Out Successful.");
+        history.push("/");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Link to="/home">
+      <Link to="/">
         <Navbar.Brand className="brand size-large">Pour It Up</Navbar.Brand>
       </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Link
-            to="/home"
+            to="/search"
             className={
-              location.pathname === "/home" ? "nav-link active" : "nav-link"
+              location.pathname === "/search" ? "nav-link active" : "nav-link"
             }
           >
             <i className="fa fa-fw fa-user"></i>
-            Home
+            Search
           </Link>
           <Link
             to="/favorites"
@@ -53,9 +56,13 @@ function Navigation() {
             <i className="fa fa-fw fa-envelope"></i>
             Contact
           </Link>
-          <button onClick={handleSignOut}>
-            Sign Out
-          </button>
+          <Link to="/profile" 
+          className={
+            location.path === "/profile" ? "nav-link active" : "nav-link"
+            }>
+          <UserAvatar />
+          </Link>
+          <button onClick={handleSignOut}>Sign Out</button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
