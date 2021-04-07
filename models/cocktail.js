@@ -7,23 +7,23 @@ const cocktailSchema = new Schema({
     required: true,
   },
 
-  strOwner: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-
   name: {
     type: String,
     required: true,
   },
-
+  
+  preparation: {
+    type: String,
+    required: true,
+  },
+  
   ingredients: {
     type: Array,
     required: true,
   },
 
-  preparation: {
-    type: String,
+  measurement: {
+    type: Array,
     required: true,
   },
 
