@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { List, ListItem } from "../List";
 // import handleSubmitFavorite from "../CocktailData/CocktailData";
 //import Jumbotron from "../components/Jumbotron";
 // import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
+import { UserContext } from "../../Providers/UserProvider";
+
 
 function Favorite() {
+  const { user } = useContext(UserContext);
   const [favorites, setFavorites] = useState([]);
-  // useEffect(() => {
-  //   loadFavorites();
-  // }, []);
+  useEffect(() => {
+    loadFavorites();
+  }, []);
 
   function loadFavorites() {
-    API.favoriteCocktails()
+    API.favoriteCocktails(user.uid)
       .then((res) => {
+        console.log(res.data);
         setFavorites(res.data)
       })
       .catch((err) => console.log(err));
@@ -29,7 +33,7 @@ function Favorite() {
 
   return (
     <div>
-      <h1>Favorite Drinks</h1>
+      {/* <h1>Favorite Drinks</h1>
 
       {favorites.length ? (
         <List>
@@ -45,7 +49,7 @@ function Favorite() {
                   />{" "}
                 </div>
 
-                {/* <DeleteBtn onClick={() => deleteCocktail(favorite._id)} /> */}
+                <DeleteBtn onClick={() => deleteCocktail(favorite._id)} />
 
               </ListItem>
             );
@@ -53,7 +57,7 @@ function Favorite() {
         </List>
       ) : (
         <h3>No Favorites Yet ... Pour It Up!</h3>
-      )}
+      )} */}
     </div>
   );
 }

@@ -25,6 +25,7 @@ function CocktailData() {
   // Handle form submit -- first API call
   const searchByIngredientFormSubmit = (e) => {
     e.preventDefault();
+
     if (inputsObj.ingredient === undefined) {
       alert("Please enter a valid ingredient!");
       return;
@@ -33,6 +34,7 @@ function CocktailData() {
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
       setDrinks(results.data.drinks);
+      console.log(results.data.drinks)
     });
   };
 
@@ -73,6 +75,7 @@ function CocktailData() {
     // let ingredients = [];
     const favObject = {
       uid: user.uid,
+      idDrink: singleDrinkDetails.idDrink,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
       preparation: singleDrinkDetails.strInstructions,
