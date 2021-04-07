@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
 import { UserContext } from "../../Providers/UserProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./style.css";
 
 function CocktailData() {
@@ -67,6 +69,7 @@ function CocktailData() {
 
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
+    toast.info("Saved to favorites!");
     // let ingredients = [];
     const favObject = {
       uid: user.uid,
@@ -111,8 +114,20 @@ function CocktailData() {
         <h2 className="drink-category">Glass: </h2>
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
-
-      <button onClick={() => handleSubmitFavorite()}>Save to Favorites</button>
+      <div>
+        <button onClick={() => handleSubmitFavorite()}>Save to Favorites</button>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </div>
       {/* <button onClick={() => handleClose()}>
         Close
       </button> */}
