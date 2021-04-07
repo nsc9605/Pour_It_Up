@@ -29,30 +29,30 @@ module.exports = {
   saveCocktail: function (req, res) {
     console.log(req.body);
     const {
-      strDrink: name,
-      strDrinkThumb: image,
-      strInstructions: preparation,
-      strIngredients: [ingredients],
-      strMeasure: [measurements],
-      uid: uid,
-      strGlass: glassware,
-    } = req.body;
-
-
-    const addCocktail = Cocktail.create({
       name,
       image,
       preparation,
       ingredients,
       measurements,
-      // strOwner: req.user.uid,
       uid,
       glassware,
-    });
+    } = req.body;
 
-    Cocktail.all([drinkId])
-      .then((drinkId) => res.render("/drink/:drinkId", { drinkId }))
-      .catch((err) => next(err));
+
+   Cocktail.create({
+      name,
+      image,
+      preparation,
+      ingredients,
+      measurements,
+      uid,
+      glassware,
+    }).then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));;
+
+    // Cocktail.all([drinkId])
+    //   .then((drinkId) => res.json("/drink/:drinkId", { drinkId }))
+    //   .catch((err) => next(err));
   },
 
   // favoriteCocktails: function (req, res) {
