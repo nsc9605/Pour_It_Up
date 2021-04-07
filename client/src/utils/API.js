@@ -19,8 +19,8 @@ export default {
     return axios.post('/api/drink', drinkObj);
   },
 
-  favoriteCocktails: function(id) {
-    return axios.get('/api/drink' + id);
+  favoriteCocktails: function(uid) {
+    return axios.get('/api/cocktails/' + uid);
   },
 
   remove: function (id) {

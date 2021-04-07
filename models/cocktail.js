@@ -6,8 +6,18 @@ const cocktailSchema = new Schema({
     type: String,
     required: true,
   },
-
+  
+  idDrink: {
+    type: String,
+    required: true,
+  },
+  
   name: {
+    type: String,
+    required: true,
+  },
+
+  image: {
     type: String,
     required: true,
   },
@@ -22,7 +32,7 @@ const cocktailSchema = new Schema({
     required: true,
   },
 
-  measurement: {
+  measurements: {
     type: Array,
     required: true,
   },

@@ -29,23 +29,25 @@ module.exports = {
   saveCocktail: function (req, res) {
     console.log(req.body);
     const {
+      uid,
+      idDrink,
       name,
       image,
       preparation,
       ingredients,
       measurements,
-      uid,
       glassware,
     } = req.body;
 
 
    Cocktail.create({
+      uid,
+      idDrink,
       name,
       image,
       preparation,
       ingredients,
       measurements,
-      uid,
       glassware,
     }).then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));;
@@ -56,13 +58,12 @@ module.exports = {
   },
 
   // favoriteCocktails: function (req, res) {
-  //   const id = req.user.uid;
+  //   const uid = req.params.user.uid;
 
-  //   Cocktail.findById(uid)
-  //     .populate("uid")
-  //     .then((id) =>
-  //       res.render("api/drink/:id", { id })
-  //     )
-  //     .catch((err) => next(err));
+  //   Cocktail.find(uid)
+  //     // .populate("uid")
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
   // },
+  
 };

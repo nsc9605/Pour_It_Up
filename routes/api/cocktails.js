@@ -14,7 +14,4 @@ router
   .delete(cocktailsController.remove);
 
 
-  // router.route("/:favorites")
-  // .get(cocktailsController.favoriteCocktails)
-
 module.exports = router;

@@ -10,12 +10,15 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   // findById: function(req, res) {
-  favoriteCocktails: function(req, res) {
-    db.Cocktail
-      .findById(req.user.uid)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+    favoriteCocktails: function(req, res) {
+      console.log(req.params)
+      db.Cocktail
+        .find({uid: req.params.id})
+        .then(dbModel => {
+          console.log(dbModel)
+          res.json(dbModel)})
+        .catch(err => res.status(422).json(err));
+    },
   // create: function(req, res) {
   saveCocktail: function(req, res) {
     console.log("WORKS")
