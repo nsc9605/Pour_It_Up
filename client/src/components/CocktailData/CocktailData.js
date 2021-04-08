@@ -48,6 +48,7 @@ function CocktailData() {
     });
   };
 
+
   // Go through and count the number of ingredients per drink with measure
   const numberOfIngredients = () => {
     let ingredients = [];
