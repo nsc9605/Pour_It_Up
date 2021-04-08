@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
-import { List, ListItem } from "../List";
 // import handleSubmitFavorite from "../CocktailData/CocktailData";
 //import Jumbotron from "../components/Jumbotron";
-// import DeleteBtn from "../../components/DeleteBtn";
+//import DeleteBtn from "../DeleteBtn";
 import API from "../../utils/API";
 import { UserContext } from "../../Providers/UserProvider";
 
@@ -33,31 +32,32 @@ function Favorite() {
 
   return (
     <div>
-      {/* <h1>Favorite Drinks</h1>
+      <h1>Favorite Drinks</h1>
 
       {favorites.length ? (
-        <List>
-          {favorites.map((favorite) => {
-            return (
-              <ListItem key={favorite._id}>
-                <h1 id="simple-modal-title">{favorite.strDrink}</h1>
-                <div className="cocktailImage">
-                  <img
-                    src={favorite.strDrinkThumb}
-                    alt={favorite.strDrink}
-                    className="drinkImg"
-                  />{" "}
-                </div>
+          <table className="table">
+                <thead>
+                    <tr>
+                        <th >Photo</th>
+                        <th >Cocktail Name</th>
+                        <th >Remove from List</th>
+                    </tr>
+                </thead>
+     {favorites.map(favorite => (
+         <tbody>
+         <tr key={favorite._id}>
+           <td><img src={favorite.image} alt={favorite.name} className="drinkImg" /></td>
+           <td>{favorite.name}</td>
+           {/* <td><DeleteBtn onClick={() => deleteCocktail(favorite.idDrink)} /> </td> */}
+         </tr>
+         </tbody>
+        ))}          
+ 
+        </table>
 
-                <DeleteBtn onClick={() => deleteCocktail(favorite._id)} />
-
-              </ListItem>
-            );
-          })}
-        </List>
       ) : (
         <h3>No Favorites Yet ... Pour It Up!</h3>
-      )} */}
+      )}
     </div>
   );
 }
