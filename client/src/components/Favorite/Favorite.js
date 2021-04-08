@@ -35,25 +35,38 @@ function Favorite() {
       <h1>Favorite Drinks</h1>
 
       {favorites.length ? (
-          <table className="table">
-                <thead>
-                    <tr>
-                        <th >Photo</th>
-                        <th >Cocktail Name</th>
-                        <th >Remove from List</th>
-                    </tr>
-                </thead>
+          // <table className="table">
+          //       <thead>
+          //           <tr>
+          //               <th >Photo</th>
+          //               <th >Cocktail Name</th>
+          //               <th >Remove from List</th>
+          //           </tr>
+          //       </thead>
+                <div class="flip-card">
      {favorites.map(favorite => (
-         <tbody>
-         <tr key={favorite._id}>
-           <td><img src={favorite.image} alt={favorite.name} className="drinkImg" /></td>
-           <td>{favorite.name}</td>
+       <div class="flip-card-inner">
+         <div className="flip-card-front" key={favorite._id}>
+         {/* <tbody> */}
+         {/* <tr key={favorite._id}> */}
+         <img src={favorite.image} alt={favorite.name} className="drinkImg" key={favorite._id}/>
+         <h1>{favorite.name}</h1>
+                   <p>{favorite.glass}</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>{favorite.name}</h1>
+                    <p>{favorite.preparation}</p>
+                    <p>{favorite.ingredients}</p>
+           </div>
+           {/* <td><img src={favorite.image} alt={favorite.name} className="drinkImg" /></td>
+           <td>{favorite.name}</td> */}
            {/* <td><DeleteBtn onClick={() => deleteCocktail(favorite.idDrink)} /> </td> */}
-         </tr>
-         </tbody>
+         {/* </tr> */}
+         {/* </tbody> */}
+         </div>
         ))}          
- 
-        </table>
+         {/* </table> */}
+      </div>
 
       ) : (
         <h3>No Favorites Yet ... Pour It Up!</h3>
