@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 // import handleSubmitFavorite from "../CocktailData/CocktailData";
 //import Jumbotron from "../components/Jumbotron";
-//import DeleteBtn from "../DeleteBtn";
+import DeleteBtn from "../DeleteBtn/DeleteBtn";
 import API from "../../utils/API";
 import { UserContext } from "../../Providers/UserProvider";
 import Grid from "@material-ui/core/Grid";
@@ -23,8 +23,8 @@ function Favorite() {
       .catch((err) => console.log(err));
   }
 
-  function deleteCocktail(id) {
-    API.deleteCocktail(id).then((res) => {
+  function deleteCocktail(_id) {
+    API.deleteCocktail(_id).then((res) => {
       loadFavorites();
     });
   }
@@ -48,6 +48,7 @@ function Favorite() {
                 {/* <div className="container"> */}
                 <h3>{favorite.name}</h3>
                 <h5>{favorite.glassware}</h5>
+                <DeleteBtn onClick={() => deleteCocktail(favorite._id)} />
                 {/* </div> */}
               </div>
               <div className="flip-card-back p-2">
