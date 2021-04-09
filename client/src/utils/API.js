@@ -23,8 +23,9 @@ export default {
     return axios.get('/api/cocktails/' + uid);
   },
 
-  deleteCocktail: function(_id) {
-    return axios.delete('/api/drink/' + _id);
+  deleteCocktail: function(key) {
+    console.log(key);
+    return axios.delete('/api/drink/' + key);
   }
 }
 
