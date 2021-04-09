@@ -42,25 +42,39 @@ MERN stack app aimed at those new found bartenders during the 2020 quarantine lo
 │       └── robots.txt
 │   └── src
 │   └── components
-│       └── Favorite
-│           └── Favorite.js
 │       └── Header
 │           └── Header.js
-│       └── Login
-│           └── Login.js
+│       └── CocktailData
+│           └── CocktailData.js
+│           └── CocktailList.js
+│       └── DeleteBtn
+│           └── DeleteBtn.js
+│       └── Favorite
+│           └── Favorite.js
+│           └── style.css
+│       └── List
+│           └── index.js
 │       └── Nav
 │           └── Navtabs.js
-│       └── Search
-│           └── Search.js
+│       └── PasswordReset
+│           └── index.js
+│       └── ProfilePage
+│           └── Avatar.js
+│           └── index.js
+│       └── SignIn
+│           └── SignIn.js
+│       └── SignUp
+│           └── SignUp.js
 │   └── pages
-│       └── About.js
 │       └── Contact.js
-│       └── Favorite.js
+│       └── Favorites.js
 │       └── Home.js
+│       └── Search.js
 │   └── utils
 │       └── API.js
 │   └── App.css
 │   └── App.jsx
+│   └── firebase.js
 │   └── index.css
 │   └── index.js
 │   └── package-lock.json
@@ -68,19 +82,24 @@ MERN stack app aimed at those new found bartenders during the 2020 quarantine lo
 │   └── README.md
 ├── controllers
 │   └── cocktailsController.js
+│   └── drinkIdController.js
+│   └── searchController.js
 ├── models
-│   └── Cocktail.js
+│   └── cocktail.js
 │   └── index.js
 ├── node_modules
 ├── routes
 │   └── api
 │       └── cocktails.js
+│       └── drink.js
 │       └── index.js
+│       └── search.js
 │   └── index.js
 ├── scripts
 │   └── seedDB.js
 ├── package-lock.json
 ├── package.json  
+├── Procfile
 ├── README.md
 ├── server.js
 ```
@@ -91,7 +110,7 @@ MERN stack app aimed at those new found bartenders during the 2020 quarantine lo
 
 ## Usage
 
-[Click here to deploy application!](https:///)
+[Click here to deploy application!](https://pour-it-up.herokuapp.com/)
 
 
 ## License
