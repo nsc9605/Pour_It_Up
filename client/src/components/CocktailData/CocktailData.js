@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
+import Grid from "@material-ui/core/Grid";
 import { UserContext } from "../../Providers/UserProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -42,7 +43,7 @@ function CocktailData() {
   const getDetails = (idDrink) => {
     console.log(inputsObj.ingredient.idDrink);
     API.selectDrink(idDrink).then((results) => {
-      console.log(results);
+      // console.log(results);
       console.log(results.data.drinks[0].idDrink);
       setSingleDrinkDetails(results.data.drinks[0]);
     });
@@ -124,7 +125,7 @@ let measurements = [];
         <img
           src={singleDrinkDetails.strDrinkThumb}
           alt={singleDrinkDetails.strDrink}
-          className="drinkImg"
+          className="drinkImg rounded"
         />
       </div>
       <div className="cocktail-details px-4">
@@ -168,8 +169,9 @@ let measurements = [];
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
           return (
+            <Grid container direction="column" justify="center" alignItems="flex-start" spacing={1}>
             <div
-              className="container m-4"
+              className="drinkCards m-2"
               key={index}
               onClick={() => getDetails(each.idDrink)}
             >
@@ -178,7 +180,7 @@ let measurements = [];
                 alt={index}
                 className="rounded drinkImg"
               />
-              <h4>{each.strDrink}</h4>
+              <h4 className="text-center">{each.strDrink}</h4>
               <button
                 className="mb-2 rounded"
                 type="button"
@@ -187,6 +189,7 @@ let measurements = [];
                 Select Drink
               </button>
             </div>
+            </Grid>
           );
         })}
       </form>

@@ -25,7 +25,7 @@ export default {
 
   deleteCocktail: function(key) {
     console.log(key);
-    return axios.delete('/api/drink/' + key);
+    return axios.put('/api/cocktails/', key);
   }
 }
 

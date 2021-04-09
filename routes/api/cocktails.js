@@ -11,7 +11,9 @@ router
   .route("/:id")
   .get(cocktailsController.favoriteCocktails)
   .put(cocktailsController.update)
-  .delete(cocktailsController.remove);
+
+  router.route("/:key")
+  .delete(cocktailsController.deleteCocktail);
 
 
 module.exports = router;

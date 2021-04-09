@@ -38,19 +38,21 @@ function Favorite() {
       {favorites.length ? (
         <Grid container spacing={2}>
           {favorites.map((favorite) => (
-            <div className="card p-4 m-3">
+            <div className="p-4 m-3">
               <div className="flip-card m-5">
                 <div className="flip-card-inner">
                   <div className="flip-card-front" key={favorite._id}>
                     <DeleteBtn onClick={() => 
                       console.log(favorite).then(() =>
                       deleteCocktail(favorite._id))} />
+                      <div className="card-img-top">
                     <img
                       src={favorite.image}
                       alt={favorite.name}
                       className="card-img image-fluid"
                       key={favorite._id}
                     />
+                    </div>
                     {/* <div className="container"> */}
                     <h3>{favorite.name}</h3>
                     <h5>{favorite.glassware}</h5>
@@ -61,7 +63,8 @@ function Favorite() {
                     <h2>{favorite.name}</h2>
                     <p>Preparation: <span>{favorite.preparation}</span></p>
                     <p>Glass: <span>{favorite.glassware}</span></p>
-                    <p>Measurements: <span>{favorite.measurements}</span></p>
+                    <p>Measurements: <span> {favorite.measurements.join(', ')}</span></p>
+                    <p>Ingredients: <span> {favorite.ingredients.join(', ')}</span></p>
                   </div>
                 </div>
               </div>
