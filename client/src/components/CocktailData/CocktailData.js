@@ -73,15 +73,37 @@ function CocktailData() {
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
     toast.info("Saved to favorites!");
-    // let ingredients = [];
+
+    let ingredients = [];
+
+    for (const property in singleDrinkDetails) {
+      if(property.includes("strIngredient")){
+        console.log(singleDrinkDetails[property]);
+        if(singleDrinkDetails[property]){
+          ingredients.push(singleDrinkDetails[property]);
+        }
+      }
+    }
+
+let measurements = [];
+
+    for (const property in singleDrinkDetails) {
+      if(property.includes("strMeasure")){
+        console.log(singleDrinkDetails[property]);
+        if(singleDrinkDetails[property]){
+          measurements.push(singleDrinkDetails[property]);
+        }
+      }
+    }
+    
     const favObject = {
       uid: user.uid,
       idDrink: singleDrinkDetails.idDrink,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
       preparation: singleDrinkDetails.strInstructions,
-      ingredients: singleDrinkDetails.ingredients,
-      measurements: singleDrinkDetails.strMeasure,
+      ingredients: ingredients,
+      measurements: measurements,
       glassware: singleDrinkDetails.strGlass,
     };
     setFavorite(favObject);
