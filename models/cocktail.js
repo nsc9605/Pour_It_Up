@@ -28,12 +28,12 @@ const cocktailSchema = new Schema({
   },
   
   ingredients: {
-    type: Array,
+    type: [String],
     required: true,
   },
 
   measurements: {
-    type: Array,
+    type: [String],
     required: true,
   },
 

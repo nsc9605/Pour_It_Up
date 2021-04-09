@@ -19,9 +19,9 @@ function App() {
   const userContext = useContext(UserContext);
   const user = userContext.user;
 
-  window.addEventListener("beforeunload", (e) => {
-    handleSignOut();
-  });
+  // window.addEventListener("beforeunload", (e) => {
+  //   handleSignOut();
+  // });
 
   const handleSignOut = () => {
     auth
