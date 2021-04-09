@@ -1,9 +1,9 @@
-.drinkCards {
+/* .drinkCards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
   margin: 10px;
-}
+} */
 
 /* .modal-size {
     position: absolute;

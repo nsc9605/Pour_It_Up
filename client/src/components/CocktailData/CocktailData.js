@@ -3,8 +3,8 @@ import API from "../../utils/API";
 import Modal from "@material-ui/core/Modal";
 import Grid from "@material-ui/core/Grid";
 import { UserContext } from "../../Providers/UserProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 function CocktailData() {
@@ -35,7 +35,7 @@ function CocktailData() {
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
       setDrinks(results.data.drinks);
-      console.log(results.data.drinks)
+      console.log(results.data.drinks);
     });
   };
 
@@ -48,7 +48,6 @@ function CocktailData() {
       setSingleDrinkDetails(results.data.drinks[0]);
     });
   };
-
 
   // Go through and count the number of ingredients per drink with measure
   const numberOfIngredients = () => {
@@ -78,25 +77,25 @@ function CocktailData() {
     let ingredients = [];
 
     for (const property in singleDrinkDetails) {
-      if(property.includes("strIngredient")){
+      if (property.includes("strIngredient")) {
         console.log(singleDrinkDetails[property]);
-        if(singleDrinkDetails[property]){
+        if (singleDrinkDetails[property]) {
           ingredients.push(singleDrinkDetails[property]);
         }
       }
     }
 
-let measurements = [];
+    let measurements = [];
 
     for (const property in singleDrinkDetails) {
-      if(property.includes("strMeasure")){
+      if (property.includes("strMeasure")) {
         console.log(singleDrinkDetails[property]);
-        if(singleDrinkDetails[property]){
+        if (singleDrinkDetails[property]) {
           measurements.push(singleDrinkDetails[property]);
         }
       }
     }
-    
+
     const favObject = {
       uid: user.uid,
       idDrink: singleDrinkDetails.idDrink,
@@ -142,7 +141,9 @@ let measurements = [];
         <p>{singleDrinkDetails.strGlass}</p>
       </div>
       <div>
-        <button onClick={() => handleSubmitFavorite()}>Save to Favorites</button>
+        <button onClick={() => handleSubmitFavorite()}>
+          Save to Favorites
+        </button>
         <ToastContainer
           position="top-right"
           autoClose={2000}
@@ -163,32 +164,38 @@ let measurements = [];
 
   return (
     <div className="container">
-      <form className="m-2" onSubmit={searchByIngredientFormSubmit}>
+      <form className="m-2 text-center" onSubmit={searchByIngredientFormSubmit}>
         <h2>Search for Drinks by Ingredient!</h2>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
         {drinks.map((each, index) => {
           return (
-            <Grid container direction="column" justify="center" alignItems="flex-start" spacing={1}>
-            <div
-              className="drinkCards m-2"
-              key={index}
-              onClick={() => getDetails(each.idDrink)}
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+              spacing={2}
             >
-              <img
-                src={each.strDrinkThumb}
-                alt={index}
-                className="rounded drinkImg"
-              />
-              <h4 className="text-center">{each.strDrink}</h4>
-              <button
-                className="mb-2 rounded"
-                type="button"
-                onClick={handleOpen}
+              <div
+                className="drinkCards m-2 text-center"
+                key={index}
+                onClick={() => getDetails(each.idDrink)}
               >
-                Select Drink
-              </button>
-            </div>
+                <img
+                  src={each.strDrinkThumb}
+                  alt={index}
+                  className="rounded drinkImg"
+                />
+                <h4 className="text-center">{each.strDrink}</h4>
+                <button
+                  className="mb-2 rounded"
+                  type="button"
+                  onClick={handleOpen}
+                >
+                  Select Drink
+                </button>
+              </div>
             </Grid>
           );
         })}

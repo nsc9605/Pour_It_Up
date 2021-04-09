@@ -22,7 +22,7 @@ code {
 }
 
 .drinkImg{
-  height: 300px;
+  max-height: 300px !important;
   margin: 10px;
   flex-wrap: wrap;
 }
