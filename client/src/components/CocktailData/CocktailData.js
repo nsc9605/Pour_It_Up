@@ -119,29 +119,35 @@ function CocktailData() {
 
   const body = (
     <div id="modal">
-      <h1 id="simple-modal-title">{singleDrinkDetails.strDrink}</h1>
-      <div className="cocktailImage">
+      {/* <div className="cocktailImage"> */}
+      <h1 id="simple-modal-title">{singleDrinkDetails.strDrink}
         <img
           src={singleDrinkDetails.strDrinkThumb}
           alt={singleDrinkDetails.strDrink}
-          className="drinkImg rounded"
-        />
-      </div>
+          className="modalImg rounded img-fluid"
+        /></h1>
+      {/* </div> */}
       <div className="cocktail-details px-4">
-        <h2 className="drink-category">Preparation: </h2>
-        <p>{singleDrinkDetails.strInstructions}</p>
-        <h2 className="drink-category">Ingredients: </h2>
+        <p className="drink-category">
+          Preparation:
+          <span>  {singleDrinkDetails.strInstructions}</span>
+        </p>
+        <p className="drink-category">
+          Ingredients: 
         {numberOfIngredients().map((number) => (
-          <p key={number}>
-            {singleDrinkDetails["strMeasure" + number]}
-            {singleDrinkDetails["strIngredient" + number]}
-          </p>
+          <div key={number}>
+             <span>{singleDrinkDetails["strMeasure" + number]}
+            {singleDrinkDetails["strIngredient" + number]}</span>
+          </div>
         ))}
-        <h2 className="drink-category">Glass: </h2>
-        <p>{singleDrinkDetails.strGlass}</p>
+        </p>
+        <p className="drink-category">
+          Glass: 
+        <span> {singleDrinkDetails.strGlass}</span>
+        </p>
       </div>
       <div>
-        <button onClick={() => handleSubmitFavorite()}>
+        <button className="rounded" onClick={() => handleSubmitFavorite()}>
           Save to Favorites
         </button>
         <ToastContainer
@@ -200,15 +206,18 @@ function CocktailData() {
           );
         })}
       </form>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        onSubmit={handleSubmitFavorite}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <div className="m-2">{body}</div>
-      </Modal>
+      <Grid container spacing={4}>
+        <Modal
+          open={open}
+          onClose={handleClose}s
+          onSubmit={handleSubmitFavorite}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          id="container-fluid"
+        >
+          <div className="m-2">{body}</div>
+        </Modal>
+      </Grid>
     </div>
   );
 }

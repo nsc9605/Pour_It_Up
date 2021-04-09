@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 // import Avatar from "@material-ui/core/Avatar"
-// import Avatar from "react-avatar";
 import { UserContext } from "../../Providers/UserProvider";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,11 +13,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function UserAvatar(props) {
-  const { user } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
+  // const { photoURL, name } = user;
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {/* <Avatar key={user} alt={props.name} src={user.photoURL} className={classes.large} /> */}
+      {/* <Avatar key={user} alt={user.name} src={user.photoURL} className={classes.large} /> */}
     </div>
   );
 }

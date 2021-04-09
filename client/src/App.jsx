@@ -7,7 +7,6 @@ import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
 import { UserContext } from "./Providers/UserProvider";
 import { auth } from "./firebase";
-import Header from "./components/Header/Header";
 import Favorites from "./pages/Favorites";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -38,7 +37,6 @@ return (
   <Router>
     <div className="App">
       <Navigation />
-      <Header />
       {user && (
         <Switch>
           <Route exact path={["/", "/home"]} component={Home} />
