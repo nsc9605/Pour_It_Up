@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../Providers/UserProvider";
 import { auth } from "../../firebase";
-// import UserAvatar from "./Avatar";
+import UserAvatar from "./Avatar";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
@@ -26,7 +26,7 @@ const ProfilePage = () => {
           <h3 className="italic">{email}</h3>
         </div>
       </div>
-      {/* <UserAvatar key={user.uid} round={true} alt={name} src={photoURL} title={name} /> */}
+      <UserAvatar key={user.uid} round={true} alt={name} src={photoURL} title={name} />
 
       <button
         className="w-full py-3 bg-red-600 mt-4 text-white"

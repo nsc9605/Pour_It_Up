@@ -23,10 +23,13 @@ function Favorite() {
       .catch((err) => console.log(err));
   }
 
-  function deleteCocktail(_id) {
-    API.deleteCocktail(_id).then((res) => {
-      loadFavorites();
-    });
+  function deleteCocktail(key) {
+    API.deleteCocktail(key)
+      .then((res) => {
+        console.log("delete response: ", res);
+        loadFavorites();
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -35,38 +38,41 @@ function Favorite() {
       {favorites.length ? (
         <Grid container spacing={2}>
           {favorites.map((favorite) => (
-        <div className="card p-4 m-3">
-          <div className="flip-card m-5">
-            <div className="flip-card-inner">
-              <div className="flip-card-front" key={favorite._id}>
-                <img
-                  src={favorite.image}
-                  alt={favorite.name}
-                  className="card-img image-fluid"
-                  key={favorite._id}
-                />
-                {/* <div className="container"> */}
-                <h3>{favorite.name}</h3>
-                <h5>{favorite.glassware}</h5>
-                <DeleteBtn onClick={() => deleteCocktail(favorite._id)} />
-                {/* </div> */}
-              </div>
-              <div className="flip-card-back p-2">
-                <h2>{favorite.name}</h2>
-                <p>Preparation: <span>{favorite.preparation}</span></p>
-                <p>Glass: <span>{favorite.glassware}</span></p>
-                <p>Measurements: <span>{favorite.measurements}</span></p>
-              </div>
-              </div>
-              </div>
-              </div>
-              ))}
-                </Grid>
-              ) : (
-                <h3>No Favorites Yet ... Pour It Up!</h3>
-                )}
+            <div className="card p-4 m-3">
+              <div className="flip-card m-5">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front" key={favorite._id}>
+                    <DeleteBtn onClick={() => 
+                      console.log(favorite).then(() =>
+                      deleteCocktail(favorite._id))} />
+                    <img
+                      src={favorite.image}
+                      alt={favorite.name}
+                      className="card-img image-fluid"
+                      key={favorite._id}
+                    />
+                    {/* <div className="container"> */}
+                    <h3>{favorite.name}</h3>
+                    <h5>{favorite.glassware}</h5>
+                    {/* </div> */}
+                  </div>
+                  <div className="flip-card-back p-2">
+                    <DeleteBtn onClick={() => deleteCocktail(favorite._id)} />
+                    <h2>{favorite.name}</h2>
+                    <p>Preparation: <span>{favorite.preparation}</span></p>
+                    <p>Glass: <span>{favorite.glassware}</span></p>
+                    <p>Measurements: <span>{favorite.measurements}</span></p>
+                  </div>
                 </div>
-        );
+              </div>
+            </div>
+          ))}
+        </Grid>
+      ) : (
+        <h3>No Favorites Yet ... Pour It Up!</h3>
+      )}
+    </div>
+  );
 }
 
 export default Favorite;
