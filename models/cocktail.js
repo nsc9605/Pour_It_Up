@@ -38,7 +38,7 @@ const cocktailSchema = new Schema({
   },
 
   glassware: {
-    type: Array,
+    type: [String],
     required: true,
   },
 

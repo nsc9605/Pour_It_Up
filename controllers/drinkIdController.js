@@ -39,8 +39,7 @@ module.exports = {
       glassware,
     } = req.body;
 
-
-   Cocktail.create({
+    Cocktail.create({
       uid,
       idDrink,
       name,
@@ -49,8 +48,9 @@ module.exports = {
       ingredients,
       measurements,
       glassware,
-    }).then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));;
+    })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
 
     // Cocktail.all([drinkId])
     //   .then((drinkId) => res.json("/drink/:drinkId", { drinkId }))
@@ -65,5 +65,4 @@ module.exports = {
   //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // },
-  
 };

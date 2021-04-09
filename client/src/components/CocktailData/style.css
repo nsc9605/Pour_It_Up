@@ -1,3 +1,10 @@
+/* .drinkCards {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin: 10px;
+} */
+
 /* .modal-size {
     position: absolute;
     width: 50%;
