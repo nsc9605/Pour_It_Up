@@ -16,6 +16,7 @@ function Search() {
                 <div className="flexParent h-25">
                     <div className="homeText col-6 text-center">
                         <CocktailData />
+                        {/* <CocktailList /> */}
                     </div>
                 </div>
 
