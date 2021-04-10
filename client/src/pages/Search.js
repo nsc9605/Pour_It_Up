@@ -14,7 +14,8 @@ function Search() {
                 height: '100vh'
             }}>
                 <div className="flexParent h-25">
-                    <div className="homeText col-6 text-center">
+                    {/* <div className="homeText"> */}
+                    <div className="text-center">
                         <CocktailData />
                     </div>
                 </div>

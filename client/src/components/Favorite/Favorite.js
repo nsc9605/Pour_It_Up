@@ -39,10 +39,10 @@ function Favorite() {
       {favorites.length ? (
         <Grid container spacing={2}>
           {favorites.map((favorite) => (
-            <div className="p-4 m-3">
+            <div className="p-4 m-3" key={favorite._id}>
               <div className="flip-card m-3">
                 <div className="flip-card-inner">
-                  <div className="flip-card-front" key={favorite._id}>
+                  <div className="flip-card-front">
                     {/* <Button
                     variant="contained"
                     color="default"
@@ -57,7 +57,7 @@ function Favorite() {
                       <img
                         src={favorite.image}
                         alt={favorite.name}
-                        className="card-img image-fluid rounded"
+                        className="card-img img-fluid rounded"
                         key={favorite._id}
                       />
                     </div>
@@ -67,29 +67,35 @@ function Favorite() {
                     {/* </div> */}
                   </div>
                   <div className="flip-card-back p-2">
-                   
                     <h4 className="text-center">{favorite.name}</h4>
-                    <p>
-                      Preparation: <span>{favorite.preparation}</span>
-                    </p>
-                    <p>
-                      Measurements:{" "}
-                      <span> {favorite.measurements.join(", ")}</span>
-                    </p>
-                    <p>
+                    <div className="title">
+                      Preparation: 
+                      <span> {favorite.preparation}</span>
+                    </div>
+                    <div className="title">
                       Ingredients:{" "}
-                      <span> {favorite.ingredients.join(", ")}</span>
-                    </p>
-                    <p>
-                      Glass: <span>{favorite.glassware}</span>
-                    </p>
+                      <ul> 
+                        {" "}
+                        {favorite.measurements
+                          .map(
+                            (measurement, i) =>
+                              measurement + " " + favorite.ingredients[i]
+                          )
+                          .join(", ")}
+                      </ul>
+                    </div>
+                    <div className="title">
+                      Glass: <span> {favorite.glassware}</span>
+                    </div>
                     <Button
-                    variant="contained"
-                    color="default"
-                    className="deleteBtn"
-                    startIcon={<DeleteIcon />}
+                      variant="contained"
+                      color="default"
+                      className="deleteBtn text-center"
+                      startIcon={<DeleteIcon />}
                       onClick={() => deleteCocktail(favorite._id)}
-                    >Delete</Button>
+                    >
+                      Delete
+                    </Button>
                   </div>
                 </div>
               </div>

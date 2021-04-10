@@ -7,7 +7,7 @@
 MERN stack app aimed at those new found bartenders during the 2020 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!
 
 
-:round_pushpin: [Click here to view deployed page!](https://www.herokuapp.com) :round_pushpin:
+:round_pushpin: [Click here to view deployed page!](https://pour-it-up.herokuapp.com/) :round_pushpin:
 
 ## Table of Contents
 
@@ -104,10 +104,6 @@ MERN stack app aimed at those new found bartenders during the 2020 quarantine lo
 ├── server.js
 ```
 
-## Features
- 
-
-
 ## Usage
 
 [Click here to deploy application!](https://pour-it-up.herokuapp.com/)
@@ -124,9 +120,10 @@ This application is licensed under the MIT License.
 
 This Search was creating with help from:
 
+- [Nicole](https://github.com/nsc9605)
 - [Jessica Deck](https://github.com/deck-jessica)
 - [Jon Gudenzi](https://github.com/JonGudenzi)
-- [TRussell Jewett](https://github.com/treyjewett)
+- [Trey Jewett](https://github.com/treyjewett)
 
 
 ## Technologies
@@ -142,11 +139,22 @@ This Search was creating with help from:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal
 
+
 ## Contact Information
 
-- GitHub: [nsc9605](https://github.com/nsc9605)
-- Portfolio: [Deploy Portfolio](https://nsc9605.github.io/Responsive-Portfolio/)
-- Email: [Nicole Catapano](mailto:nsc9605@gmail.com)
+GitHub: 
+- [nsc9605](https://github.com/nsc9605)
+- [deck-jessica](https://github.com/deck-jessica)
+- [JonGudenzi](https://github.com/JonGudenzi)
+- [treyjewett](https://github.com/treyjewett)
+
+Email: 
+[Nicole Catapano](mailto:nsc9605@gmail.com)
+[Jessica Deck](mailto:deck.jessica@gmail.com)
+[Jon Gudenzi](mailto:jongudenzi@gmail.com)
+[Trey Jewett](mailto:rfjewett3@gmail.com)
+
+
 # Getting Started with Create React App
 
 This Search was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
