@@ -84,3 +84,23 @@ button {
     height: 50px;
   }
 }
+
+.flexParent{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.homeText{
+  color: white;
+  background-color: #343a40;
+  padding: 10px;
+  /* width: 600px; */
+  border: black 3px solid;
+  border-radius: 20px;
+}
+
+.startBtn{
+  background-color: rgb(78, 187, 238);
+  margin-left: 25%;
+}
