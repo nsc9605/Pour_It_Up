@@ -1,19 +1,30 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../Providers/UserProvider";
 import { auth } from "../../firebase";
-import UserAvatar from "./Avatar";
+import Avatar from "@material-ui/core/Avatar"
+import { makeStyles } from "@material-ui/core/styles";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
-  const { photoURL, name, email } = user;
+  const { photoURL, name, email } = auth.currentUser;
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: "flex",
+      "& > *": {
+        margin: theme.spacing(1),
+      },
+    },
+  }));
+  const classes = useStyles();
   return (
     <div className="mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
       <div className="flex border flex-col items-center md:flex-row md:items-start border-blue-400 px-3 py-4">
         <div
           style={{
             background: `url(${
-              photoURL ||
-              "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"
+              photoURL
+              // ||
+              // "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"
             })  no-repeat center center`,
             backgroundSize: "cover",
             height: "200px",
@@ -26,7 +37,9 @@ const ProfilePage = () => {
           <h3 className="italic">{email}</h3>
         </div>
       </div>
-      <UserAvatar key={user.uid} round={true} alt={name} src={photoURL} title={name} />
+      <div className={classes.root}>
+     {user&& <Avatar key={name} alt={name} src={photoURL} className={classes.large}/>}
+    </div>
 
       <button
         className="w-full py-3 bg-red-600 mt-4 text-white"

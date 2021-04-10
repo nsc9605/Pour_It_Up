@@ -16,6 +16,12 @@ function CocktailData() {
   // const [ingredients, setIngredients] = useState([]);
   // const [measurements, setMeasurements] = useState([]);
 
+  // useEffect(() => {
+  //   var drinks = [];
+  //   for (let i = 0; i < drinks.length; i++) {
+
+  //   }
+  // }) 
   // Handle input to target API
   const handleInputs = (e) => {
     let clone = inputsObj;
@@ -227,7 +233,7 @@ function CocktailData() {
           onSubmit={handleSubmitFavorite}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
-          id="container-fluid"
+          id="container-fluid modal-size"
         >
           <div className="m-2">{body}</div>
         </Modal>
