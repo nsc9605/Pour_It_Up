@@ -17,10 +17,10 @@ function Home() {
                     <div className="homeText col-6 text-center">
                         <h1>Welcome to Pour It Up!</h1>
                         <h2>The source for all of your Cocktail needs!</h2>
-                        <p>Search ingredients to find your perfect cocktail</p>
+                        <p>Search an ingredient to find cocktail information!</p>
                         <div className="startBtn col-6 text-center">
                             <Button component={Link} to="/search">
-                                Click Here to Start!
+                                Click to Start!
                         </Button>
                         </div>
 

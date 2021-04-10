@@ -1,19 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@500&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .brand {
-  font-size: 25px !important;
+  font-size: 30px !important;
+  font-family: 'Khand', sans-serif;
+  /* font-weight: bold !important; */
 }
 #modal {
   display: flex;
@@ -24,17 +28,21 @@ code {
   margin-bottom: 20px;
   padding: 15px;
   font-size: 15px;
+  /* width: 75%;; */
   width: 700px;
   height: 500px;
   border-radius: 7px;
+  position: center;
+  overflow: visible;
+  cursor: pointer;
 }
 
-.drinkImg{
+.drinkImg {
   max-height: 300px !important;
   margin: 10px;
   flex-wrap: wrap;
 }
-.modalImg{
+.modalImg {
   height: 200px;
   width: 200px;
   margin: 10px;
@@ -63,44 +71,72 @@ button {
 .drink-category {
   font-weight: bold;
   font-size: 20px;
-  border-bottom: .5px solid 50%;
+  border-bottom: 0.5px solid 50%;
   flex-wrap: wrap;
+  
 }
 
-@media (max-width: 790px){
-  #modal{
+@media (max-width: 790px) {
+  #modal {
     height: 25%;
   }
-  .drinkImg{
+  .drinkImg {
     height: 150px;
   }
-  #simple-modal-title{
+  #simple-modal-title {
     font-size: 18px;
   }
 }
 
-@media (max-width: 440px){
-  .drinkImg{
+@media (max-width: 440px) {
+  .drinkImg {
     height: 50px;
   }
 }
 
-.flexParent{
+.flexParent {
   display: flex;
   justify-content: center;
   padding: 30px;
 }
 
-.homeText{
+.homeText {
   color: white;
   background-color: #343a40;
+  opacity: 0.9;
   padding: 10px;
-  /* width: 600px; */
+  min-width: 30vw; 
   border: black 3px solid;
   border-radius: 20px;
+  overflow: visible;
 }
 
-.startBtn{
+.searchText {
+  color: white;
+  background-color: #a9a9a962;
+  opacity: 0.8;
+  padding: 20px;
+  min-height: 100vh;
+  border: black 3px solid;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.startBtn {
   background-color: rgb(78, 187, 238);
+  opacity: 0.9;
   margin-left: 25%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+/* .searchPage {
+  background: url(../src/assets/img/search2.jpeg) center;
+  height: 100%;
+  background-size: cover center;
+  background-repeat: no-repeat;
+} */
+
+.cocktail {
+  background-color: white;
 }

@@ -20,9 +20,9 @@ function Navigation() {
   }
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
       <Link to="/">
-        <Navbar.Brand className="brand size-large">Pour It Up</Navbar.Brand>
+        <Navbar.Brand className="brand size-large">Pour It Up </Navbar.Brand>
       </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -40,8 +40,8 @@ function Navigation() {
             to="/favorites"
             className={
               location.pathname === "/favorites"
-                ? "nav-link active"
-                : "nav-link"
+              ? "nav-link active"
+              : "nav-link"
             }
           >
             <i className="fa fa-fw fa-heart"></i>
@@ -56,13 +56,14 @@ function Navigation() {
             <i className="fa fa-fw fa-envelope"></i>
             Contact
           </Link>
-          <Link to="/profile" 
+          <Avatar />
+          {/* <Link to="/profile" 
           className={
             location.path === "/profile" ? "nav-link active" : "nav-link"
             }>
           <Avatar />
-          </Link>
-          <button onClick={handleSignOut}>Sign Out</button>
+          </Link> */}
+          <button classname="rounded"onClick={handleSignOut}>Sign Out</button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

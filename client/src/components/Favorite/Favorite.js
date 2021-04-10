@@ -68,24 +68,29 @@ function Favorite() {
                   </div>
                   <div className="flip-card-back p-2">
                     <h4 className="text-center">{favorite.name}</h4>
-                    <div className="title">
-                      Preparation: 
-                      <span> {favorite.preparation}</span>
-                    </div>
-                    <div className="title">
-                      Ingredients:{" "}
-                      <ul> 
-                        {" "}
-                        {favorite.measurements
-                          .map(
-                            (measurement, i) =>
-                              measurement + " " + favorite.ingredients[i]
-                          )
-                          .join(", ")}
-                      </ul>
-                    </div>
-                    <div className="title">
-                      Glass: <span> {favorite.glassware}</span>
+                    <div className="content">
+                      <div className="title">
+                        Preparation:
+                        <span> {favorite.preparation}</span>
+                        <br></br>
+                      </div>
+                      <div className="title">
+                        Ingredients:{" "}
+                        <p className="data">
+                          {" "}
+                          {favorite.measurements
+                            .map(
+                              (measurement, i) =>
+                                measurement + " " + favorite.ingredients[i]
+                            )
+                            .join(", ")}
+                        </p>
+                        <br></br>
+                      </div>
+                      <div className="title">
+                        Glass: <span> {favorite.glassware}</span>
+                        <br></br>
+                      </div>
                     </div>
                     <Button
                       variant="contained"

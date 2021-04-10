@@ -79,7 +79,6 @@ function CocktailData() {
     setOpen(false);
   };
 
-  // const useStyles = makeStyles({})
 
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
@@ -146,10 +145,10 @@ function CocktailData() {
         <div className="drink-category">
           Ingredients: 
         {numberOfIngredients().map((number) => (
-          <p key={number}>
-             <span> {singleDrinkDetails["strMeasure" + number]}
-            {singleDrinkDetails["strIngredient" + number]} </span>
-          </p>
+          <div key={number} className="data">
+            {singleDrinkDetails["strMeasure" + number]}
+            {singleDrinkDetails["strIngredient" + number]}
+          </div>
         ))}
         </div>
         <div className="drink-category">
@@ -179,20 +178,21 @@ function CocktailData() {
     </div>
   );
 
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     root: {
       flexGrow: 1,
+      alignSelf: 'center'
     },
   }));
   
   const classes = useStyles();
 
   return (
-    <div className="container">
+    <div className="container align-center">
       <form className="m-2 text-center" onSubmit={searchByIngredientFormSubmit}>
         <h2>Search for Drinks by Ingredient!</h2>
         <input name="ingredient" type="text" onChange={handleInputs} />
-        <button className="mx-2 rounded">Search</button>
+        <button className="m-2 rounded">Search</button>
         <Grid
         container
         direction="row"
@@ -226,7 +226,7 @@ function CocktailData() {
         })}
         </Grid>
       </form>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} className={classes.root} justify="center" >
         <Modal
           open={open}
           onClose={handleClose}
@@ -234,6 +234,7 @@ function CocktailData() {
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
           id="container-fluid modal-size"
+          whiteSpace="normal"
         >
           <div className="m-2">{body}</div>
         </Modal>

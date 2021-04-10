@@ -1,23 +1,37 @@
 import React from 'react';
 import CocktailData from '../components/CocktailData/CocktailData';
 // import CocktailList from '../components/CocktailData/CocktailList';
-import bg from "../assets/img/bg.jpg";
+import bg from "../assets/img/search2.jpeg";
 
 function Search() {
+    // const styles = {
+    //     container: {
+    //         backgroundImage: `url(${bg})`,
+    //         backgroundPosition: 'center',
+    //         backgroundSize: 'cover',
+    //         backgroundRepeat: 'no-repeat',
+    //         width: '100vw',
+    //         height: '100vh'
+    //     }
+    // };
     return (
         <div>
-            <div style={{
+            <div
+            className="searchPage"
+            style={{
                 backgroundImage: `url(${bg})`,
-                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                width: '100%',
-                height: '100vh'
+                backgroundRepeat: "no-repeat",
+                width: '100vw',
+                height: '100vh',
             }}>
-                <div className="flexParent h-25">
+            {/* > */}
+                <div className="flexParent text-center searchText">
                     {/* <div className="homeText"> */}
-                    <div className="text-center">
+                    {/* <div className="text-center"> */}
                         <CocktailData />
-                    </div>
+                    {/* </div> */}
                 </div>
 
             </div>
