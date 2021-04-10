@@ -6,7 +6,6 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
 import { UserContext } from "./Providers/UserProvider";
-import { auth } from "./firebase";
 import Favorites from "./pages/Favorites";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -16,28 +15,13 @@ import './index.css';
 
 function App() {
   const userContext = useContext(UserContext);
-  const user = userContext.user;
-
-  // window.addEventListener("beforeunload", (e) => {
-  //   handleSignOut();
-  // });
-
-  // const handleSignOut = () => {
-  //   auth
-  //     .signOut()
-  //     .then(() => {
-  //       alert("Sign Out Successful.");
-  //     })
-  //     .catch((error) => {
-  //       alert(error);
-  //     });
-  // }
+  const token = userContext.token;
 
 return (
   <Router>
     <div className="App">
       <Navigation />
-      {user && (
+      {token && (
         <Switch>
           <Route exact path={["/", "/home"]} component={Home} />
           <Route exact path="/search" component={Search} />
@@ -46,7 +30,7 @@ return (
           <Route exact path="/profile" component={ProfilePage} />
         </Switch>
       )}
-      {!user && (
+      {!token && (
         <Switch>
           <Route exact path="/" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
