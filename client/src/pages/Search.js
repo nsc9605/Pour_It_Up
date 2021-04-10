@@ -17,6 +17,7 @@ function Search() {
                     {/* <div className="homeText"> */}
                     <div className="text-center">
                         <CocktailData />
+                        {/* <CocktailList /> */}
                     </div>
                 </div>
 
