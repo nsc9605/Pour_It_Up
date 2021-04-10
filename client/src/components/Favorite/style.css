@@ -10,7 +10,6 @@
     
   }
   
-  
   .card-img-top {
     width: 400px;
     height: 400px;
@@ -70,12 +69,12 @@
     font-size: 15px;
   }
 
-  p {
+  .title {
     font-weight: bold;
     font-size: 17px;
   }
 
-  span {
+  span, ul {
     font-size: 13px !important;
     font-weight: normal !important;
   }

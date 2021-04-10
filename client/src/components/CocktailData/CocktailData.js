@@ -139,23 +139,23 @@ function CocktailData() {
         /></h1>
       {/* </div> */}
       <div className="cocktail-details px-4">
-        <p className="drink-category">
+        <div className="drink-category">
           Preparation:
           <span>  {singleDrinkDetails.strInstructions}</span>
-        </p>
-        <p className="drink-category">
+        </div>
+        <div className="drink-category">
           Ingredients: 
         {numberOfIngredients().map((number) => (
-          <div key={number}>
-             <span>{singleDrinkDetails["strMeasure" + number]}
-            {singleDrinkDetails["strIngredient" + number]}</span>
-          </div>
+          <p key={number}>
+             <span> {singleDrinkDetails["strMeasure" + number]}
+            {singleDrinkDetails["strIngredient" + number]} </span>
+          </p>
         ))}
-        </p>
-        <p className="drink-category">
+        </div>
+        <div className="drink-category">
           Glass: 
         <span> {singleDrinkDetails.strGlass}</span>
-        </p>
+        </div>
       </div>
       <div>
         <button className="rounded" onClick={() => handleSubmitFavorite()}>
@@ -229,7 +229,7 @@ function CocktailData() {
       <Grid container spacing={4}>
         <Modal
           open={open}
-          onClose={handleClose}s
+          onClose={handleClose}
           onSubmit={handleSubmitFavorite}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
