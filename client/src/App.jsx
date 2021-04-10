@@ -35,6 +35,10 @@ return (
           <Route exact path="/" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/passwordreset" component={PasswordReset} />
+          <Route exact path="/search" component={SignIn} />
+          <Route exact path="/favorites" component={SignIn} />
+          <Route exact path="/contact" component={SignIn} />
+          <Route exact path="/profile" component={SignIn} />
         </Switch>
       )}
     </div>
