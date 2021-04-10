@@ -33,10 +33,7 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   deleteCocktail: function (req, res) {
-    db.Cocktail.findByIdAndRemove({ id: req.params.key });
-    console
-      .log(req.params.key)
-      .then((dbModel) => dbModel.remove())
+    db.Cocktail.findByIdAndRemove(req.params.key)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
