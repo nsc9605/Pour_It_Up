@@ -9,14 +9,14 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import "./style.css";
 
 function Favorite() {
-  const { user } = useContext(UserContext);
+  const { token } = useContext(UserContext);
   const [favorites, setFavorites] = useState([]);
   useEffect(() => {
     loadFavorites();
   }, []);
 
   function loadFavorites() {
-    API.favoriteCocktails(user.uid)
+    API.favoriteCocktails(token)
       .then((res) => {
         console.log(res.data);
         setFavorites(res.data);

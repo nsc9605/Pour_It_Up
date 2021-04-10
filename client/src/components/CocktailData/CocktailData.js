@@ -8,8 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 function CocktailData() {
-  const { user } = useContext(UserContext);
-  console.log(user);
+  const { token } = useContext(UserContext);
+  console.log(token);
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
@@ -97,7 +97,7 @@ function CocktailData() {
     }
 
     const favObject = {
-      uid: user.uid,
+      uid: token,
       idDrink: singleDrinkDetails.idDrink,
       name: singleDrinkDetails.strDrink,
       image: singleDrinkDetails.strDrinkThumb,
