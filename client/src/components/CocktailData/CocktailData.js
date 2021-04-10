@@ -27,15 +27,20 @@ function CocktailData() {
   const searchByIngredientFormSubmit = (e) => {
     e.preventDefault();
 
-    if (inputsObj.ingredient === undefined) {
+    if (inputsObj.ingredient === undefined || inputsObj.ingredient === "") {
       alert("Please enter a valid ingredient!");
       return;
     }
     // console.log(inputsObj.ingredient);
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
+      if (results.data.drinks === "None Found") {
+        alert("No drinks found with that ingredient!")
+        return
+      } else {
       setDrinks(results.data.drinks);
       console.log(results.data.drinks);
+      }
     });
   };
 
