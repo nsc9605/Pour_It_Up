@@ -9,7 +9,6 @@ import "./style.css";
 
 function CocktailData() {
   const { token } = useContext(UserContext);
-  console.log(token);
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
