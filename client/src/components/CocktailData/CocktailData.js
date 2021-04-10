@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { UserContext } from "../../Providers/UserProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
 
 function CocktailData() {
@@ -172,21 +173,30 @@ function CocktailData() {
     </div>
   );
 
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+  }));
+  
+  const classes = useStyles();
+
   return (
     <div className="container">
       <form className="m-2 text-center" onSubmit={searchByIngredientFormSubmit}>
         <h2>Search for Drinks by Ingredient!</h2>
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="mx-2 rounded">Search</button>
+        <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        spacing={3}
+        className={classes.root}
+        >
         {drinks.map((each, index) => {
           return (
-            <Grid
-              container
-              direction="column"
-              justify="center"
-              alignItems="center"
-              spacing={2}
-            >
               <div
                 className="drinkCards m-2 text-center"
                 key={index}
@@ -206,9 +216,9 @@ function CocktailData() {
                   Select Drink
                 </button>
               </div>
-            </Grid>
           );
         })}
+        </Grid>
       </form>
       <Grid container spacing={4}>
         <Modal
