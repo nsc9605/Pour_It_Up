@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
-  const { photoURL, name, email } = auth.currentUser;
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
@@ -16,10 +15,15 @@ const ProfilePage = () => {
     },
   }));
   const classes = useStyles();
+  if (!auth.currentUser) {
+    return null;
+  }
+  const { photoURL, name, email } = auth.currentUser;
+
   return (
     <div className="mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
       <div className="flex border flex-col items-center md:flex-row md:items-start border-blue-400 px-3 py-4">
-        <div
+        {/* <div
           style={{
             background: `url(${
               photoURL
@@ -31,7 +35,7 @@ const ProfilePage = () => {
             width: "200px",
           }}
           className="border border-blue-300"
-        ></div>
+        ></div> */}
         <div className="md:pl-4">
           <h2 className="text-2xl font-semibold">{name}</h2>
           <h3 className="italic">{email}</h3>
