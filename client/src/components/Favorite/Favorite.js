@@ -42,9 +42,9 @@ function Favorite() {
     >
       <h1 className="container text-center p-2">Favorite Drinks</h1>
       {favorites.length ? (
-        <Grid container spacing={2} className=" drinkCards ">
+        <Grid container spacing={2}>
           {favorites.map((favorite) => (
-            <div className="p-4 m-3 flexParent text-center" key={favorite._id}>
+            <div className="p-4 m-3 text-center" key={favorite._id}>
               <div className="flip-card m-3">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">

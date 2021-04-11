@@ -46,7 +46,7 @@ h1 {
 #modal {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   /* flex-shrink: row; */
   color: rgb(23, 21, 21) !important;
   background-color: rgb(63, 77, 85) !important;
@@ -58,8 +58,7 @@ h1 {
   width: 800px;
   height: 700px;
   border-radius: 7px;
-  overflow: hidden;
-  cursor: pointer;
+  overflow: scroll;
 }
 
 .drinkImg {
