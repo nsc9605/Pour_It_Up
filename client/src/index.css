@@ -46,7 +46,7 @@ h1 {
 #modal {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* flex-shrink: row; */
   color: rgb(23, 21, 21) !important;
   background-color: rgb(63, 77, 85) !important;
@@ -196,8 +196,8 @@ button {
 
 @media (max-width: 790px) {
   #modal {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     height: 600px;
     width: 700px;
     overflow: scroll;
@@ -227,8 +227,8 @@ button {
   #modal {
     height: 25%;
     width: 400px;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     overflow: scroll;
   }
   .flip-card-back {
