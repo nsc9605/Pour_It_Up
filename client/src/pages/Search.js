@@ -15,8 +15,6 @@ function Search() {
                     {/* <div className="homeText"> */}
                     {/* <div className="text-center"> */}
                         <CocktailData />
-                        {/* <Dialog /> */}
-                    {/* </div> */}
                 </div>
 
             </div>
