@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-// import handleSubmitFavorite from "../CocktailData/CocktailData";
-//import Jumbotron from "../components/Jumbotron";
 import Button from "@material-ui/core/Button";
 import API from "../../utils/API";
 import { UserContext } from "../../Providers/UserProvider";
@@ -34,12 +32,18 @@ function Favorite() {
   }
 
   return (
-    <div>
+    <div 
+    style={{
+      alignContent: "center",
+      backgroundColor: "white",
+      backgroundOpacity: "0.8",
+  }}
+  >
       <h1 className="container">Favorite Drinks</h1>
       {favorites.length ? (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className=" drinkCards ">
           {favorites.map((favorite) => (
-            <div className="p-4 m-3" key={favorite._id}>
+            <div className="p-4 m-3 flexParent text-center" key={favorite._id}>
               <div className="flip-card m-3">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
@@ -68,24 +72,29 @@ function Favorite() {
                   </div>
                   <div className="flip-card-back p-2">
                     <h4 className="text-center">{favorite.name}</h4>
-                    <div className="title">
-                      Preparation: 
-                      <span> {favorite.preparation}</span>
-                    </div>
-                    <div className="title">
-                      Ingredients:{" "}
-                      <ul> 
-                        {" "}
-                        {favorite.measurements
-                          .map(
-                            (measurement, i) =>
-                              measurement + " " + favorite.ingredients[i]
-                          )
-                          .join(", ")}
-                      </ul>
-                    </div>
-                    <div className="title">
-                      Glass: <span> {favorite.glassware}</span>
+                    <div className="content">
+                      <div className="title">
+                        Preparation:
+                        <span> {favorite.preparation}</span>
+                        <br></br>
+                      </div>
+                      <div className="title">
+                        Ingredients:{" "}
+                        <p className="data">
+                          {" "}
+                          {favorite.measurements
+                            .map(
+                              (measurement, i) =>
+                                measurement + " " + favorite.ingredients[i]
+                            )
+                            .join(", ")}
+                        </p>
+                        <br></br>
+                      </div>
+                      <div className="title">
+                        Glass: <span> {favorite.glassware}</span>
+                        <br></br>
+                      </div>
                     </div>
                     <Button
                       variant="contained"

@@ -42,7 +42,7 @@ const ProfilePage = () => {
         {/* </div> */}
       {/* </div> */}
       <div className={classes.root}>
-     {user&& <Avatar key={name} alt={name} src={photoURL} className={classes.large}/>}
+     {user&& <Avatar key={email} alt={name} src={photoURL} title={name} className={classes.large}/>}
     </div>
 
       {/* <button

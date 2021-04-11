@@ -1,5 +1,8 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Thasadith:wght@700&display=swap');
+
 .flip-card {
-    background-color: transparent;
+    background-color: white;
     /* display: flex !important;
     flex-wrap: wrap !important;
     gap: 20px; */
@@ -58,27 +61,39 @@
   }
   
   .flip-card-back {
+    /* font-family: 'Advent Pro', sans-serif; */
+    font-family: 'Thasadith', sans-serif;
     background-color: transparent;
     color: black;
     transform: rotateY(180deg);
     width: 100%;
     border-radius: 3px;
-    /* padding: 20px;
-    height: 400px; */
+    /* padding: 20px; */
+    height: 500px;
     overflow: hidden;
     font-size: 15px;
   }
+.drinkCards {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  box-shadow: 3px 2px 3px rgb(79, 79, 79);
+}
+  span, .data {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    font-family: 'Thasadith', sans-serif;
+  }
+
+  .deleteBtn {
+    align-self: center !important;
+  }
 
   .title {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
     font-weight: bold;
-    font-size: 17px;
-  }
-
-  span, ul {
-    font-size: 13px !important;
-    font-weight: normal !important;
-  }
-
-  .deletetBtn {
-    align-self: right;
+    font-size: 20px;
   }

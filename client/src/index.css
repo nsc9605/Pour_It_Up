@@ -1,44 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Oswald:wght@300;400&family=Thasadith:wght@700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-link {
+  font-family: 'Oswald', sans-serif;  
 }
 
+h1 {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  text-shadow: 4px 4px 4px rgb(10, 10, 10),
+  1px 1px 2px rgb(11, 8, 8),
+   1px -1px 1px #000,
+ 1px -1px 1px rgb(0, 0, 0);
+}
 .brand {
-  font-size: 25px !important;
+  font-size: 30px !important;
+  font-family: 'Anton', sans-serif;
+  /* font-family: 'Oswald', sans-serif; */
+  text-shadow: 4px 4px 4px rgb(10, 10, 10),
+  1px 1px 2px rgb(11, 8, 8),
+   1px -1px 1px #000,
+ 1px -1px 1px rgb(0, 0, 0);
+  /* font-weight: bold !important; */
 }
 #modal {
   display: flex;
   flex-direction: row;
+  /* flex-shrink: row; */
   color: rgb(23, 21, 21) !important;
   background-color: rgb(63, 77, 85) !important;
-  align-items: center;
+  align-content: center;
   margin-bottom: 20px;
   padding: 15px;
   font-size: 15px;
-  width: 700px;
-  height: 500px;
+  /* width: 75%;; */
+  width: 800px;
+  height: 700px;
   border-radius: 7px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.drinkImg{
+.drinkImg {
   max-height: 300px !important;
   margin: 10px;
   flex-wrap: wrap;
 }
-.modalImg{
-  height: 200px;
-  width: 200px;
+.modalImg {
+  max-height: 350px;
+  max-width: 350px;
   margin: 10px;
   flex-wrap: wrap;
+  align-content: center;
+  padding: 10px;
 }
 
 button {
@@ -46,61 +70,115 @@ button {
   border-radius: 7px solid;
   padding: 5px;
   flex-wrap: wrap;
+  /* position: fixed; */
+}
+
+.favBtn {
+  box-shadow: 3px 2px 3px rgb(79, 79, 79);
+  border-radius: 7px solid;
+  padding: 5px;
+  flex-wrap: wrap;
+  position: fixed;
 }
 
 #simple-modal-title {
   color: white;
   flex-wrap: wrap;
   text-align: center;
+  align-content: center;
 }
 
 .cocktail-details {
   color: white;
   flex-wrap: wrap;
   margin: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: bolder !important;
+  
 }
 
 .drink-category {
   font-weight: bold;
   font-size: 20px;
-  border-bottom: .5px solid 50%;
+  border-bottom: 0.5px solid 50%;
   flex-wrap: wrap;
+  
 }
 
-@media (max-width: 790px){
-  #modal{
-    height: 25%;
-  }
-  .drinkImg{
-    height: 150px;
-  }
-  #simple-modal-title{
-    font-size: 18px;
-  }
-}
 
-@media (max-width: 440px){
-  .drinkImg{
-    height: 50px;
-  }
-}
-
-.flexParent{
+.flexParent {
   display: flex;
   justify-content: center;
   padding: 30px;
 }
 
-.homeText{
+.homeText {
   color: white;
   background-color: #343a40;
+  opacity: 0.9;
+  font-weight: bold !important;
   padding: 10px;
-  /* width: 600px; */
+  min-width: 30vw; 
   border: black 3px solid;
   border-radius: 20px;
+  overflow: visible;
+  font-family: 'Happy Monkey', cursive;
 }
 
-.startBtn{
+.searchText {
+  color: rgb(0, 0, 0);
+  background-color: #a9a9a962;
+  opacity: 0.8;
+  padding: 20px;
+  min-height: 100vh;
+  border: black 3px solid;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.startBtn {
   background-color: rgb(78, 187, 238);
+  opacity: 0.9;
   margin-left: 25%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+/* .searchPage {
+  background: url(../src/assets/img/search2.jpeg) center;
+  height: 100%;
+  background-size: cover center;
+  background-repeat: no-repeat;
+} */
+
+.cocktail {
+  background-color: white;
+}
+
+
+@media (max-width: 790px) {
+  #modal {
+    height: 25%;
+  }
+  .drinkImg {
+    height: 150px;
+  }
+  #simple-modal-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 440px) {
+  .drinkImg {
+    height: 100px;
+    padding-right: 20px;
+    align-items: center;
+  }
+}
+@media (max-width: 375px) {
+  .drinkImg {
+    padding: 10px;
+    align-items: center;
+  }
 }
