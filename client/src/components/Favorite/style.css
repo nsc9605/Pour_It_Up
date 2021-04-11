@@ -70,7 +70,7 @@
     border-radius: 3px;
     /* padding: 20px; */
     height: 500px;
-    overflow: hidden;
+    overflow: scroll;
     font-size: 15px;
   }
 .drinkCards {

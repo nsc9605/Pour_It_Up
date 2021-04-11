@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import { UserContext } from "../../Providers/UserProvider";
 import Grid from "@material-ui/core/Grid";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function Favorite() {
@@ -32,14 +33,14 @@ function Favorite() {
   }
 
   return (
-    <div 
-    style={{
-      alignContent: "center",
-      backgroundColor: "white",
-      backgroundOpacity: "0.8",
-  }}
-  >
-      <h1 className="container">Favorite Drinks</h1>
+    <div
+    //   style={{
+    //     alignContent: "center",
+    //     backgroundColor: "white",
+    //     backgroundOpacity: "0.8",
+    // }}
+    >
+      <h1 className="container text-center p-2">Favorite Drinks</h1>
       {favorites.length ? (
         <Grid container spacing={2} className=" drinkCards ">
           {favorites.map((favorite) => (
@@ -67,7 +68,7 @@ function Favorite() {
                     </div>
                     {/* <div className="container"> */}
                     <h3>{favorite.name}</h3>
-                    <h5>{favorite.glassware}</h5>
+                    {/* <h5>{favorite.glassware}</h5> */}
                     {/* </div> */}
                   </div>
                   <div className="flip-card-back p-2">
@@ -112,7 +113,17 @@ function Favorite() {
           ))}
         </Grid>
       ) : (
-        <h3>No Favorites Yet ... Pour It Up!</h3>
+        <div className="App justify-content-center flexParent">
+          <div className="about homeText text-center">
+            <h3>NO FAVORITES SAVED YET!</h3>
+            <h5>Click the start button to begin searching for a cocktail!</h5>
+            <div className="startBtn col-6 text-center">
+              <Button component={Link} to="/search">
+                Click to Start!
+              </Button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

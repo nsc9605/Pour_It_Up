@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Oswald:wght@300;400&family=Thasadith:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 
 body {
   margin: 0;
@@ -11,7 +13,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.nav-link {
+.nav-link,
+.about {
   font-family: 'Oswald', sans-serif;  
 }
 
@@ -23,6 +26,7 @@ h1 {
    1px -1px 1px #000,
  1px -1px 1px rgb(0, 0, 0);
 }
+
 .brand {
   font-size: 30px !important;
   font-family: 'Anton', sans-serif;
@@ -31,11 +35,18 @@ h1 {
   1px 1px 2px rgb(11, 8, 8),
    1px -1px 1px #000,
  1px -1px 1px rgb(0, 0, 0);
+ padding-left: 10px;
   /* font-weight: bold !important; */
+}
+
+.brandImg {
+  max-width: 50px;
+  max-height: 50px;
 }
 #modal {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   /* flex-shrink: row; */
   color: rgb(23, 21, 21) !important;
   background-color: rgb(63, 77, 85) !important;
@@ -126,6 +137,28 @@ button {
   font-family: 'Happy Monkey', cursive;
 }
 
+.about {
+  max-width: 70%;
+  min-width: 45%;
+  max-height: 100%;
+  justify-content: center;
+  color: black;
+  background-color: white;
+  opacity: 0.7;
+  border: black 3px solid;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Source Code Pro', cursive;
+  font-size: 15px;
+  font-weight: bold;
+  position: sticky;
+  z-index: 1;
+}
+
+.indent {
+  text-indent: 50px;
+  margin: 10px
+}
 .searchText {
   color: rgb(0, 0, 0);
   background-color: #a9a9a962;
@@ -135,6 +168,7 @@ button {
   border: black 3px solid;
   border-radius: 10px;
   overflow: hidden;
+  margin: 25px;
 }
 
 .startBtn {
@@ -156,16 +190,31 @@ button {
   background-color: white;
 }
 
+/* .about {
+
+} */
 
 @media (max-width: 790px) {
   #modal {
-    height: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 700px;
+    overflow: scroll;
   }
   .drinkImg {
     height: 150px;
   }
   #simple-modal-title {
     font-size: 18px;
+  }
+  .about {
+    max-height: 500px;
+    max-width: 500px;
+    overflow: scroll;
+  }
+  .flip-card-back {
+    overflow: scroll;
   }
 }
 
@@ -175,10 +224,31 @@ button {
     padding-right: 20px;
     align-items: center;
   }
+  #modal {
+    height: 25%;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+  }
+  .flip-card-back {
+    overflow: scroll;
+  }
 }
 @media (max-width: 375px) {
   .drinkImg {
     padding: 10px;
     align-items: center;
+  }
+  #modal {
+    height: 25%;
+    width: 300px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flip-card-back {
+    overflow: scroll;
+    font-size: 8px;
   }
 }

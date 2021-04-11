@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Nav/Navigation";
-import ProfilePage from "./components/ProfilePage";
+// import ProfilePage from "./components/ProfilePage";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
 import { UserContext } from "./Providers/UserProvider";
 import Favorites from "./pages/Favorites";
-import Contact from "./pages/Contact";
+import About from "./pages/About";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import bg from "./assets/img/search2.jpeg";
@@ -57,10 +57,10 @@ return (
       {token && (
         <Switch>
           <Route exact path={["/", "/home"]} component={Home} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/favorites" component={Favorites} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/profile" component={ProfilePage} />
+          {/* <Route exact path="/profile" component={ProfilePage} /> */}
         </Switch>
       )}
       {!token && (
@@ -70,7 +70,7 @@ return (
           <Route exact path="/passwordreset" component={PasswordReset} />
           <Route exact path="/search" component={SignIn} />
           <Route exact path="/favorites" component={SignIn} />
-          <Route exact path="/contact" component={SignIn} />
+          <Route exact path="/about" component={SignIn} />
           <Route exact path="/profile" component={SignIn} />
         </Switch>
       )}
