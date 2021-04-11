@@ -2,6 +2,8 @@ import { Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
 import Avatar from "../ProfilePage/index";
+// import cocktail from "../../assets/img/cocktail-png-15412.png";
+import cocktail from "../../assets/img/logo.png";
 
 function Navigation() {
   const location = useLocation();
@@ -22,11 +24,23 @@ function Navigation() {
   return (
     <Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
       <Link to="/">
-        <Navbar.Brand className="brand size-large">Pour It Up </Navbar.Brand>
+        <Navbar.Brand className="brand size-large" >
+              Pour It Up
+          </Navbar.Brand>
       </Link>
+          <img src={cocktail} alt={cocktail} className="brandImg"/>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
+          <Link
+            to="/about"
+            className={
+              location.pathname === "/about" ? "nav-link active" : "nav-link"
+            }
+          >
+            <i className="fa fa-fw fa-envelope"></i>
+            About
+          </Link>
           <Link
             to="/search"
             className={
@@ -46,15 +60,6 @@ function Navigation() {
           >
             <i className="fa fa-fw fa-heart"></i>
             Favorites
-          </Link>
-          <Link
-            to="/contact"
-            className={
-              location.pathname === "/contact" ? "nav-link active" : "nav-link"
-            }
-          >
-            <i className="fa fa-fw fa-envelope"></i>
-            Contact
           </Link>
           <Avatar />
           {/* <Link to="/profile" 

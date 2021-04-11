@@ -6,6 +6,19 @@
 
 MERN stack app aimed at those new found bartenders during the 2020 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!
 
+With <bold>Pour It Up you</bold> are able to type in any
+ingredient you may have just in the house or if you know you like
+drinks with said ingredient, you will be provided with all drinks
+available. You can type in ingredient, a liquor, even a garnish
+and once you click search you are provided with cocktails in that
+category! You will be provided with the name of the cocktail, an
+image, preparation, ingredients, measurements, and what type of
+glass it should be served in. If you want to save that cocktail to
+reference later you simple click the "Save To Favorites" button.
+When on the favorites page, when you hover over the cocktail it
+displays the details on the back. When you are finished with a
+cocktail, you can click delete and remove it from your favorites.
+This is conveniently linked to your Google account when signed in.
 
 :round_pushpin: [Click here to view deployed page!](https://pour-it-up.herokuapp.com/) :round_pushpin:
 
@@ -24,10 +37,15 @@ MERN stack app aimed at those new found bartenders during the 2020 quarantine lo
 ![Overview](src/img/main.png)
 
 ### About Me Section
+
 ![AboutMe](src/assets/img/about.png)
+
 ### Searchs Section
+
 ![Searchs](src/assets/img/Searchs.png)
+
 ### Contact Information
+
 ![Contact](src/assets/img/contact.png)
 
 ### Directory Structure
@@ -108,13 +126,11 @@ MERN stack app aimed at those new found bartenders during the 2020 quarantine lo
 
 [Click here to deploy application!](https://pour-it-up.herokuapp.com/)
 
-
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This application is licensed under the MIT License.
-
 
 ## Contribution
 
@@ -124,7 +140,6 @@ This Search was creating with help from:
 - [Jessica Deck](https://github.com/deck-jessica)
 - [Jon Gudenzi](https://github.com/JonGudenzi)
 - [Trey Jewett](https://github.com/treyjewett)
-
 
 ## Technologies
 
@@ -139,21 +154,20 @@ This Search was creating with help from:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal
 
-
 ## Contact Information
 
-GitHub: 
+GitHub:
+
 - [nsc9605](https://github.com/nsc9605)
 - [deck-jessica](https://github.com/deck-jessica)
 - [JonGudenzi](https://github.com/JonGudenzi)
 - [treyjewett](https://github.com/treyjewett)
 
-Email: 
+Email:
 [Nicole Catapano](mailto:nsc9605@gmail.com)
 [Jessica Deck](mailto:deck.jessica@gmail.com)
 [Jon Gudenzi](mailto:jongudenzi@gmail.com)
 [Trey Jewett](mailto:rfjewett3@gmail.com)
-
 
 # Getting Started with Create React App
 

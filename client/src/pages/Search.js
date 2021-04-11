@@ -1,6 +1,5 @@
 import React from 'react';
 import CocktailData from '../components/CocktailData/CocktailData';
-// import Dialog from '../components/CocktailData/Dialog'
 // import CocktailList from '../components/CocktailData/CocktailList';
 
 
