@@ -6,12 +6,8 @@ import { UserContext } from "../../Providers/UserProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
-import Slide from "@material-ui/core/Slide";
 import "./style.css";
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="down" ref={ref} {...props} />;
-});
 
 function CocktailData() {
   const { token } = useContext(UserContext);
@@ -133,19 +129,19 @@ function CocktailData() {
 
   const body = (
     <div id="modal">
-      <div className="row">
-        <h1 id="simple-modal-title text-center">
+      <div className="row p-3">
+        <h1 id="simple-modal-title text-center p-3">
           {singleDrinkDetails.strDrink}
         </h1>
+      </div>
+
+      <div className="row">
         <img
           src={singleDrinkDetails.strDrinkThumb}
           alt={singleDrinkDetails.strDrink}
           variant="left"
-          className="rounded img-fluid drinkImg align-center"
+          className="rounded drinkImg img-fluid align-center"
         />
-      </div>
-
-      <div id="row">
         {/* </div>
       <div id="row"> */}
         {/* </div> */}
@@ -251,11 +247,7 @@ function CocktailData() {
           onSubmit={handleSubmitFavorite}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
-          id="container-fluid modal-size"
-          whiteSpace="normal"
-          marginLeft="auto!important"
-          TransitionComponent={Transition}
-          keepMounted
+          // className="modal-size"
         >
           <div className="items-center m-4">{body}</div>
         </Modal>

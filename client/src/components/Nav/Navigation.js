@@ -68,7 +68,7 @@ function Navigation() {
             }>
           <Avatar />
           </Link> */}
-          <button classname="rounded"onClick={handleSignOut}>Sign Out</button>
+          <button className="rounded"onClick={handleSignOut}>Sign Out</button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

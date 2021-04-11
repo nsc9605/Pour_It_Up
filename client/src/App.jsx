@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Nav/Navigation";
-// import ProfilePage from "./components/ProfilePage";
+import ProfilePage from "./components/ProfilePage";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
@@ -60,7 +60,7 @@ return (
           <Route exact path="/about" component={About} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/favorites" component={Favorites} />
-          {/* <Route exact path="/profile" component={ProfilePage} /> */}
+          <Route exact path="/profile" component={ProfilePage} />
         </Switch>
       )}
       {!token && (

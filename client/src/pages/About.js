@@ -1,23 +1,23 @@
 import React from "react";
 import beach from "../assets/img/beach.jpeg";
-import { withStyles } from "@material-ui/core/styles";
+// import { withStyles } from "@material-ui/core/styles";
 
-const styles = (theme) => ({
-  body: {
-    backgroundImage: `url("${beach}")`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
-    height: "100%",
-  },
-  html: {
-    height: "100%",
-  },
-  "#componentWithId": {
-    height: "100%",
-  },
-});
+// const styles = (theme) => ({
+//   body: {
+//     backgroundImage: `url("${beach}")`,
+//     backgroundRepeat: "no-repeat",
+//     backgroundPosition: "center center",
+//     backgroundSize: "cover",
+//     backgroundAttachment: "fixed",
+//     height: "100%",
+//   },
+//   html: {
+//     height: "100%",
+//   },
+//   "#componentWithId": {
+//     height: "100%",
+//   },
+// });
 
 function About() {
   //   const classes = useStyles();
@@ -47,8 +47,9 @@ function About() {
               of when things would go back to normal, many people picked up
               creating cocktails as a hobby at home. 
             </p>
+            <br></br>
             <p className="indent">
-              With <bold>Pour It Up you</bold> are able to type in any
+              With Pour It Up you are able to type in any
               ingredient you may have just in the house or if you know you like
               drinks with said ingredient, you will be provided with all drinks
               available. You will be provided with the name of the cocktail, an

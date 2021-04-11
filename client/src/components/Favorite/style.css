@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Thasadith:wght@700&display=swap');
 
 .flip-card {
-    background-color: white;
+    /* background-color: white; */
+    opacity: 0.9;
     /* display: flex !important;
     flex-wrap: wrap !important;
     gap: 20px; */
@@ -52,7 +53,7 @@
   }
   
   .flip-card-front {
-    background-color: #bbb;
+    background-color: rgb(255, 255, 255);
     color: black;
     width: 400px;
     height: 400px;
@@ -63,7 +64,7 @@
   .flip-card-back {
     /* font-family: 'Advent Pro', sans-serif; */
     font-family: 'Thasadith', sans-serif;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.699);
     color: black;
     transform: rotateY(180deg);
     width: 100%;
