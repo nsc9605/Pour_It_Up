@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Yanone+Kaffeesatz:wght@200;300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Oswald:wght@300;400&family=Thasadith:wght@700&display=swap');
 
 body {
   margin: 0;
@@ -10,9 +11,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.nav-link {
+  font-family: 'Oswald', sans-serif;  
 }
 
 h1 {
@@ -26,6 +26,7 @@ h1 {
 .brand {
   font-size: 30px !important;
   font-family: 'Anton', sans-serif;
+  /* font-family: 'Oswald', sans-serif; */
   text-shadow: 4px 4px 4px rgb(10, 10, 10),
   1px 1px 2px rgb(11, 8, 8),
    1px -1px 1px #000,
@@ -35,18 +36,18 @@ h1 {
 #modal {
   display: flex;
   flex-direction: row;
+  /* flex-shrink: row; */
   color: rgb(23, 21, 21) !important;
   background-color: rgb(63, 77, 85) !important;
-  align-items: center;
+  align-content: center;
   margin-bottom: 20px;
   padding: 15px;
   font-size: 15px;
   /* width: 75%;; */
-  width: 700px;
-  height: 500px;
+  width: 800px;
+  height: 700px;
   border-radius: 7px;
-  position: center;
-  overflow: visible;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -56,10 +57,12 @@ h1 {
   flex-wrap: wrap;
 }
 .modalImg {
-  height: 200px;
-  width: 200px;
+  max-height: 350px;
+  max-width: 350px;
   margin: 10px;
   flex-wrap: wrap;
+  align-content: center;
+  padding: 10px;
 }
 
 button {
@@ -82,12 +85,17 @@ button {
   color: white;
   flex-wrap: wrap;
   text-align: center;
+  align-content: center;
 }
 
 .cocktail-details {
   color: white;
   flex-wrap: wrap;
   margin: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: bolder !important;
+  
 }
 
 .drink-category {
@@ -153,9 +161,9 @@ button {
   #modal {
     height: 25%;
   }
-  /* .drinkImg {
+  .drinkImg {
     height: 150px;
-  } */
+  }
   #simple-modal-title {
     font-size: 18px;
   }

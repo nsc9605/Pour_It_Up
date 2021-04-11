@@ -32,14 +32,18 @@ function Favorite() {
   }
 
   return (
-    <div style={{
+    <div 
+    style={{
+      alignContent: "center",
       backgroundColor: "white",
-  }}>
+      backgroundOpacity: "0.8",
+  }}
+  >
       <h1 className="container">Favorite Drinks</h1>
       {favorites.length ? (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className=" drinkCards ">
           {favorites.map((favorite) => (
-            <div className="p-4 m-3" key={favorite._id}>
+            <div className="p-4 m-3 flexParent text-center" key={favorite._id}>
               <div className="flip-card m-3">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">

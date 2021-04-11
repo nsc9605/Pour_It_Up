@@ -6,7 +6,12 @@ import { UserContext } from "../../Providers/UserProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
+import Slide from "@material-ui/core/Slide";
 import "./style.css";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 function CocktailData() {
   const { token } = useContext(UserContext);
@@ -21,7 +26,7 @@ function CocktailData() {
   //   for (let i = 0; i < drinks.length; i++) {
 
   //   }
-  // }) 
+  // })
   // Handle input to target API
   const handleInputs = (e) => {
     let clone = inputsObj;
@@ -41,11 +46,11 @@ function CocktailData() {
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
       if (results.data.drinks === "None Found") {
-        alert("No drinks found with that ingredient!")
-        return
+        alert("No drinks found with that ingredient!");
+        return;
       } else {
-      setDrinks(results.data.drinks);
-      console.log(results.data.drinks);
+        setDrinks(results.data.drinks);
+        console.log(results.data.drinks);
       }
     });
   };
@@ -78,7 +83,6 @@ function CocktailData() {
   const handleClose = () => {
     setOpen(false);
   };
-
 
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
@@ -128,66 +132,77 @@ function CocktailData() {
   };
 
   const body = (
-    <div id="modal" margin="auto!important">
+    <div id="modal">
       <div className="row">
+        <h1 id="simple-modal-title text-center">
+          {singleDrinkDetails.strDrink}
+        </h1>
         <img
           src={singleDrinkDetails.strDrinkThumb}
           alt={singleDrinkDetails.strDrink}
-          className="rounded img-fluid text-center"
+          variant="left"
+          className="rounded img-fluid drinkImg align-center"
         />
       </div>
+
       <div id="row">
-      <h1 id="simple-modal-title">{singleDrinkDetails.strDrink}</h1>
-      {/* </div> */}
-      <div className="cocktail-details px-4">
-        <div className="drink-category">
-          Preparation:
-          <span>  {singleDrinkDetails.strInstructions}</span>
-        </div>
-        <div className="drink-category">
-          Ingredients: 
-        {numberOfIngredients().map((number) => (
-          <div key={number} className="data">
-            {singleDrinkDetails["strMeasure" + number]}
-            {singleDrinkDetails["strIngredient" + number]}
+        {/* </div>
+      <div id="row"> */}
+        {/* </div> */}
+
+        <div className="cocktail-details px-4">
+          <div className="drink-category title">
+            Preparation:
+            <span> {singleDrinkDetails.strInstructions}</span>
           </div>
-        ))}
+          <div className="drink-category title">
+            Ingredients:
+            {numberOfIngredients().map((number) => (
+              <div key={number} className="data">
+                {singleDrinkDetails["strMeasure" + number]}
+                {singleDrinkDetails["strIngredient" + number]}
+              </div>
+            ))}
+          </div>
+          <div className="drink-category title">
+            Glass:
+            <span> {singleDrinkDetails.strGlass}</span>
+          </div>
+
+          <div className="center">
+            <button
+              className="rounded favBtn"
+              onClick={() => handleSubmitFavorite()}
+            >
+              Save to Favorites
+            </button>
+            <ToastContainer
+              position="top-right"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+          </div>
         </div>
-        <div className="drink-category">
-          Glass: 
-        <span> {singleDrinkDetails.strGlass}</span>
-        </div>
-      </div>
-      <div>
-        <button className="rounded favBtn" onClick={() => handleSubmitFavorite()}>
-          Save to Favorites
-        </button>
-        <ToastContainer
-          position="top-right"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </div>
-      {/* <button onClick={() => handleClose()}>
+        {/* <button onClick={() => handleClose()}>
         Close
       </button> */}
-    </div>
+      </div>
     </div>
   );
 
   const useStyles = makeStyles(() => ({
     root: {
       flexGrow: 1,
-      alignSelf: 'center'
+      alignSelf: "center",
     },
   }));
-  
+
   const classes = useStyles();
 
   return (
@@ -197,15 +212,15 @@ function CocktailData() {
         <input name="ingredient" type="text" onChange={handleInputs} />
         <button className="m-2 rounded">Search</button>
         <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        spacing={3}
-        className={classes.root}
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={3}
+          className={classes.root}
         >
-        {drinks.map((each, index) => {
-          return (
+          {drinks.map((each, index) => {
+            return (
               <div
                 className="drinkCards m-2 text-center"
                 key={index}
@@ -225,11 +240,11 @@ function CocktailData() {
                   Select Drink
                 </button>
               </div>
-          );
-        })}
+            );
+          })}
         </Grid>
       </form>
-      <Grid container spacing={4} className={classes.root} justify="center" >
+      <Grid container spacing={4} className={classes.root} justify="center">
         <Modal
           open={open}
           onClose={handleClose}
@@ -239,12 +254,13 @@ function CocktailData() {
           id="container-fluid modal-size"
           whiteSpace="normal"
           marginLeft="auto!important"
+          TransitionComponent={Transition}
+          keepMounted
         >
           <div className="items-center m-4">{body}</div>
         </Modal>
       </Grid>
     </div>
- 
   );
 }
 
