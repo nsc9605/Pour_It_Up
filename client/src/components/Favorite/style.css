@@ -78,6 +78,7 @@
   border-radius: 5px;
   color: black;
   padding: 10px;
+  box-shadow: 3px 2px 3px rgb(79, 79, 79);
 }
   span, .data {
     font-size: 15px !important;

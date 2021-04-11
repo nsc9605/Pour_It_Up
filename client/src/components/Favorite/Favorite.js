@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-// import handleSubmitFavorite from "../CocktailData/CocktailData";
-//import Jumbotron from "../components/Jumbotron";
 import Button from "@material-ui/core/Button";
 import API from "../../utils/API";
 import { UserContext } from "../../Providers/UserProvider";
@@ -34,7 +32,9 @@ function Favorite() {
   }
 
   return (
-    <div>
+    <div style={{
+      backgroundColor: "white",
+  }}>
       <h1 className="container">Favorite Drinks</h1>
       {favorites.length ? (
         <Grid container spacing={2}>

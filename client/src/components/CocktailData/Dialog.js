@@ -1,28 +1,39 @@
 import React, { useState, useContext } from "react";
 import API from "../../utils/API";
-import Modal from "@material-ui/core/Modal";
-import Grid from "@material-ui/core/Grid";
 import { UserContext } from "../../Providers/UserProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// @material-ui/core components
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import Slide from "@material-ui/core/Slide";
+// @material-ui/icons components
+import Clear from "@material-ui/icons/Clear";
+// core components
+import componentStyles from "assets/theme/components/dialog.js";
 import "./style.css";
 
-function CocktailData() {
+const useStyles = makeStyles(componentStyles);
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
+
+export default function Example() {
+  const classes = useStyles();
   const { token } = useContext(UserContext);
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
-  // const [ingredients, setIngredients] = useState([]);
-  // const [measurements, setMeasurements] = useState([]);
+  const [open, setOpen] = React.useState(false);
 
-  // useEffect(() => {
-  //   var drinks = [];
-  //   for (let i = 0; i < drinks.length; i++) {
-
-  //   }
-  // }) 
-  // Handle input to target API
   const handleInputs = (e) => {
     let clone = inputsObj;
     inputsObj[e.target.name] = e.target.value;
@@ -41,11 +52,11 @@ function CocktailData() {
     API.searchIng(inputsObj.ingredient).then((results) => {
       console.log(results);
       if (results.data.drinks === "None Found") {
-        alert("No drinks found with that ingredient!")
-        return
+        alert("No drinks found with that ingredient!");
+        return;
       } else {
-      setDrinks(results.data.drinks);
-      console.log(results.data.drinks);
+        setDrinks(results.data.drinks);
+        console.log(results.data.drinks);
       }
     });
   };
@@ -70,7 +81,6 @@ function CocktailData() {
     return ingredients;
   };
 
-  const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -78,8 +88,6 @@ function CocktailData() {
   const handleClose = () => {
     setOpen(false);
   };
-
-
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
     toast.info("Saved to favorites!");
@@ -127,69 +135,14 @@ function CocktailData() {
     return favorite;
   };
 
-  const body = (
-    <div id="modal" margin="auto!important">
-      <div className="row">
-        <img
-          src={singleDrinkDetails.strDrinkThumb}
-          alt={singleDrinkDetails.strDrink}
-          className="rounded img-fluid text-center"
-        />
-      </div>
-      <div id="row">
-      <h1 id="simple-modal-title">{singleDrinkDetails.strDrink}</h1>
-      {/* </div> */}
-      <div className="cocktail-details px-4">
-        <div className="drink-category">
-          Preparation:
-          <span>  {singleDrinkDetails.strInstructions}</span>
-        </div>
-        <div className="drink-category">
-          Ingredients: 
-        {numberOfIngredients().map((number) => (
-          <div key={number} className="data">
-            {singleDrinkDetails["strMeasure" + number]}
-            {singleDrinkDetails["strIngredient" + number]}
-          </div>
-        ))}
-        </div>
-        <div className="drink-category">
-          Glass: 
-        <span> {singleDrinkDetails.strGlass}</span>
-        </div>
-      </div>
-      <div>
-        <button className="rounded favBtn" onClick={() => handleSubmitFavorite()}>
-          Save to Favorites
-        </button>
-        <ToastContainer
-          position="top-right"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </div>
-      {/* <button onClick={() => handleClose()}>
-        Close
-      </button> */}
-    </div>
-    </div>
-  );
-
   const useStyles = makeStyles(() => ({
     root: {
       flexGrow: 1,
       alignSelf: 'center'
     },
-  }));
+}));
+// const classes = useStyles();
   
-  const classes = useStyles();
-
   return (
     <div className="container align-center">
       <form className="m-2 text-center" onSubmit={searchByIngredientFormSubmit}>
@@ -206,6 +159,7 @@ function CocktailData() {
         >
         {drinks.map((each, index) => {
           return (
+              <>
               <div
                 className="drinkCards m-2 text-center"
                 key={index}
@@ -225,27 +179,81 @@ function CocktailData() {
                   Select Drink
                 </button>
               </div>
+               <Dialog
+               open={open}
+               TransitionComponent={Transition}
+               keepMounted
+               onClose={handleClose}
+               aria-labelledby="alert-dialog-slide-title"
+               aria-describedby="alert-dialog-slide-description"
+             >
+               <div className={classes.dialogHeader}>
+                 <Typography
+                   variant="h5"
+                   component="h5"
+                   className={classes.dialogTitle}
+                 >
+                   {singleDrinkDetails.strDrink}
+                 </Typography>
+                 <img
+                   src={singleDrinkDetails.strDrinkThumb}
+                   alt={singleDrinkDetails.strDrink}
+                   className="rounded img-fluid text-center"
+                 />
+                 <IconButton onClick={handleClose}>
+                   <Clear />
+                 </IconButton>
+               </div>
+               <DialogContent>
+                 <Typography variant="body2" component="p">
+                   Preparation:
+                   <span> {singleDrinkDetails.strInstructions}</span>
+                 </Typography>
+                 <Typography variant="body2" component="p">
+                   Ingredients:
+                   {numberOfIngredients().map((number) => (
+                     <div key={number} className="data">
+                       {singleDrinkDetails["strMeasure" + number]}
+                       {singleDrinkDetails["strIngredient" + number]}
+                     </div>
+                   ))}
+                 </Typography>
+                 <Typography variant="body2" component="p">
+                 Glass: 
+               <span> {singleDrinkDetails.strGlass}</span>
+                 </Typography>
+               </DialogContent>
+               <DialogActions>
+                 <Button onClick={() => handleSubmitFavorite()} color="primary" variant="contained">
+                   Save To Favorites
+                 </Button>
+                 <ToastContainer
+                 position="top-right"
+                 autoClose={2000}
+                 hideProgressBar={false}
+                 newestOnTop={false}
+                 closeOnClick
+                 rtl={false}
+                 pauseOnFocusLoss
+                 draggable
+                 pauseOnHover
+               />
+                 <Button
+                   component={Box}
+                   onClick={handleClose}
+                   color="primary"
+                   marginLeft="auto!important"
+                 >
+                   Close
+                 </Button>
+               </DialogActions>
+             </Dialog>
+             </>
           );
         })}
         </Grid>
       </form>
-      <Grid container spacing={4} className={classes.root} justify="center" >
-        <Modal
-          open={open}
-          onClose={handleClose}
-          onSubmit={handleSubmitFavorite}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          id="container-fluid modal-size"
-          whiteSpace="normal"
-          marginLeft="auto!important"
-        >
-          <div className="items-center m-4">{body}</div>
-        </Modal>
-      </Grid>
-    </div>
- 
+      </div>
   );
 }
 
-export default CocktailData;
