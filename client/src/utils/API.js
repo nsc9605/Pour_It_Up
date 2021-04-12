@@ -5,7 +5,7 @@ export default {
   search: function () {
     return axios.get('/api/search')
   },
-  
+
   searchIng: function (ing) {
     return axios.get('/api/search/' + ing)
   },
@@ -19,13 +19,12 @@ export default {
     return axios.post('/api/drink/', drinkObj);
   },
 
-  favoriteCocktails: function(uid) {
+  favoriteCocktails: function (uid) {
     return axios.get('/api/cocktails/' + uid);
   },
 
-  deleteCocktail: function(key) {
+  deleteCocktail: function (key) {
     console.log(key);
     return axios.delete('/api/cocktails/' + key);
   }
 }
-

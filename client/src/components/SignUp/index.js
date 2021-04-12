@@ -11,14 +11,14 @@ const SignUp = () => {
 
   const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
     event.preventDefault();
-    try{
-      const {user} = await auth.createUserWithEmailAndPassword(email, password);
-      auth.generateUserDocument(user, {displayName});
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+      auth.generateUserDocument(user, { displayName });
     }
-    catch(error){
+    catch (error) {
       setError('Error signing up ith email and password');
     }
-  
+
     setEmail("");
     setPassword("");
     setDisplayName("");
@@ -91,7 +91,7 @@ const SignUp = () => {
           </button>
         </form>
         <p>or</p>
-        <button onClick={() => {handlePopup()}}>
+        <button onClick={() => { handlePopup() }}>
           Sign In with Google
         </button>
         <p>

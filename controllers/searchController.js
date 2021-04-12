@@ -2,7 +2,6 @@ require("dotenv").config();
 const axios = require("axios");
 
 module.exports = {
-  // findAll: function (req, res) {
   findIng: function (req, res) {
     console.log(process.env.API_HOST);
     const options = {

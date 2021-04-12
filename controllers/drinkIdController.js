@@ -3,9 +3,7 @@ const Cocktail = require("../models/cocktail");
 const axios = require("axios");
 
 module.exports = {
-  // findAll: function (req, res) {
   selectDrink: function (req, res) {
-    // console.log(process.env.API_HOST);
     const drinkTarget = {
       method: "GET",
       url: "https://the-cocktail-db.p.rapidapi.com/lookup.php?",
@@ -18,7 +16,6 @@ module.exports = {
     axios
       .request(drinkTarget)
       .then(function (response) {
-        // console.log(response.data);
         res.json(response.data);
       })
       .catch(function (error) {

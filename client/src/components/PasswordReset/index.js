@@ -20,7 +20,7 @@ const PasswordReset = () => {
       .sendPasswordResetEmail(email)
       .then(() => {
         setEmailHasBeenSent(true);
-        setTimeout(() => {setEmailHasBeenSent(false)}, 3000);
+        setTimeout(() => { setEmailHasBeenSent(false) }, 3000);
       })
       .catch(() => {
         setError("Error resetting password");
@@ -66,4 +66,5 @@ const PasswordReset = () => {
     </div>
   );
 };
+
 export default PasswordReset;
