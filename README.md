@@ -34,21 +34,20 @@ This is conveniently linked to your Google account when signed in.
 
 ## Demonstration
 
-![Board](client/src/assets/img/Project-Board.png)
 ### Project Management Board
+![Board](client/src/assets/img/Project-Board.png)
 
 ### Overview
 ![Overview](client/src/img/main.png)
 
-### About Me Section
+### About Page
 
 ![About](client/src/assets/img/about.png)
 
-### Searchs Section
-
+### Search Page
 ![Search](client/src/assets/img/Searchs.png)
 
-### Contact Information
+### Favorites Page
 
 ![Favorites](client/src/assets/img/contact.png)
 

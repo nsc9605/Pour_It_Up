@@ -1,23 +1,6 @@
 import React from "react";
 import beach from "../assets/img/beach.jpeg";
-// import { withStyles } from "@material-ui/core/styles";
 
-// const styles = (theme) => ({
-//   body: {
-//     backgroundImage: `url("${beach}")`,
-//     backgroundRepeat: "no-repeat",
-//     backgroundPosition: "center center",
-//     backgroundSize: "cover",
-//     backgroundAttachment: "fixed",
-//     height: "100%",
-//   },
-//   html: {
-//     height: "100%",
-//   },
-//   "#componentWithId": {
-//     height: "100%",
-//   },
-// });
 
 function About() {
   //   const classes = useStyles();
@@ -39,22 +22,21 @@ function About() {
           <div className="about m-2">
             <p className="indent">
               Our goal is offer people a convenient source of information
-              pertaining to all things cocktails!
-            
-              Based on our observations, it seems that a lot of people got into
-              "at-home-bartending" during quarantine as the future was uncertain!
-              As people tried to fill the void and distract from the uncertainty
-              of when things would go back to normal, many people picked up
-              creating cocktails as a hobby at home. 
+              pertaining to all things cocktails! Based on our observations, it
+              seems that a lot of people got into "at-home-bartending" during
+              quarantine as the future was uncertain! As people tried to fill
+              the void and distract from the uncertainty of when things would go
+              back to normal, many people picked up creating cocktails as a
+              hobby at home.
             </p>
             <br></br>
             <p className="indent">
-              With Pour It Up you are able to type in any
-              ingredient you may have just in the house or if you know you like
-              drinks with said ingredient, you will be provided with all drinks
-              available. You will be provided with the name of the cocktail, an
-              image, preparation, ingredients, measurements, and what type of
-              glass it should be served in. If you want to save that cocktail to
+              With Pour It Up you are able to type in any ingredient you may
+              have just in the house or if you know you like drinks with said
+              ingredient, you will be provided with all drinks available. You
+              will be provided with the name of the cocktail, an image,
+              preparation, ingredients, measurements, and what type of glass it
+              should be served in. If you want to save that cocktail to
               reference later you simple click the "Save To Favorites" button..
               This is conveniently linked to your Google account when signed in.
             </p>

@@ -23,9 +23,7 @@ function Navigation() {
   return (
     <Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
       <Link to="/">
-        <Navbar.Brand className="brand size-large" >
-          Pour It Up
-          </Navbar.Brand>
+        <Navbar.Brand className="brand size-large">Pour It Up</Navbar.Brand>
       </Link>
       <img src={cocktail} alt={cocktail} className="brandImg" />
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -61,7 +59,9 @@ function Navigation() {
             Favorites
           </Link>
           <Avatar />
-          <button className="rounded" onClick={handleSignOut}>Sign Out</button>
+          <button className="rounded" onClick={handleSignOut}>
+            Sign Out
+          </button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

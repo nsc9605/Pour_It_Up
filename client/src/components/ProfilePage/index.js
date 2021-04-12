@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../Providers/UserProvider";
 import { auth } from "../../firebase";
-import Avatar from "@material-ui/core/Avatar"
+import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 
 const ProfilePage = () => {
@@ -42,7 +42,15 @@ const ProfilePage = () => {
       {/* </div> */}
       {/* </div> */}
       <div className={classes.root}>
-        {user && <Avatar key={email} alt={name} src={photoURL} title={name} className={classes.large} />}
+        {user && (
+          <Avatar
+            key={email}
+            alt={name}
+            src={photoURL}
+            title={name}
+            className={classes.large}
+          />
+        )}
       </div>
 
       {/* <button

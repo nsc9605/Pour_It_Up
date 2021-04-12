@@ -13,10 +13,9 @@ import Search from "./pages/Search";
 import bg from "./assets/img/search2.jpeg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
-import './index.css';
+import "./index.css";
 
-
-const styles = theme => ({
+const styles = (theme) => ({
   "@global": {
     body: {
       backgroundImage: `url("${bg}")`,
@@ -24,15 +23,15 @@ const styles = theme => ({
       backgroundPosition: "center center",
       backgroundSize: "cover",
       backgroundAttachment: "fixed",
-      height: "100%"
+      height: "100%",
     },
     html: {
-      height: "100%"
+      height: "100%",
     },
     "#componentWithId": {
-      height: "100%"
-    }
-  }
+      height: "100%",
+    },
+  },
 });
 
 function App() {
@@ -43,16 +42,18 @@ function App() {
     <>
       <CssBaseline />
       <Router>
-        <div className="App"
+        <div
+          className="App"
           style={{
             backgroundImage: `url(${bg})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
+            backgroundPosition: "center",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
-            width: '100vw',
-            height: '100vh',
-          }}>
+            width: "100vw",
+            height: "100vh",
+          }}
+        >
           <Navigation />
           {token && (
             <Switch>
