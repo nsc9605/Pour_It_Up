@@ -13,6 +13,7 @@ import "./style.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    flexShrink: 1,
   },
   paper: {
     height: 140,
@@ -138,63 +139,50 @@ function CocktailData(props) {
   };
 
   const body = (
-    <div id="modal">
-      <div className="row p-3">
-        <h1 id="simple-modal-title text-center mt-3">
+    <div id="modal" className="m-3">
+      <div className="row m-3 pt-4">
+        <h1 id="simple-modal-title" className="mt-4 pt-4 indent text">
           {singleDrinkDetails.strDrink}
         </h1>
-      </div>
-
-      <div className="row">
         <img
           src={singleDrinkDetails.strDrinkThumb}
           alt={singleDrinkDetails.strDrink}
           variant="left"
-          className="m-5"
+          className="img-fluid rounded modalImg"
         />
-
-        <div className="cocktail-details px-4">
-          <div className="drink-category title">
-            Preparation:
-            <span> {singleDrinkDetails.strInstructions}</span>
-          </div>
-          <div className="drink-category title">
-            Ingredients:
-            {numberOfIngredients().map((number) => (
-              <div key={number} className="data">
-                {singleDrinkDetails["strMeasure" + number]}
-                {singleDrinkDetails["strIngredient" + number]}
-              </div>
-            ))}
-          </div>
-          <div className="drink-category title">
-            Glass:
-            <span> {singleDrinkDetails.strGlass}</span>
-          </div>
-          <div className="drink-category title">
-            Type:
-            <span> {singleDrinkDetails.strAlcoholic}</span>
-          </div>
-
-          <div className="center">
-            <button
-              // className="rounded favBtn"
-              onClick={() => handleSubmitFavorite()}
-            >
-              Save to Favorites
-            </button>
-            <ToastContainer
-              position="top-right"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-          </div>
+      </div>
+      <div className="cocktail-details">
+        <div className="drink-category title">
+          Ingredients:
+          {numberOfIngredients().map((number) => (
+            <span key={number} className="data">
+              {singleDrinkDetails["strMeasure" + number]}
+              {singleDrinkDetails["strIngredient" + number]}
+            </span>
+          ))}
+          Preparation:
+          <span> {singleDrinkDetails.strInstructions} </span>
+          Glass:
+          <span> {singleDrinkDetails.strGlass}</span>
+          Type:
+          <span> {singleDrinkDetails.strAlcoholic}</span>
+          <button
+            className="m-3 rounded"
+            onClick={() => handleSubmitFavorite()}
+          >
+            Save to Favorites
+          </button>
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </div>
       </div>
     </div>
@@ -215,7 +203,7 @@ function CocktailData(props) {
           direction="row"
           justify="center"
           // alignItems="center"
-          // spacing={3}s
+          // spacing={3}
           // className={classes.paper}
           className={classes.root}
         >
@@ -249,22 +237,31 @@ function CocktailData(props) {
         </Grid>
       </form>
       <div>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          onSubmit={handleSubmitFavorite}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          style={{
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "10px",
-          }}
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          spacing={3}
+          className={classes.root}
         >
-          <Slide direction="down" in={open} mountOnEnter unmountOnExit>
-            <div className="items-center m-5 p-4">{body}</div>
-          </Slide>
-        </Modal>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            onSubmit={handleSubmitFavorite}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "10px",
+            }}
+            spacing={3}
+          >
+            <Slide direction="down" in={open} mountOnEnter unmountOnExit>
+              <div className="items-center m-5 p-4">{body}</div>
+            </Slide>
+          </Modal>
+        </Grid>
       </div>
     </div>
   );
