@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
 
-
 function CocktailData() {
   const { token } = useContext(UserContext);
   const [inputsObj, setInputsObj] = useState({});
@@ -47,6 +46,8 @@ function CocktailData() {
   const getDetails = (idDrink) => {
     console.log(inputsObj.ingredient.idDrink);
     API.selectDrink(idDrink).then((results) => {
+      // console.log(results);
+      console.log(results.data.drinks[0]);
       console.log(results.data.drinks[0].idDrink);
       setSingleDrinkDetails(results.data.drinks[0]);
     });
@@ -106,6 +107,7 @@ function CocktailData() {
       ingredients: ingredients,
       measurements: measurements,
       glassware: singleDrinkDetails.strGlass,
+      type: singleDrinkDetails.strAlcoholic,
     };
     setFavorite(favObject);
 
@@ -148,6 +150,10 @@ function CocktailData() {
           <div className="drink-category title">
             Glass:
             <span> {singleDrinkDetails.strGlass}</span>
+          </div>
+          <div className="drink-category title">
+            Type:
+            <span> {singleDrinkDetails.strAlcoholic}</span>
           </div>
 
           <div className="center">

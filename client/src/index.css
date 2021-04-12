@@ -164,7 +164,7 @@ button {
   opacity: 0.8;
   padding: 20px;
   min-height: 100vh;
-  border: black 3px solid;
+  /* border: black 1px solid; */
   border-radius: 10px;
   overflow: hidden;
   margin: 25px;

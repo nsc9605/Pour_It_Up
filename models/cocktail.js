@@ -42,6 +42,11 @@ const cocktailSchema = new Schema({
     required: true,
   },
 
+  type: {
+    type: String,
+    required: true,
+  },
+
   date: {
     type: Date,
     default: Date.now,

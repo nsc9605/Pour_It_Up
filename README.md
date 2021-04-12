@@ -34,19 +34,23 @@ This is conveniently linked to your Google account when signed in.
 
 ## Demonstration
 
-![Overview](src/img/main.png)
+![Board](client/src/assets/img/Project-Board.png)
+### Project Management Board
+
+### Overview
+![Overview](client/src/img/main.png)
 
 ### About Me Section
 
-![AboutMe](src/assets/img/about.png)
+![About](client/src/assets/img/about.png)
 
 ### Searchs Section
 
-![Searchs](src/assets/img/Searchs.png)
+![Search](client/src/assets/img/Searchs.png)
 
 ### Contact Information
 
-![Contact](src/assets/img/contact.png)
+![Favorites](client/src/assets/img/contact.png)
 
 ### Directory Structure
 
@@ -132,14 +136,26 @@ This is conveniently linked to your Google account when signed in.
 
 This application is licensed under the MIT License.
 
-## Contribution
+## Authors
 
-This Search was creating with help from:
+### [Jessica Deck](https://github.com/deck-jessica)
+![Github User Image](https://avatars.githubusercontent.com/u/69402870?v=4)
 
-- [Nicole](https://github.com/nsc9605)
-- [Jessica Deck](https://github.com/deck-jessica)
-- [Jon Gudenzi](https://github.com/JonGudenzi)
-- [Trey Jewett](https://github.com/treyjewett)
+-----------------------------------------------------------------------------
+
+### [Jon Gudenzi](https://github.com/JonGudenzi)
+![Github User Image](https://avatars.githubusercontent.com/u/71613242?v=4)
+
+-----------------------------------------------------------------------------
+
+### [Trey Jewett](https://github.com/treyjewett)
+![Github User Image](https://avatars.githubusercontent.com/u/46719631?v=4)
+
+-----------------------------------------------------------------------------
+
+### [Nicole Catapano](https://github.com/nsc9605)
+![Github User Image](https://avatars.githubusercontent.com/u/69088802?v=4)
+
 
 ## Technologies
 
@@ -148,26 +164,22 @@ This Search was creating with help from:
 - [Express.js](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/docs/)
-- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [Material UI](https://material-ui.com/)
+- [Trello]()
+- [Google Firebase](https://firebase.google.com/products/auth)
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal
 
 ## Contact Information
 
-GitHub:
-
-- [nsc9605](https://github.com/nsc9605)
-- [deck-jessica](https://github.com/deck-jessica)
-- [JonGudenzi](https://github.com/JonGudenzi)
-- [treyjewett](https://github.com/treyjewett)
-
-Email:
-[Nicole Catapano](mailto:nsc9605@gmail.com)
-[Jessica Deck](mailto:deck.jessica@gmail.com)
-[Jon Gudenzi](mailto:jongudenzi@gmail.com)
-[Trey Jewett](mailto:rfjewett3@gmail.com)
+### Email:
+- [Jessica Deck](mailto:deck.jessica@gmail.com)
+- [Jon Gudenzi](mailto:jongudenzi@gmail.com)
+- [Trey Jewett](mailto:rfjewett3@gmail.com)
+- [Nicole Catapano](mailto:nsc9605@gmail.com)
 
 # Getting Started with Create React App
 

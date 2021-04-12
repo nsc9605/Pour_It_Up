@@ -18,6 +18,7 @@ function Favorite() {
     API.favoriteCocktails(token)
       .then((res) => {
         console.log(res.data);
+        // console.log(res.data.);
         setFavorites(res.data);
       })
       .catch((err) => console.log(err));
@@ -94,6 +95,10 @@ function Favorite() {
                       </div>
                       <div className="title">
                         Glass: <span> {favorite.glassware}</span>
+                        <br></br>
+                      </div>
+                      <div className="title">
+                       Type:  <span> {favorite.type}</span>
                         <br></br>
                       </div>
                     </div>
