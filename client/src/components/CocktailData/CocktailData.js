@@ -14,15 +14,7 @@ function CocktailData() {
   const [inputsObj, setInputsObj] = useState({});
   const [drinks, setDrinks] = useState([]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
-  // const [ingredients, setIngredients] = useState([]);
-  // const [measurements, setMeasurements] = useState([]);
 
-  // useEffect(() => {
-  //   var drinks = [];
-  //   for (let i = 0; i < drinks.length; i++) {
-
-  //   }
-  // })
   // Handle input to target API
   const handleInputs = (e) => {
     let clone = inputsObj;
@@ -55,7 +47,6 @@ function CocktailData() {
   const getDetails = (idDrink) => {
     console.log(inputsObj.ingredient.idDrink);
     API.selectDrink(idDrink).then((results) => {
-      // console.log(results);
       console.log(results.data.drinks[0].idDrink);
       setSingleDrinkDetails(results.data.drinks[0]);
     });
@@ -117,12 +108,9 @@ function CocktailData() {
       glassware: singleDrinkDetails.strGlass,
     };
     setFavorite(favObject);
-    // console.log(favObject);
 
     API.saveCocktail(favObject).then((results) => {
       console.log(results);
-      // setFavorite(favObject);
-      // setDrinks(results.data.drinks);
     });
     return favorite;
   };
@@ -142,9 +130,6 @@ function CocktailData() {
           variant="left"
           className="rounded drinkImg img-fluid align-center"
         />
-        {/* </div>
-      <div id="row"> */}
-        {/* </div> */}
 
         <div className="cocktail-details px-4">
           <div className="drink-category title">
@@ -154,11 +139,11 @@ function CocktailData() {
           <div className="drink-category title">
             Ingredients:
             {numberOfIngredients().map((number) => (
-              <div key={number} className="data">
-                {singleDrinkDetails["strMeasure" + number]}
-                {singleDrinkDetails["strIngredient" + number]}
-              </div>
-            ))}
+            <div key={number} className="data">
+              {singleDrinkDetails["strMeasure" + number]}
+              {singleDrinkDetails["strIngredient" + number]}
+            </div>
+          ))}
           </div>
           <div className="drink-category title">
             Glass:
@@ -247,7 +232,7 @@ function CocktailData() {
           onSubmit={handleSubmitFavorite}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
-          // className="modal-size"
+        // className="modal-size"
         >
           <div className="items-center m-4">{body}</div>
         </Modal>

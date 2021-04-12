@@ -4,7 +4,6 @@ const cocktailsController = require("../../controllers/cocktailsController");
 // Matches with "/api/cocktails"
 router.route("/")
   .get(cocktailsController.findAll)
-  // .post(cocktailsController.saveCocktail);
 
 // Matches with "/api/cocktails/:id"
 router
@@ -12,8 +11,7 @@ router
   .get(cocktailsController.favoriteCocktails)
   .put(cocktailsController.update)
 
-  router.route("/:key")
+router.route("/:key")
   .delete(cocktailsController.deleteCocktail);
-
 
 module.exports = router;
