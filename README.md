@@ -33,23 +33,24 @@ This is conveniently linked to your Google account when signed in.
 - [Contact Information](#contact-information)
 
 ## Demonstration
-![Board](./src/assets/img/Project-Board.png)
+
+![Board](client/src/assets/img/Project-Board.png)
 ### Project Management Board
 
 ### Overview
-![Overview](src/img/main.png)
+![Overview](client/src/img/main.png)
 
 ### About Me Section
 
-![About](src/assets/img/about.png)
+![About](client/src/assets/img/about.png)
 
 ### Searchs Section
 
-![Search](src/assets/img/Searchs.png)
+![Search](client/src/assets/img/Searchs.png)
 
 ### Contact Information
 
-![Favorites](src/assets/img/contact.png)
+![Favorites](client/src/assets/img/contact.png)
 
 ### Directory Structure
 

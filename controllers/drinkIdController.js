@@ -37,6 +37,7 @@ module.exports = {
       ingredients,
       measurements,
       glassware,
+      type,
     } = req.body;
 
     Cocktail.create({
@@ -48,6 +49,7 @@ module.exports = {
       ingredients,
       measurements,
       glassware,
+      type,
     })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

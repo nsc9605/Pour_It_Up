@@ -42,7 +42,10 @@ const cocktailSchema = new Schema({
     required: true,
   },
 
-  // link: { type: String },
+  type: {
+    type: String,
+    required: true,
+  },
 
   date: {
     type: Date,
