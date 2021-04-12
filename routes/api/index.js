@@ -8,5 +8,4 @@ router.use("/cocktails", cocktailRoutes);
 router.use("/search", searchRoutes);
 router.use("/drink", drinkRoutes);
 
-
 module.exports = router;

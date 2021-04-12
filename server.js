@@ -21,7 +21,6 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.ATLAS_URI || "mongodb://localhost/cocktailsdb",
-  
   {
     useNewUrlParser: true,
     useFindAndModify: false,

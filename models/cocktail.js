@@ -6,12 +6,12 @@ const cocktailSchema = new Schema({
     type: String,
     required: true,
   },
-  
+
   idDrink: {
     type: String,
     required: true,
   },
-  
+
   name: {
     type: String,
     required: true,
@@ -21,12 +21,12 @@ const cocktailSchema = new Schema({
     type: String,
     required: true,
   },
-  
+
   preparation: {
     type: String,
     required: true,
   },
-  
+
   ingredients: {
     type: [String],
     required: true,
@@ -50,7 +50,7 @@ const cocktailSchema = new Schema({
   date: {
     type: Date,
     default: Date.now,
-  },
+  }
 });
 
 const Cocktail = mongoose.model("Cocktail", cocktailSchema);

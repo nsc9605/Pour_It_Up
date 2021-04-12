@@ -8,7 +8,6 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  // findById: function(req, res) {
   favoriteCocktails: function (req, res) {
     console.log(req.params);
     db.Cocktail
@@ -20,7 +19,6 @@ module.exports = {
       })
       .catch((err) => res.status(422).json(err));
   },
-  // create: function(req, res) {
   saveCocktail: function (req, res) {
     console.log("WORKS");
     db.Cocktail.create(req.body)
