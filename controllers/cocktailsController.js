@@ -10,8 +10,7 @@ module.exports = {
   },
   favoriteCocktails: function (req, res) {
     console.log(req.params);
-    db.Cocktail
-      .find({ uid: req.params.id })
+    db.Cocktail.find({ uid: req.params.id })
       .sort({ date: -1 })
       .then((dbModel) => {
         console.log(dbModel);

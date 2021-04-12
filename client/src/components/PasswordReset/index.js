@@ -7,20 +7,22 @@ const PasswordReset = () => {
   const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
   const [error, setError] = useState(null);
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     const { name, value } = event.currentTarget;
     if (name === "userEmail") {
       setEmail(value);
     }
   };
 
-  const sendResetEmail = event => {
+  const sendResetEmail = (event) => {
     event.preventDefault();
     auth
       .sendPasswordResetEmail(email)
       .then(() => {
         setEmailHasBeenSent(true);
-        setTimeout(() => { setEmailHasBeenSent(false) }, 3000);
+        setTimeout(() => {
+          setEmailHasBeenSent(false);
+        }, 3000);
       })
       .catch(() => {
         setError("Error resetting password");
@@ -29,24 +31,12 @@ const PasswordReset = () => {
 
   return (
     <div>
-      <h1>
-        Reset your Password
-      </h1>
+      <h1>Reset your Password</h1>
       <div>
         <form action="">
-          {emailHasBeenSent && (
-            <div>
-              An email has been sent to you!
-            </div>
-          )}
-          {error !== null && (
-            <div>
-              {error}
-            </div>
-          )}
-          <label htmlFor="userEmail">
-            Email:
-          </label>
+          {emailHasBeenSent && <div>An email has been sent to you!</div>}
+          {error !== null && <div>{error}</div>}
+          <label htmlFor="userEmail">Email:</label>
           <input
             type="email"
             name="userEmail"
@@ -55,13 +45,9 @@ const PasswordReset = () => {
             placeholder="Input your email"
             onChange={onChangeHandler}
           />
-          <button onClick={sendResetEmail}>
-            Send me a reset link
-          </button>
+          <button onClick={sendResetEmail}>Send me a reset link</button>
         </form>
-        <Link to="/">
-          &larr; back to sign in page
-        </Link>
+        <Link to="/">&larr; back to sign in page</Link>
       </div>
     </div>
   );

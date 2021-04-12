@@ -5,11 +5,11 @@ import { generateUserDocument } from "../firebase";
 export const UserContext = createContext({ user: null });
 class UserProvider extends Component {
   state = {
-    user: null
+    user: null,
   };
 
   componentDidMount = async () => {
-    auth.onAuthStateChanged(async userAuth => {
+    auth.onAuthStateChanged(async (userAuth) => {
       const user = await generateUserDocument(userAuth);
       if (user === undefined) {
         const token = null;
@@ -23,11 +23,13 @@ class UserProvider extends Component {
 
   updateUser = (token) => {
     this.setState({ token });
-  }
+  };
 
   render() {
     return (
-      <UserContext.Provider value={{ ...this.state, updateUser: this.updateUser }}>
+      <UserContext.Provider
+        value={{ ...this.state, updateUser: this.updateUser }}
+      >
         {this.props.children}
       </UserContext.Provider>
     );

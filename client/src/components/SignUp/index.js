@@ -9,14 +9,20 @@ const SignUp = () => {
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
 
-  const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
+  const createUserWithEmailAndPasswordHandler = async (
+    event,
+    email,
+    password
+  ) => {
     event.preventDefault();
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
       auth.generateUserDocument(user, { displayName });
-    }
-    catch (error) {
-      setError('Error signing up ith email and password');
+    } catch (error) {
+      setError("Error signing up ith email and password");
     }
 
     setEmail("");
@@ -24,7 +30,7 @@ const SignUp = () => {
     setDisplayName("");
   };
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     const { name, value } = event.currentTarget;
     if (name === "userEmail") {
       setEmail(value);
@@ -37,53 +43,43 @@ const SignUp = () => {
 
   const handlePopup = () => {
     signInWithGoogle();
-  }
+  };
 
   return (
     <div>
       <h1>Sign Up</h1>
       <div>
-        {error !== null && (
-          <div>
-            {error}
-          </div>
-        )}
+        {error !== null && <div>{error}</div>}
         <form>
-          <label htmlFor="displayName">
-            Display Name:
-          </label>
+          <label htmlFor="displayName">Display Name:</label>
           <input
             type="text"
             name="displayName"
             value={displayName}
             placeholder="Your Name"
             id="displayName"
-            onChange={event => onChangeHandler(event)}
+            onChange={(event) => onChangeHandler(event)}
           />
-          <label htmlFor="userEmail">
-            Email:
-          </label>
+          <label htmlFor="userEmail">Email:</label>
           <input
             type="email"
             name="userEmail"
             value={email}
             placeholder="example@gmail.com"
             id="userEmail"
-            onChange={event => onChangeHandler(event)}
+            onChange={(event) => onChangeHandler(event)}
           />
-          <label htmlFor="userPassword">
-            Password:
-          </label>
+          <label htmlFor="userPassword">Password:</label>
           <input
             type="password"
             name="userPassword"
             value={password}
             placeholder="Your Password"
             id="userPassword"
-            onChange={event => onChangeHandler(event)}
+            onChange={(event) => onChangeHandler(event)}
           />
           <button
-            onClick={event => {
+            onClick={(event) => {
               createUserWithEmailAndPasswordHandler(event, email, password);
             }}
           >
@@ -91,14 +87,15 @@ const SignUp = () => {
           </button>
         </form>
         <p>or</p>
-        <button onClick={() => { handlePopup() }}>
+        <button
+          onClick={() => {
+            handlePopup();
+          }}
+        >
           Sign In with Google
         </button>
         <p>
-          Already have an account?{" "}
-          <Link to="/">
-            Sign in here
-          </Link>
+          Already have an account? <Link to="/">Sign in here</Link>
         </p>
       </div>
     </div>
