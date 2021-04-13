@@ -23,7 +23,7 @@ function Scroll() {
         <button
           className="scrollTop"
           onClick={scrollTop}
-          style={{ height: 40, display: showScroll ? "flex" : "none" }}
+          style={{ width: 100, height: 40, right: 125, bottom: 70, display: showScroll ? "flex" : "none" }}
         >
           Back Top
         </button>
