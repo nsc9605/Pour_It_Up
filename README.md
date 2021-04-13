@@ -48,11 +48,11 @@ This is conveniently linked to your Google account when signed in.
 
 ### Search Page
 
-![Search](client/src/assets/img/)
+![Search](client/src/assets/img/search-example.png)
 
 ### Favorites Page
 
-![Favorites](client/src/assets/img/)
+![Favorites](client/src/assets/img/favorites.png)
 
 # Features
 
