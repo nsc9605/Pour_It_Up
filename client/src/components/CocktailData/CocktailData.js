@@ -355,7 +355,7 @@ function CocktailData(props) {
                 <CardContent>
                   <Typography paragraph>Ingredients:</Typography>
                   {numberOfIngredients().map((number) => (
-                    <Typography paragraph key={number} classNameName="data">
+                    <Typography paragraph key={number} className="data">
                       {singleDrinkDetails["strMeasure" + number]}
                       {singleDrinkDetails["strIngredient" + number]}
                     </Typography>
@@ -368,7 +368,7 @@ function CocktailData(props) {
                   <Typography paragraph>
                     {singleDrinkDetails.strGlass}
                   </Typography>
-                  <Typography paragraphy>Type:</Typography>
+                  <Typography paragraph>Type:</Typography>
                   <Typography>{singleDrinkDetails.strAlcoholic}</Typography>
                 </CardContent>
               </Collapse>
