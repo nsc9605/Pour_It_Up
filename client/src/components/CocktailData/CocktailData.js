@@ -9,7 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
-import ScrollToTop from "react-scroll-to-top";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -263,9 +262,6 @@ function CocktailData(props) {
             </Slide>
           </Modal>
         </Grid>
-      </div>
-      <div>
-        <ScrollToTop smooth />
       </div>
     </div>
   );
