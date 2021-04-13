@@ -30,3 +30,15 @@
   .data {
     font-weight: normal !important;
   }
+
+  #searchHeader {
+    margin-right: 10%;
+  }
+
+  #lastSearch {
+    margin-right: 46%;
+  }
+
+  #grid {
+    margin-left: 10%;
+  }
