@@ -19,7 +19,7 @@ function Scroll() {
 
   return (
     <>
-      <div>
+      <div className="mx-3 float-right rounded">
         <button
           className="scrollTop"
           onClick={scrollTop}

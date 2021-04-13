@@ -163,6 +163,11 @@ button {
   min-height: 666px !important;
 }
 
+.searchPage {
+  align-content: center !important;
+  justify-items: center !important;
+}
+
 .startBtn {
   background-color: rgb(78, 187, 238);
   opacity: 0.9;

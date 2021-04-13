@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 700,
     minWidth: 400,
     padding: theme.spacing(3),
-    alignContent: "center",
   },
   media: {
     height: "100%",
