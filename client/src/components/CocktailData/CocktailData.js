@@ -134,7 +134,7 @@ function CocktailData(props) {
     API.saveCocktail(favObject).then((results) => {
       console.log(results);
     });
-
+    setTimeout(handleClose, 1600);
     return favorite;
   };
 
@@ -174,8 +174,8 @@ function CocktailData(props) {
           </button>
           <ToastContainer
             position="top-right"
-            autoClose={2000}
-            hideProgressBar={false}
+            autoClose={1500}
+            hideProgressBar={true}
             newestOnTop={false}
             closeOnClick
             rtl={false}
