@@ -1,6 +1,6 @@
 import React from "react";
 import beach from "../assets/img/beach.jpeg";
-
+import Footer from "../components/Footer";
 
 function About() {
   //   const classes = useStyles();
@@ -43,6 +43,7 @@ function About() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

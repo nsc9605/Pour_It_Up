@@ -1,0 +1,13 @@
+.holder {
+  text-align: center;
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+}
+
+#contributers a {
+  color: black
+}
+
+#contributers a:hover {
+  color: darkblue;
+}

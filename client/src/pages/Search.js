@@ -1,5 +1,6 @@
 import React, {  useState } from "react";
 import CocktailData from "../components/CocktailData/CocktailData";
+import Footer from "../components/Footer";
 
 function Search() {
   const [mostRecentSearch] = useState(
@@ -29,6 +30,7 @@ function Search() {
           <CocktailData mostRecentSearch={mostRecentSearch} />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
