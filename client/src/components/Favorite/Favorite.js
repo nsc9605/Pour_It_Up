@@ -38,13 +38,12 @@ function Favorite() {
     <div
       style={{
         justify: "center",
-    //     backgroundColor: "white",
-    //     backgroundOpacity: "0.8",
+        
     }}
     >
       <h1 className="container text-center p-2">Favorite Drinks</h1>
       {favorites.length ? (
-        <Grid container spacing={2} justifycontent="center">
+        <Grid container spacing={2} alignContent="center">
           {favorites.map((favorite) => (
             <div className="p-4 m-3 outer" key={favorite._id}>
               <div className="flip-card m-3">
@@ -104,6 +103,7 @@ function Favorite() {
                       variant="contained"
                       color="default"
                       className="deleteBtn text-center"
+                      align="center"
                       startIcon={<DeleteIcon />}
                       onClick={() => deleteCocktail(favorite._id)}
                     >
@@ -114,6 +114,7 @@ function Favorite() {
               </div>
             </div>
           ))}
+          <Scroll/>
         </Grid>
       ) : (
         <div className="App justify-content-center flexParent">
@@ -128,7 +129,7 @@ function Favorite() {
           </div>
         </div>
       )}
-      <Scroll />
+      
     </div>
   );
 }

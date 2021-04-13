@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 700,
     minWidth: 400,
     padding: theme.spacing(3),
-    alignContent: "center",
   },
   media: {
     height: "100%",
@@ -226,7 +225,7 @@ function CocktailData(props) {
             className={classes.popup}
           >
             <Slide direction="down" in={open} mountOnEnter unmountOnExit>
-              <Card className={classes.card}>
+              <Card className={classes.card} fontFamily="Thasadith">
                 <CardHeader
                   avatar={
                     <Avatar
@@ -251,9 +250,10 @@ function CocktailData(props) {
                     {singleDrinkDetails.strDrink}
                   </Typography>
                   <Typography
-                    variant="body2"
+                    variant="h6"
                     color="textSecondary"
                     component="h4"
+                    
                   >
                     {singleDrinkDetails.strAlcoholic}
                   </Typography>
@@ -280,8 +280,8 @@ function CocktailData(props) {
                   </IconButton>
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography paragraph variant="h5" component="h6">
+                  <CardContent align="left">
+                    <Typography gutterbottom variant="h5" component="h6">
                       Ingredients:
                     </Typography>
                     {numberOfIngredients().map((number) => (
@@ -295,19 +295,19 @@ function CocktailData(props) {
                         {singleDrinkDetails["strIngredient" + number]}
                       </Typography>
                     ))}
-                    <Typography paragraph variant="h5" component="h6">
+                    <Typography gutterBottom variant="h5" component="h6">
                       Preparation:
                     </Typography>
                     <Typography variant="body2" component="p">
                       {singleDrinkDetails.strInstructions}
                     </Typography>
-                    <Typography paragraph variant="h5" component="h6">
+                    <Typography gutterbottom variant="h5" component="h6">
                       Glass:
                     </Typography>
                     <Typography variant="body2" component="p">
                       {singleDrinkDetails.strGlass}
                     </Typography>
-                    <Typography paragraph variant="h5" component="h6">
+                    <Typography gutterbottom variant="h5" component="h6">
                       Type:
                     </Typography>
                     <Typography>{singleDrinkDetails.strAlcoholic}</Typography>

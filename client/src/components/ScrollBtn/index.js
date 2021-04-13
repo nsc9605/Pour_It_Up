@@ -19,11 +19,11 @@ function Scroll() {
 
   return (
     <>
-      <div>
+      <div className="mx-3 float-right rounded">
         <button
           className="scrollTop"
           onClick={scrollTop}
-          style={{ height: 40, display: showScroll ? "flex" : "none" }}
+          style={{ height: 40, padding: 10, display: showScroll ? "flex" : "none" }}
         >
           Back Top
         </button>
