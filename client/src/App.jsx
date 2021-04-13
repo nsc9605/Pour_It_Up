@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Nav/Navigation";
-import ProfilePage from "./components/ProfilePage";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PasswordReset from "./components/PasswordReset";
@@ -61,7 +60,6 @@ function App() {
               <Route exact path="/about" component={About} />
               <Route exact path="/search" component={Search} />
               <Route exact path="/favorites" component={Favorites} />
-              <Route exact path="/profile" component={ProfilePage} />
             </Switch>
           )}
           {!token && (
@@ -69,10 +67,6 @@ function App() {
               <Route exact path="/" component={SignIn} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/passwordreset" component={PasswordReset} />
-              <Route exact path="/search" component={SignIn} />
-              <Route exact path="/favorites" component={SignIn} />
-              <Route exact path="/about" component={SignIn} />
-              <Route exact path="/profile" component={SignIn} />
             </Switch>
           )}
         </div>
