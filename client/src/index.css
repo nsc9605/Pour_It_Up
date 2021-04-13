@@ -42,7 +42,7 @@ h2 {
   max-width: 35px !important;
   max-height: 70px !important;
 }
-#modal {
+#card {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -190,6 +190,10 @@ button {
   .flip-card-back {
     overflow: scroll;
   }
+  .container {
+    margin: 15px;
+    align-content: center;
+  }
 }
 
 @media (max-width: 440px) {
@@ -203,6 +207,10 @@ button {
   .flip-card-back {
     overflow: scroll;
   }
+  .container {
+    margin: 15px;
+    align-content: center;
+  }
 }
 @media (max-width: 375px) {
   .drinkImg {
@@ -215,6 +223,10 @@ button {
   .flip-card-back {
     overflow: scroll;
     font-size: 8px;
+  }
+  .container {
+    margin: 15px;
+    align-content: center;
   }
 }
 
