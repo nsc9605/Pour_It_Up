@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
 import "./style.css";
-import ScrollToTop from "react-scroll-to-top";
 
 function Favorite() {
   const { token } = useContext(UserContext);
@@ -112,9 +111,6 @@ function Favorite() {
                     </Button>
                   </div>
                 </div>
-              </div>
-              <div>
-                <ScrollToTop smooth />
               </div>
             </div>
           ))}
