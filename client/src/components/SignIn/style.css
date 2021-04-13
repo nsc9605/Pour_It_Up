@@ -1,0 +1,35 @@
+.container {
+  text-align: center;
+  margin-top: 3%;
+  background-color: lightgrey;
+  width: 37%;
+  border-radius: 20px;
+  padding-bottom: .5%;
+  padding-top: .5%;
+}
+
+#title {
+  margin-bottom: 3%;
+  padding-top: 1%;
+  color: #17a2b8
+}
+
+.userInput {
+  margin-left: 2%;
+  margin-right: .5%; 
+  margin-bottom: 4%;
+}
+
+#signUp {
+  margin-left: 1%;
+  border-radius: 5px;
+}
+
+#or {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+#google {
+  border-radius: 5px;
+}

@@ -1,0 +1,31 @@
+.container {
+  text-align: center;
+  margin-top: 3%;
+  background-color: lightgrey;
+  width: 30%;
+  border-radius: 20px;
+  padding-bottom: .5%;
+  padding-top: .5%;
+}
+
+#title {
+  margin-bottom: 3%;
+  padding-top: 1%;
+  color: #17a2b8
+}
+
+.userInput {
+  margin-left: 2%;
+  margin-right: 0.5%; 
+  margin-bottom: 2%;
+}
+
+#signUp {
+  margin-left: 1%;
+  border-radius: 5px;
+}
+
+#reset {
+  border-radius: 5px;
+  margin-left: 1%;
+}

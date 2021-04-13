@@ -2,6 +2,7 @@ import React, { useState, } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signInWithGoogle } from "../../firebase";
+import "./style.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -38,12 +39,12 @@ const SignIn = () => {
 
   return (
     <div className="container">
-      <h1>Sign In</h1>
+      <h1 id="title">Sign In</h1>
       <div>
         {error !== null && <div>{error}</div>}
         <form>
-          <label htmlFor="userEmail" className="mx-2">
-            Email:
+          <label htmlFor="userEmail" className="userInput">
+            <strong>Email:</strong>
           </label>
           <input
             type="email"
@@ -53,8 +54,8 @@ const SignIn = () => {
             id="userEmail"
             onChange={(event) => onChangeHandler(event)}
           />
-          <label htmlFor="userPassword" className="mx-2">
-            Password:
+          <label htmlFor="userPassword" className="userInput">
+            <strong>Password:</strong>
           </label>
           <input
             type="password"
@@ -68,19 +69,22 @@ const SignIn = () => {
             Sign in
           </button>
         </form>
-        <p>or</p>
-        <button className="my-2 rounded" onClick={() => { handlePopup() }}>
-          Sign in with Google
-        </button>
-        <p>
+        <p id="signUp">
           Don't have an account?{" "}
           <Link to="/signup">
             Sign up here
-          </Link>{" "}
+          </Link>
+          <br />{" "}
           <br />{" "}
           <Link to="/passwordreset">
             Forgot Password?
           </Link>
+          <br />{" "}
+          <br />{" "}
+        <p id="or">or</p>
+        <button className="my-2 rounded" onClick={() => { handlePopup() }}>
+          Sign in with Google
+        </button>
         </p>
       </div>
     </div>
