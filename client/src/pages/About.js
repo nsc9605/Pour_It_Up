@@ -21,7 +21,7 @@ function About() {
         <div className="flexParent">
           <div className="about m-2">
             <p className="indent">
-              Our goal is offer people a convenient source of information
+              Our goal aims to offer people a convenient source of information
               pertaining to all things cocktails! Based on our observations, it
               seems that a lot of people got into "at-home-bartending" during
               quarantine as the future was uncertain! As people tried to fill

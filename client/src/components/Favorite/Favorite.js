@@ -45,7 +45,7 @@ function Favorite() {
       {favorites.length ? (
         <Grid container spacing={2}>
           {favorites.map((favorite) => (
-            <div className="p-4 m-3 text-center" key={favorite._id}>
+            <div className="p-4 m-3 outer" key={favorite._id}>
               <div className="flip-card m-3">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
@@ -67,13 +67,11 @@ function Favorite() {
                         key={favorite._id}
                       />
                     </div>
-                    {/* <div className="container"> */}
-                    <h3>{favorite.name}</h3>
-                    {/* <h5>{favorite.glassware}</h5> */}
-                    {/* </div> */}
+                    <h3 className="flip-title-front">{favorite.name}</h3>
+                   
                   </div>
                   <div className="flip-card-back p-2">
-                    <h4 className="text-center">{favorite.name}</h4>
+                    <h4 className="text-center h4">{favorite.name}</h4>
                     <div className="content">
                       <div className="title">
                         Preparation:
@@ -82,7 +80,7 @@ function Favorite() {
                       </div>
                       <div className="title">
                         Ingredients:{" "}
-                        <p className="data">
+                        <span className="data">
                           {" "}
                           {favorite.measurements
                             .map(
@@ -90,7 +88,7 @@ function Favorite() {
                                 measurement + " " + favorite.ingredients[i]
                             )
                             .join(", ")}
-                        </p>
+                        </span>
                         <br></br>
                       </div>
                       <div className="title">

@@ -3,6 +3,7 @@ import CocktailData from "../components/CocktailData/CocktailData";
 import Footer from "../components/Footer";
 
 function Search() {
+
   const [mostRecentSearch] = useState(
     { ...JSON.parse(localStorage.getItem("mostRecentSearch")) }
       ? { ...JSON.parse(localStorage.getItem("mostRecentSearch")) }
@@ -14,15 +15,7 @@ function Search() {
         }
   );
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("mostRecentSearch")) {
-  //     setMostRecentSearch({
-  //       ...JSON.parse(localStorage.getItem("mostRecentSearch")),
-  //     });
-  //   }
-  //   console.log(mostRecentSearch);
-  // }, []);
-
+ 
   return (
     <div>
       <div className="searchPage">
