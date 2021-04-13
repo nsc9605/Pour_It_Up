@@ -232,7 +232,7 @@ function CocktailData(props) {
             onSubmit={handleSubmitFavorite}
             className={classes.popup}
           >
-            <Slide direction="down" in={open} mountOnEnter unmountOnExit>
+            <Slide direction="down" in={open} mountOnEnter unmountOnExit id="popup">
               <Card className={classes.card} fontFamily="Thasadith">
                 <CardHeader
                   avatar={
