@@ -10,7 +10,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
-import Scroll from "../ScrollBtn/index";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -133,6 +132,7 @@ function CocktailData(props) {
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
+    window.scrollTo({ top: 250, behavior: "smooth" });
     setOpen(true);
   };
 
@@ -201,26 +201,28 @@ function CocktailData(props) {
     );
   }
 
+
   return (
     <>
       <Grid
+        id="grid"
         container
         direction="row"
-        justify="center"
         spacing={3}
-        alignItems="center"
         className={classes.root}
       >
         <form
-          className="m-2 text-center"
+          // className="m-2 text-center"
           onSubmit={searchByIngredientFormSubmit}
         >
+          <div id="searchHeader">
           <h1>Search for Drinks by Ingredient!</h1>
           <input name="ingredient" type="text" onChange={handleInputs} />
           <button className="m-2 rounded">Search</button>
+          </div>
           {drinks.length === 1 && (
             <>
-              <h2>Last drink searched:</h2>
+              <h2 id="lastSearch">Last drink searched:</h2>
             </>
           )}
 
@@ -252,30 +254,12 @@ function CocktailData(props) {
                   title={singleDrinkDetails.strDrink}
                 />
                 <CardContent>
-
                   <Typography variant="h5" component="h5" color="textSecondary">
                     {singleDrinkDetails.strDrink}
-                  <Typography paragraph>Ingredients:</Typography>
-                  {numberOfIngredients().map((number) => (
-                    <Typography paragraph key={number} className="data">
-                      {singleDrinkDetails["strMeasure" + number]}
-                      {singleDrinkDetails["strIngredient" + number]}
-                    </Typography>
-                  ))}
-                  <Typography paragraph>Preparation:</Typography>
-                  <Typography paragraph>
-                    {singleDrinkDetails.strInstructions}
                   </Typography>
-                  <Typography
-                    variant="h6"
-                    color="textSecondary"
-                    component="h4"
-                    
-                  >
+                  <Typography variant="h6" color="textSecondary" component="h4">
                     {singleDrinkDetails.strAlcoholic}
                   </Typography>
-                  <Typography paragraph>Type:</Typography>
-                  <Typography>{singleDrinkDetails.strAlcoholic}</Typography>
                 </CardContent>
                 <CardActions disableSpacing>
                   <IconButton
@@ -346,41 +330,32 @@ function CocktailData(props) {
               </Card>
             </Slide>
           </div>
-          <Grid item xs={8} className={classes.main}>
-            {/* <Grid
-              container
-              justify="space-around"
-              alignItems="center"
-              className={classes.main}
-            > */}
-              {drinks.map((each, index) => {
-                return (
-                  <Paper
-                    className="drinkCards m-2 text-center"
-                    key={index}
-                    onClick={() => getDetails(each.idDrink)}
+          <Grid item xs={8} className={classes.main} id="grid">
+            {drinks.map((each, index) => {
+              return (
+                <Paper
+                  className="drinkCards m-2 text-center"
+                  key={index}
+                  onClick={() => getDetails(each.idDrink)}
+                >
+                  <img
+                    src={each.strDrinkThumb}
+                    alt={index}
+                    className="rounded text-center"
+                  />
+                  <h4 className="text-center">{each.strDrink}</h4>
+                  <button
+                    className="mb-2 rounded"
+                    type="button"
+                    onClick={handleOpen}
                   >
-                    <img
-                      src={each.strDrinkThumb}
-                      alt={index}
-                      className="rounded text-center"
-                    />
-                    <h4 className="text-center">{each.strDrink}</h4>
-                    <button
-                      className="mb-2 rounded"
-                      type="button"
-                      onClick={handleOpen}
-                    >
-                      Select Drink
+                    Select Drink
                     </button>
-                  </Paper>
-                );
-              })}
-            </Grid>
-          {/* </Grid> */}
-          {/* </Grid> */}
+                </Paper>
+              );
+            })}
+          </Grid>
         </form>
-        <Scroll />
       </Grid>
     </>
   );

@@ -115,3 +115,7 @@ span,
   font-size: 22px;
   font-family: "Oswald", sans-serif !important;
 }
+
+#favGrid {
+  justify-content: center;
+}
