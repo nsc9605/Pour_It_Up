@@ -8,7 +8,7 @@ function About() {
     <div className="App justify-content-center">
       <div
         style={{
-          backgroundImage: `url(${beach})`,
+          backgroundImage: `url(${beach}) !important`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

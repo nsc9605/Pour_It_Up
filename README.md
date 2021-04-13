@@ -4,9 +4,9 @@
 
 ## Description
 
-MERN stack app aimed at those new found bartenders during the 2020 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!
+MERN stack app aimed at those new found bartenders during the 2020 Covid-19 quarantine lockdown. This app helps in assisting those with drink ingredients, preparations, glass, and more!
 
-With <bold>Pour It Up you</bold> are able to type in any
+With <bold>Pour It Up </bold> you are able to type in any
 ingredient you may have just in the house or if you know you like
 drinks with said ingredient, you will be provided with all drinks
 available. You can type in ingredient, a liquor, even a garnish
@@ -35,21 +35,32 @@ This is conveniently linked to your Google account when signed in.
 ## Demonstration
 
 ### Project Management Board
+
 ![Board](client/src/assets/img/Project-Board.png)
 
 ### Overview
-![Overview](client/src/img/main.png)
+
+![Overview](client/src/img/)
 
 ### About Page
 
-![About](client/src/assets/img/about.png)
+![About](client/src/assets/img/)
 
 ### Search Page
-![Search](client/src/assets/img/Searchs.png)
+
+![Search](client/src/assets/img/)
 
 ### Favorites Page
 
-![Favorites](client/src/assets/img/contact.png)
+![Favorites](client/src/assets/img/)
+
+# Features
+
+- Using The Cocktail DB API, user is able to type in any ingredient and any cocktail available in the database will be displayed.
+  If the user is interested in the cocktail based on the photo, they can click `Select Drink` and a card will be displayed with the following information:
+  ` Drink Name, Image, Ingredients, Measurements, Preparation, Glassware and Type (Alcoholic or Non Alcoholic) `
+- User is able to save cocktails to `Favorites` to go back and reference. User is also able to delete from favorites when finished with that cocktail.
+- Favorites are linked to user Google Sign In. If they do not have a Google Account, they have the option to sign up through our page.
 
 ### Directory Structure
 
@@ -58,39 +69,59 @@ This is conveniently linked to your Google account when signed in.
 ├── client
 │   └── node_modules
 │   └── public
+│       └── assets
+│           └── img
+│               └── favicon.ico
+│               └── fruity.jpeg
+│               └── logo.png
 │       └── index.html
 │       └── manifest.json
 │       └── robots.txt
 │   └── src
+│        └── assets
+│           └── img
+│               └── beach.jpeg
+│               └── bg.jpg
+│               └── jessica.jpeg
+│               └── jon.jpeg
+│               └── logo.png
+│               └── niki.jpeg
+│               └── Project-Board.png
+│               └── search2.jpeg
+│               └── truss.jpeg
 │   └── components
-│       └── Header
-│           └── Header.js
 │       └── CocktailData
 │           └── CocktailData.js
 │           └── CocktailList.js
-│       └── DeleteBtn
-│           └── DeleteBtn.js
 │       └── Favorite
 │           └── Favorite.js
 │           └── style.css
-│       └── List
+│       └── Footer
 │           └── index.js
+│           └── style.css
 │       └── Nav
-│           └── Navtabs.js
+│           └── Navigation.js
 │       └── PasswordReset
 │           └── index.js
+│           └── style.css
 │       └── ProfilePage
 │           └── Avatar.js
 │           └── index.js
+│       └── ScrollBtn
+│           └── index.js
 │       └── SignIn
-│           └── SignIn.js
+│           └── index.js
+│           └── style.css
 │       └── SignUp
-│           └── SignUp.js
+│           └── index.js
+│           └── style.css
 │   └── pages
-│       └── Contact.js
+│       └── About.js
 │       └── Favorites.js
 │       └── Home.js
 │       └── Search.js
+│   └── Providers
+│       └── UserProvider.jsx
 │   └── utils
 │       └── API.js
 │   └── App.css
@@ -138,23 +169,26 @@ This application is licensed under the MIT License.
 ## Authors
 
 ### [Jessica Deck](https://github.com/deck-jessica)
+
 ![Github User Image](https://avatars.githubusercontent.com/u/69402870?v=4)
 
------------------------------------------------------------------------------
+---
 
 ### [Jon Gudenzi](https://github.com/JonGudenzi)
+
 ![Github User Image](https://avatars.githubusercontent.com/u/71613242?v=4)
 
------------------------------------------------------------------------------
+---
 
 ### [Trey Jewett](https://github.com/treyjewett)
+
 ![Github User Image](https://avatars.githubusercontent.com/u/46719631?v=4)
 
------------------------------------------------------------------------------
+---
 
 ### [Nicole Catapano](https://github.com/nsc9605)
-![Github User Image](https://avatars.githubusercontent.com/u/69088802?v=4)
 
+![Github User Image](https://avatars.githubusercontent.com/u/69088802?v=4)
 
 ## Technologies
 
@@ -164,23 +198,26 @@ This application is licensed under the MIT License.
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/docs/)
 - [Material UI](https://material-ui.com/)
-- [Trello]()
+- [The Cocktail DB](https://thecocktaildb.com/)
+- [Trello](https://trello.com)
 - [Google Firebase](https://firebase.google.com/products/auth)
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- Terminal
 
 ## Contact Information
 
 ### Email:
+
 - [Jessica Deck](mailto:deck.jessica@gmail.com)
 - [Jon Gudenzi](mailto:jongudenzi@gmail.com)
 - [Trey Jewett](mailto:rfjewett3@gmail.com)
 - [Nicole Catapano](mailto:nsc9605@gmail.com)
 
-# Getting Started with Create React App
+# From React.js
+
+## Getting Started with Create React App
 
 This Search was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

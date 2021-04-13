@@ -10,6 +10,7 @@
   height: 400px;
   perspective: 1000px;
   margin: 20px;
+  padding-bottom: 20px;
 }
 
 .flip-title-front {
@@ -113,4 +114,8 @@ span,
   gap: 5px;
   font-size: 22px;
   font-family: "Oswald", sans-serif !important;
+}
+
+#favGrid {
+  justify-content: center;
 }
