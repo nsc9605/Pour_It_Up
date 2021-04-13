@@ -95,7 +95,6 @@ function CocktailData(props) {
         return;
       } else {
         setDrinks(results.data.drinks);
-        console.log(results.data.drinks[0]);
         localStorage.setItem(
           "mostRecentSearch",
           JSON.stringify(results.data.drinks[0])
@@ -106,11 +105,7 @@ function CocktailData(props) {
 
   // Get details on drink selected
   const getDetails = (idDrink) => {
-    console.log(inputsObj.ingredient.idDrink);
     API.selectDrink(idDrink).then((results) => {
-      // console.log(results);
-      console.log(results.data.drinks[0]);
-      console.log(results.data.drinks[0].idDrink);
       setSingleDrinkDetails(results.data.drinks[0]);
     });
   };
@@ -140,13 +135,11 @@ function CocktailData(props) {
 
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
-    toast.info("Saved to favorites!");
 
     let ingredients = [];
 
     for (const property in singleDrinkDetails) {
       if (property.includes("strIngredient")) {
-        console.log(singleDrinkDetails[property]);
         if (singleDrinkDetails[property]) {
           ingredients.push(singleDrinkDetails[property]);
         }
@@ -157,7 +150,6 @@ function CocktailData(props) {
 
     for (const property in singleDrinkDetails) {
       if (property.includes("strMeasure")) {
-        console.log(singleDrinkDetails[property]);
         if (singleDrinkDetails[property]) {
           measurements.push(singleDrinkDetails[property]);
         }
@@ -177,12 +169,26 @@ function CocktailData(props) {
     };
     setFavorite(favObject);
 
-    API.saveCocktail(favObject).then((results) => {
-      console.log(results);
-    });
-    setTimeout(handleClose, 2000);
-    return favorite;
-  };
+    // This does not allow for duplicates in the user's favorites.
+    let favList = [];
+    API.favoriteCocktails(token).then((res) => {
+      for (let i = 0; i < res.data.length; i++) {
+        favList.push(res.data[i].idDrink);
+      }
+    }).then(() => {
+      if (!favList.includes(favObject.idDrink)) {
+        API.saveCocktail(favObject).then(() => {
+          toast.info("Saved to favorites!");
+          setTimeout(handleClose, 2000);
+        });
+      } else {
+        alert("Drink is already in favorites!");
+        return;
+      }
+      return favorite;
+    }
+    );
+  }
 
   // const body = (
   //   <div id="modal" className="m-3">
