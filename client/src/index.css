@@ -224,7 +224,7 @@ button {
   /* height: 5000px; */
 }
 
-.scrollTop {
+.scrollUp {
   position: fixed; 
   width: 100%;
   bottom: 20px;
@@ -238,7 +238,8 @@ button {
   opacity: 0.5;
 }
 
-.scrollTop:hover{
+.scrollUp
+:hover{
   opacity: 1;
 }
 

@@ -241,3 +241,151 @@
 // }
 
 // export default CocktailList;
+
+
+// import React from 'react';
+// import { makeStyles } from '@material-ui/core/styles';
+// import clsx from 'clsx';
+// import Card from '@material-ui/core/Card';
+// import CardHeader from '@material-ui/core/CardHeader';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardActions from '@material-ui/core/CardActions';
+// import Collapse from '@material-ui/core/Collapse';
+// import Avatar from '@material-ui/core/Avatar';
+// import IconButton from '@material-ui/core/IconButton';
+// import Typography from '@material-ui/core/Typography';
+// import { red } from '@material-ui/core/colors';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     maxWidth: 345,
+//   },
+//   media: {
+//     height: 0,
+//     paddingTop: '56.25%', // 16:9
+//   },
+//   expand: {
+//     transform: 'rotate(0deg)',
+//     marginLeft: 'auto',
+//     transition: theme.transitions.create('transform', {
+//       duration: theme.transitions.duration.shortest,
+//     }),
+//   },
+//   expandOpen: {
+//     transform: 'rotate(180deg)',
+//   },
+//   avatar: {
+//     backgroundColor: red[500],
+//   },
+// }));
+
+// export default function RecipeReviewCard() {
+//   const classes = useStyles();
+//   const [expanded, setExpanded] = React.useState(false);
+
+//   const handleExpandClick = () => {
+//     setExpanded(!expanded);
+//   };
+
+//   return (
+//     <Card 
+//     open={open}
+//       onClose={handleClose}
+//       onSubmit={handleSubmitFavorite}
+//       className={classes.root}>
+//       <CardHeader>
+//           {singleDrinkDetails.strDrink}
+//           </CardHeader>
+//       <CardMedia
+//         className={classes.media}
+//         image={singleDrinkDetails.strDrinkThumb}
+//         title={singleDrinkDetails.strDrink}
+//       />
+//       <CardContent>
+//         <Typography variant="body2" color="textSecondary" component="p">
+//         Ingredients:
+//          {numberOfIngredients().map((number) => (
+//           <span key={number} classNameName="data">
+//             {singleDrinkDetails["strMeasure" + number]}
+//             {singleDrinkDetails["strIngredient" + number]}
+//           </span>
+//         ))}
+//         </Typography>
+//         <Typography variant="body2" color="textSecondary" component="p">
+//           Preparation:
+//           <span> {singleDrinkDetails.strInstructions} </span>
+//           </Typography>
+//           <Typography variant="body2" color="textSecondary" component="p">
+//           Glass:
+//           <span> {singleDrinkDetails.strGlass}</span>
+//           </Typography>
+//           <Typography variant="body2" color="textSecondary" component="p">
+//           Type:
+//           <span> {singleDrinkDetails.strAlcoholic}</span>
+//         </Typography>
+//       </CardContent>
+//       <CardActions disableSpacing>
+//         <IconButton aria-label="add to favorites">
+//           <FavoriteIcon 
+//            onClick={() => handleSubmitFavorite()} />
+//         </IconButton>
+//         <IconButton aria-label="share">
+//           <ShareIcon />
+//         </IconButton>
+//         <IconButton
+//           className={clsx(classes.expand, {
+//             [classes.expandOpen]: expanded,
+//           })}
+//           onClick={handleExpandClick}
+//           aria-expanded={expanded}
+//           aria-label="show more"
+//         >
+//           <ExpandMoreIcon />
+//         </IconButton>
+//       </CardActions>
+//       <Collapse in={expanded} timeout="auto" unmountOnExit>
+//         <CardContent>
+//           <Typography paragraph>Ingredients:</Typography>
+//           {numberOfIngredients().map((number) => (
+//           <Typography paragraph key={number} classNameName="data">
+//             {singleDrinkDetails["strMeasure" + number]}
+//             {singleDrinkDetails["strIngredient" + number]}
+//           </Typography>
+//             ))}
+//             <Typography paragraph>Preparation:</Typography>
+//           <Typography paragraph>
+//             {singleDrinkDetails.strInstructions}
+//           </Typography>
+//           <Typography paragraph>Glass:</Typography>
+//           <Typography paragraph>
+//             {singleDrinkDetails.strGlass}
+//           </Typography>
+//           <Typography paragraphy>Type:</Typography>
+//           <Typography>
+//            {singleDrinkDetails.strAlcoholic}
+//           </Typography>
+//         </CardContent>
+//       </Collapse>
+//     </Card>
+//   );
+// }
+
+
+// {/* <Modal
+//             open={open}
+//             onClose={handleClose}
+//             onSubmit={handleSubmitFavorite}
+//             aria-labelledby="simple-modal-title"
+//             aria-describedby="simple-modal-description"
+//             style={{
+//               alignItems: "center",
+//               justifyContent: "center",
+//               padding: "10px",
+//             }}
+//             spacing={3}
+//           > */}     {/* </Modal> */}
