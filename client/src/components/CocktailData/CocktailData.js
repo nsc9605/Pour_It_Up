@@ -25,7 +25,6 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,13 +39,14 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     maxWidth: 800,
-    justifyContent: "space-around",
+    minWidth: 400,
+    justifyContent: "center",
     align: "center",
   },
   media: {
-    height: 0,
+    height: "100%",
     margin: "10px",
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "82%", // 16:9
   },
   expand: {
     transform: "rotate(0deg)",
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   popup: {
     justifyContent: "center",
-  }
+  },
 }));
 
 function CocktailData(props) {
@@ -287,89 +287,112 @@ function CocktailData(props) {
           </Grid>
         </form>
       </div>
-
-      <div open={open} onClose={handleClose} onSubmit={handleSubmitFavorite} className={classes.popup}>
-        <Slide direction="down" in={open} mountOnEnter unmountOnExit>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="drink" className={classes.avatar} src={singleDrinkDetails.strDrinkThumb}>
-                  {singleDrinkDetails.strDrinkThumb}
-                </Avatar>
-              }
-            >
-              {singleDrinkDetails.strDrink}
-            </CardHeader>
-            <CardMedia
-              className={classes.media}
-              image={singleDrinkDetails.strDrinkThumb}
-              title={singleDrinkDetails.strDrink}
-            />
-            <CardContent>
-              <Typography variant="h5" component="h5" color="textSecondary">
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        spacing={3}
+        // className={classes.paper}
+        className={classes.root}
+      >
+        <div
+          open={open}
+          onClose={handleClose}
+          onSubmit={handleSubmitFavorite}
+          className={classes.popup}
+        >
+          <Slide direction="down" in={open} mountOnEnter unmountOnExit>
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="drink"
+                    className={classes.avatar}
+                    src={singleDrinkDetails.strDrinkThumb}
+                  >
+                    {singleDrinkDetails.strDrinkThumb}
+                  </Avatar>
+                }
+              >
                 {singleDrinkDetails.strDrink}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="h4">
-                {singleDrinkDetails.strAlcoholic}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton
-                aria-label="add to favorites"
-                onClick={() => handleSubmitFavorite()}
-              >
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+              </CardHeader>
+              <CardMedia
+                className={classes.media}
+                image={singleDrinkDetails.strDrinkThumb}
+                title={singleDrinkDetails.strDrink}
+              />
               <CardContent>
-                <Typography paragraph>Ingredients:</Typography>
-                {numberOfIngredients().map((number) => (
-                  <Typography paragraph key={number} classNameName="data">
-                    {singleDrinkDetails["strMeasure" + number]}
-                    {singleDrinkDetails["strIngredient" + number]}
-                  </Typography>
-                ))}
-                <Typography paragraph>Preparation:</Typography>
-                <Typography paragraph>
-                  {singleDrinkDetails.strInstructions}
+                <Typography variant="h5" component="h5" color="textSecondary">
+                  {singleDrinkDetails.strDrink}
                 </Typography>
-                <Typography paragraph>Glass:</Typography>
-                <Typography paragraph>{singleDrinkDetails.strGlass}</Typography>
-                <Typography paragraphy>Type:</Typography>
-                <Typography>{singleDrinkDetails.strAlcoholic}</Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="h4"
+                >
+                  {singleDrinkDetails.strAlcoholic}
+                </Typography>
               </CardContent>
-            </Collapse>
-            <ToastContainer
-              position="top-right"
-              autoClose={1700}
-              hideProgressBar={true}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-          </Card>
-        </Slide>
-      </div>
+              <CardActions disableSpacing>
+                <IconButton
+                  aria-label="add to favorites"
+                  onClick={() => handleSubmitFavorite()}
+                >
+                  <FavoriteIcon />
+                </IconButton>
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded,
+                  })}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography paragraph>Ingredients:</Typography>
+                  {numberOfIngredients().map((number) => (
+                    <Typography paragraph key={number} classNameName="data">
+                      {singleDrinkDetails["strMeasure" + number]}
+                      {singleDrinkDetails["strIngredient" + number]}
+                    </Typography>
+                  ))}
+                  <Typography paragraph>Preparation:</Typography>
+                  <Typography paragraph>
+                    {singleDrinkDetails.strInstructions}
+                  </Typography>
+                  <Typography paragraph>Glass:</Typography>
+                  <Typography paragraph>
+                    {singleDrinkDetails.strGlass}
+                  </Typography>
+                  <Typography paragraphy>Type:</Typography>
+                  <Typography>{singleDrinkDetails.strAlcoholic}</Typography>
+                </CardContent>
+              </Collapse>
+              <ToastContainer
+                position="top-right"
+                autoClose={1700}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
+            </Card>
+          </Slide>
+        </div>
 
-      {/* <div className="items-center m-5 p-4">{body}</div> */}
+        {/* <div className="items-center m-5 p-4">{body}</div> */}
 
-      <div>
-        <Scroll />
-      </div>
+        <div>
+          <Scroll />
+        </div>
+      </Grid>
     </>
   );
 }

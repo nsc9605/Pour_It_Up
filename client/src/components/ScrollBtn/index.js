@@ -1,42 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function Scroll() {
-  const [showScrollBtn, setShowScrollBtn] = useState(false);
-  // const [scrollTop, setScrollTop] = useState()
+  const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(() => {
-    checkScrollUp()
-  },[])
-
-  const checkScrollUp = () => {
-    if (!showScrollBtn && window.pageYOffset > 400) {
-      setShowScrollBtn(true);
-    } else if (showScrollBtn && window.pageYOffset <= 400) {
-      setShowScrollBtn(false);
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
     }
   };
 
-  
-  // const handleScrollUp = () => {
-  //   checkScrollUp("scroll")
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-    const scrollUp = () => {
-      window.scrollTo({ Up: 0, behavior: "smooth" });
-    };
-    window.addEventListener("scroll", checkScrollUp);
-    // setScrollTop(scrollUp)
-
-
+  window.addEventListener("scroll", checkScrollTop);
 
   return (
     <>
       <div>
         <button
-          className="scrollUp"
-          onClick={scrollUp}
-          style={{ height: 40, display: showScrollBtn ? "flex" : "none" }}
+          className="scrollTop"
+          onClick={scrollTop}
+          style={{ height: 40, display: showScroll ? "flex" : "none" }}
         >
-          Back Up
+          Back Top
         </button>
       </div>
     </>

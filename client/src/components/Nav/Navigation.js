@@ -21,7 +21,7 @@ function Navigation() {
   }
 
   return (
-    <Navbar collapseOnSelect expand="sm" bg="info" variant="dark">
+    <Navbar collapseOnSelect expand="sm" bg="info" variant="dark" className="navbar">
       <Link to="/">
         <Navbar.Brand className="brand size-large">Pour It Up</Navbar.Brand>
       </Link>
