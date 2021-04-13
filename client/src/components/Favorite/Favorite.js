@@ -37,7 +37,7 @@ function Favorite() {
   return (
     <div
       style={{
-        justifyContent: "center",
+        justify: "center",
     //     backgroundColor: "white",
     //     backgroundOpacity: "0.8",
     }}
