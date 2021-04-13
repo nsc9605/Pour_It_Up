@@ -40,19 +40,19 @@ This is conveniently linked to your Google account when signed in.
 
 ### Overview
 
-![Overview](client/src/img/)
+![Overview](client/src/img/overview.png)
 
 ### About Page
 
-![About](client/src/assets/img/)
+![About](client/src/assets/img/about.png)
 
 ### Search Page
 
-![Search](client/src/assets/img/)
+![Search](client/src/assets/img/search-example.png)
 
 ### Favorites Page
 
-![Favorites](client/src/assets/img/)
+![Favorites](client/src/assets/img/favorites.png)
 
 # Features
 
