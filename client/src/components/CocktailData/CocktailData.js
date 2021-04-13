@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
+import ScrollToTop from "react-scroll-to-top";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -155,11 +156,11 @@ function CocktailData(props) {
         <div className="drink-category title">
           Ingredients:
           {numberOfIngredients().map((number) => (
-            <span key={number} className="data">
-              {singleDrinkDetails["strMeasure" + number]}
-              {singleDrinkDetails["strIngredient" + number]}
-            </span>
-          ))}
+          <span key={number} className="data">
+            {singleDrinkDetails["strMeasure" + number]}
+            {singleDrinkDetails["strIngredient" + number]}
+          </span>
+        ))}
           Preparation:
           <span> {singleDrinkDetails.strInstructions} </span>
           Glass:
@@ -262,6 +263,9 @@ function CocktailData(props) {
             </Slide>
           </Modal>
         </Grid>
+      </div>
+      <div>
+        <ScrollToTop smooth />
       </div>
     </div>
   );
