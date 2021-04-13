@@ -167,7 +167,7 @@ function CocktailData(props) {
           Type:
           <span> {singleDrinkDetails.strAlcoholic}</span>
           <button
-            className="m-3 rounded"
+            className="m-3 rounded deleteBtn"
             onClick={() => handleSubmitFavorite()}
           >
             Save to Favorites

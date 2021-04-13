@@ -1,101 +1,116 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Thasadith:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Khand:wght@500&family=Thasadith:wght@700&display=swap");
 
 .flip-card {
-    /* background-color: white; */
-    opacity: 0.9;
-    /* display: flex !important;
+  opacity: 0.9;
+  /* display: flex !important;
     flex-wrap: wrap !important;
     gap: 20px; */
-    width: 400px;
-    height: 400px;
-    perspective: 1000px;
-    margin: 20px;
-    
-  }
-  
-  .card-img-top {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    object-position: 50%;
-    border-radius: 3px;
-  }
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  margin: 20px;
+}
 
-  .flip-card-inner {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    /* text-align: center; */
-    margin: 10px;
-    position: relative;
-    width: 400px;
-    height: 400px;
-    /* text-align: center; */
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 15px;
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    /* border: 1px solid black; */
-    border-radius: 15px;
-  }
-  
-  .flip-card-front {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    /* border: 1px solid black; */
-  }
-  
-  .flip-card-back {
-    /* font-family: 'Advent Pro', sans-serif; */
-    font-family: 'Thasadith', sans-serif;
-    background-color: rgba(255, 255, 255, 0.699);
-    color: black;
-    transform: rotateY(180deg);
-    width: 100%;
-    border-radius: 3px;
-    /* padding: 20px; */
-    height: 500px;
-    overflow: scroll;
-    font-size: 15px;
-  }
-.drinkCards {
+.flip-title-front {
+  font-family: "Oswald", sans-serif;
+  /* text-shadow:  1px 1px 2px rgb(11, 8, 8),
+    3px -1px 1px #000, 1px -1px 1px rgb(0, 0, 0); */
+  color: rgb(14, 13, 13);
   background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+}
+.h4 {
+  font-family: "Oswald", sans-serif;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.card-img-top {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: 50%;
+  border-radius: 3px;
+}
+
+.flip-card-inner {
+  display: flex;
+  flex-direction: column;
+  /* background-color: white; */
+  margin: 10px;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  /* text-align: center; */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* border: 1px solid black; */
+  border-radius: 15px;
+}
+
+.flip-card-front {
+  /* background-color: rgb(255, 255, 255); */
+  color: black;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+}
+
+.flip-card-back {
+  /* font-family: 'Advent Pro', sans-serif; */
+  font-family: "Thasadith", sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 0.8;
+  color: black;
+  transform: rotateY(180deg);
+  width: 100%;
+  border-radius: 3px;
+  /* padding: 20px; */
+  height: 500px;
+  overflow: scroll;
+  font-size: 15px;
+}
+.drinkCards {
+  /* background-color: white; */
   border-radius: 5px;
   color: black;
   padding: 10px;
   box-shadow: 3px 2px 3px rgb(79, 79, 79);
   height: 100%;
 }
-  span, .data {
-    font-size: 18px !important;
-    font-weight: bold !important;
-    font-family: 'Thasadith', sans-serif;
-  }
+span,
+.data {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  font-family: "Thasadith", sans-serif;
+}
 
-  .deleteBtn {
-    align-self: center !important;
-  }
+.deleteBtn {
+  align-self: center !important;
+}
 
-  .title {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 5px;
-    font-weight: bold;
-    font-size: 20px;
-  }
+.title {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5px;
+  font-size: 22px;
+  font-family: "Oswald", sans-serif !important;
+}

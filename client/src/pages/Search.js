@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import CocktailData from "../components/CocktailData/CocktailData";
 
 function Search() {
+
   const [mostRecentSearch] = useState(
     { ...JSON.parse(localStorage.getItem("mostRecentSearch")) }
       ? { ...JSON.parse(localStorage.getItem("mostRecentSearch")) }
@@ -13,15 +14,7 @@ function Search() {
         }
   );
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("mostRecentSearch")) {
-  //     setMostRecentSearch({
-  //       ...JSON.parse(localStorage.getItem("mostRecentSearch")),
-  //     });
-  //   }
-  //   console.log(mostRecentSearch);
-  // }, []);
-
+ 
   return (
     <div>
       <div className="searchPage">
