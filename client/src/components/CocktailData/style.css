@@ -43,6 +43,15 @@
     margin-left: 10%;
   }
 
+  #drinkList {
+    margin-left: 10%;
+  }
+
   #popup {
-    margin-left: 20%;
+    margin-left: 22%;
+  }
+
+  .hover:hover {
+    /* background-color: red; */
+    color: red !important;
   }
