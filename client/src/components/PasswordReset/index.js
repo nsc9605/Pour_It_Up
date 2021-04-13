@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
+import "./style.css";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
@@ -30,13 +31,15 @@ const PasswordReset = () => {
   };
 
   return (
-    <div>
-      <h1>Reset your Password</h1>
+    <div className="container">
+      <h1 id="title">Reset your Password</h1>
       <div>
         <form action="">
           {emailHasBeenSent && <div>An email has been sent to you!</div>}
           {error !== null && <div>{error}</div>}
-          <label htmlFor="userEmail">Email:</label>
+          <label htmlFor="userEmail" className="userInput">
+            <strong>Email:</strong>
+          </label>
           <input
             type="email"
             name="userEmail"
@@ -45,7 +48,7 @@ const PasswordReset = () => {
             placeholder="Input your email"
             onChange={onChangeHandler}
           />
-          <button onClick={sendResetEmail}>Send me a reset link</button>
+          <button onClick={sendResetEmail} id="reset">Send me a reset link</button>
         </form>
         <Link to="/">&larr; back to sign in page</Link>
       </div>

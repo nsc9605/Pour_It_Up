@@ -46,12 +46,14 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className="container">
+      <h1 id="title">Sign Up</h1>
       <div>
         {error !== null && <div>{error}</div>}
         <form>
-          <label htmlFor="displayName">Display Name:</label>
+          <label htmlFor="displayName" className="userInput">
+            <strong>Display Name:</strong>
+          </label>
           <input
             type="text"
             name="displayName"
@@ -60,7 +62,10 @@ const SignUp = () => {
             id="displayName"
             onChange={(event) => onChangeHandler(event)}
           />
-          <label htmlFor="userEmail">Email:</label>
+          <br />{" "}
+          <label htmlFor="userEmail" className="userInput">
+            <strong>Email:</strong>
+          </label>
           <input
             type="email"
             name="userEmail"
@@ -69,7 +74,9 @@ const SignUp = () => {
             id="userEmail"
             onChange={(event) => onChangeHandler(event)}
           />
-          <label htmlFor="userPassword">Password:</label>
+          <label htmlFor="userPassword" className="userInput">
+            <strong>Password:</strong>
+          </label>
           <input
             type="password"
             name="userPassword"
@@ -78,7 +85,7 @@ const SignUp = () => {
             id="userPassword"
             onChange={(event) => onChangeHandler(event)}
           />
-          <button
+          <button id ="signUp"
             onClick={(event) => {
               createUserWithEmailAndPasswordHandler(event, email, password);
             }}
@@ -86,17 +93,17 @@ const SignUp = () => {
             Sign up
           </button>
         </form>
-        <p>or</p>
-        <button
+        <p>
+          Already have an account? <Link to="/">Sign in here</Link>
+        </p>
+        <p id="or">or</p>
+        <button id="google"
           onClick={() => {
             handlePopup();
           }}
         >
           Sign In with Google
         </button>
-        <p>
-          Already have an account? <Link to="/">Sign in here</Link>
-        </p>
       </div>
     </div>
   );
