@@ -4,10 +4,17 @@
   border: 1px solid #17a2b8;
 }
 
-#contributers a {
+#contributors a {
   color: black
 }
 
-#contributers a:hover {
+#contributors a:hover {
   color: darkblue;
+}
+
+.authorImg {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  padding: 10px;
 }

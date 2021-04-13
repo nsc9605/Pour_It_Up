@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import API from "../../utils/API";
-import Modal from "@material-ui/core/Modal";
+// import Modal from "@material-ui/core/Modal";
+import { Modal } from '@material-ui/core'
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Slide from "@material-ui/core/Slide";
@@ -9,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
-import ScrollToTop from "react-scroll-to-top";
+import Scroll from "../ScrollBtn/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +32,7 @@ function CocktailData(props) {
   const [drinks, setDrinks] = useState([props.mostRecentSearch]);
   const [singleDrinkDetails, setSingleDrinkDetails] = useState({});
   const classes = useStyles();
+  // const [showScroll, setShowScroll] = useState();
 
   // Handle input to target API
   const handleInputs = (e) => {
@@ -196,7 +198,7 @@ function CocktailData(props) {
         <button className="m-2 rounded">Search</button>
         {drinks.length === 1 && (
           <>
-            <h2>Last drink searched</h2>
+            <h2>Last drink searched:</h2>
           </>
         )}
         <Grid
@@ -208,7 +210,7 @@ function CocktailData(props) {
           // className={classes.paper}
           className={classes.root}
         >
-          <Grid item xs={6}>
+          <Grid item xs={8} className="pb-2">
             <Grid container justify="space-around">
               {drinks.map((each, index) => {
                 return (
@@ -265,7 +267,7 @@ function CocktailData(props) {
         </Grid>
       </div>
       <div>
-        <ScrollToTop smooth />
+        <Scroll />
       </div>
     </div>
   );

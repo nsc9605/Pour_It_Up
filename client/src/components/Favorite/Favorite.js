@@ -4,9 +4,9 @@ import API from "../../utils/API";
 import { UserContext } from "../../Providers/UserProvider";
 import Grid from "@material-ui/core/Grid";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Scroll from "../ScrollBtn/index";
 import { Link } from "react-router-dom";
 import "./style.css";
-import ScrollToTop from "react-scroll-to-top";
 
 function Favorite() {
   const { token } = useContext(UserContext);
@@ -69,7 +69,6 @@ function Favorite() {
                       />
                     </div>
                     <h3 className="flip-title-front">{favorite.name}</h3>
-
                   </div>
                   <div className="flip-card-back p-2">
                     <h4 className="text-center h4">{favorite.name}</h4>
@@ -97,7 +96,7 @@ function Favorite() {
                         <br></br>
                       </div>
                       <div className="title">
-                        Type:  <span> {favorite.type}</span>
+                        Type: <span> {favorite.type}</span>
                         <br></br>
                       </div>
                     </div>
@@ -113,9 +112,6 @@ function Favorite() {
                   </div>
                 </div>
               </div>
-              <div>
-                <ScrollToTop smooth />
-              </div>
             </div>
           ))}
         </Grid>
@@ -126,12 +122,13 @@ function Favorite() {
             <h5>Click the start button to begin searching for a cocktail!</h5>
             <div className="startBtn col-6 text-center">
               <Button component={Link} to="/search">
-                Click to Start!
+                Begin!
               </Button>
             </div>
           </div>
         </div>
       )}
+      <Scroll />
     </div>
   );
 }
