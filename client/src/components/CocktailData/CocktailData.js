@@ -146,7 +146,6 @@ function CocktailData(props) {
 
   const [favorite, setFavorite] = React.useState();
   const handleSubmitFavorite = () => {
-
     let ingredients = [];
 
     for (const property in singleDrinkDetails) {
@@ -182,24 +181,25 @@ function CocktailData(props) {
 
     // This does not allow for duplicates in the user's favorites.
     let favList = [];
-    API.favoriteCocktails(token).then((res) => {
-      for (let i = 0; i < res.data.length; i++) {
-        favList.push(res.data[i].idDrink);
-      }
-    }).then(() => {
-      if (!favList.includes(favObject.idDrink)) {
-        API.saveCocktail(favObject).then(() => {
-          toast.info("Saved to favorites!");
-          setTimeout(handleClose, 2000);
-        });
-      } else {
-        alert("Drink is already in favorites!");
-        return;
-      }
-      return favorite;
-    }
-    );
-  }
+    API.favoriteCocktails(token)
+      .then((res) => {
+        for (let i = 0; i < res.data.length; i++) {
+          favList.push(res.data[i].idDrink);
+        }
+      })
+      .then(() => {
+        if (!favList.includes(favObject.idDrink)) {
+          API.saveCocktail(favObject).then(() => {
+            toast.info("Saved to favorites!");
+            setTimeout(handleClose, 2000);
+          });
+        } else {
+          alert("Drink is already in favorites!");
+          return;
+        }
+        return favorite;
+      });
+  };
 
 
   return (
@@ -294,7 +294,7 @@ function CocktailData(props) {
                         variant="body2"
                         component="p"
                       >
-                        {singleDrinkDetails["strMeasure" + number]}
+                        {singleDrinkDetails["strMeasure" + number]}{" "}
                         {singleDrinkDetails["strIngredient" + number]}
                       </Typography>
                     ))}
@@ -330,7 +330,13 @@ function CocktailData(props) {
               </Card>
             </Slide>
           </div>
-          <Grid item xs={8} className={classes.main} id="grid">
+          <Grid item xs={8} className={classes.main}>
+            {/* <Grid
+              container
+              justify="space-around"
+              alignItems="center"
+              className={classes.main}
+            > */}
             {drinks.map((each, index) => {
               return (
                 <Paper
@@ -350,7 +356,7 @@ function CocktailData(props) {
                     onClick={handleOpen}
                   >
                     Select Drink
-                    </button>
+                  </button>
                 </Paper>
               );
             })}
