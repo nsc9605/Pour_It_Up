@@ -2,6 +2,7 @@ import React from 'react';
 import bg from "../assets/img/bg.jpg";
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
+import Footer from "../components/Footer";
 
 function Home() {
     return (
@@ -28,6 +29,7 @@ function Home() {
                 </div>
 
             </div>
+            <Footer />
         </div>
     )
 };
