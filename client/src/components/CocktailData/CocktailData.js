@@ -265,6 +265,7 @@ function CocktailData(props) {
                   <IconButton
                     aria-label="add to favorites"
                     onClick={() => handleSubmitFavorite()}
+                    className="hover"
                   >
                     <FavoriteIcon />
                   </IconButton>

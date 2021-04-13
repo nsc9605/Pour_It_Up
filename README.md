@@ -44,7 +44,7 @@ This is conveniently linked to your Google account when signed in.
 
 ### About Page
 
-![About](client/src/assets/img/)
+![About](client/src/assets/img/about.png)
 
 ### Search Page
 

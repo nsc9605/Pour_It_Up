@@ -50,3 +50,8 @@
   #popup {
     margin-left: 22%;
   }
+
+  .hover:hover {
+    /* background-color: red; */
+    color: red !important;
+  }
