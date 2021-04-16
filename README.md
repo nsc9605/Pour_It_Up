@@ -40,7 +40,7 @@ This is conveniently linked to your Google account when signed in.
 
 ### Overview
 
-![Overview](client/src/img/overview.png)
+![Overview](client/src/assets/img/pour_it_up.gif)
 
 ### About Page
 
