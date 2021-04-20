@@ -38,7 +38,7 @@ This is conveniently linked to your Google account when signed in.
 
 ![Board](client/src/assets/img/Project-Board.png)
 
-### Overview
+### Overview Walk-Through
 
 ![Overview](client/src/assets/img/pour_it_up.gif)
 
